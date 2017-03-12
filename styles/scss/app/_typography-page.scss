@@ -1,0 +1,65 @@
+// Styleguide Typography Page
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+._header-display{
+    margin-bottom: 0;
+    box-sizing: border-box;
+    padding: 20px 0;
+    border-top: 1px solid $grey;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child{
+        border-bottom: 1px solid $grey;
+    }
+}
+._heading-font{
+    letter-spacing: normal;
+    margin-left: 25px;
+    font-size: 14px;
+    opacity: 0.48;
+    font-weight: 600;
+    code{
+        margin-left: 15px;
+    }
+}
+
+
+
+
+
+// Icons
+.styleguide-icon-list{
+    box-sizing: border-box;
+    padding: 0 0 25px 0;
+
+    .styleguide-icon-list-row{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        padding: 0 10px;
+        background-color: $grey-light;
+
+        &.styleguide-light-icon-row{
+            background-color: $black;
+        }
+
+        a{
+            box-sizing: border-box;
+            padding: 5px 0 0 0;
+
+            img{
+                display: inline-block;
+                height: 30px;
+                width: auto;
+                padding: 4px 10px;
+                opacity: 0.8;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+}

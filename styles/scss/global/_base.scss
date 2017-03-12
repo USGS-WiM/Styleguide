@@ -1,0 +1,42 @@
+// Base
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Set box-sizing globally to handle padding and border widths, remove tap highlight
+*,
+*:after,
+*:before{
+    -webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+    outline: none !important;
+}
+
+html{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    color: $black;
+    font-family: $sans;
+}
+body{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+	font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 400;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: $white;
+
+    font-size: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5;
+}

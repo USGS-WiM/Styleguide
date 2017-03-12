@@ -1,0 +1,382 @@
+<div class="container _grid-page">
+    
+
+    <section>
+        <h1>
+            Layout Grid
+        </h1>
+        <p>
+            The grid system is based off the <a href="http://flexboxgrid.com/" target="_blank">flexboxgrid</a> with a 12-column row base. Using it, you can specify different column widths, offsets, alignment, and distribution at <b>xs</b>, <b>sm</b>, <b>md</b> & <b>lg</b> size widths.
+        </p>
+
+
+        <br/>
+        <hr/>
+        <br/>
+
+
+        <h2>Basic Syntax</h2>
+        <p class="p-meta">
+            The correct format will <b>always</b> be row, column, content.
+        </p>    
+        <pre>
+            <code>&lt;div class="row"&gt;</code>
+            <code>    &lt;div class="col-xs-12"&gt;</code>
+            <code>        Column Content</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+    </section>
+
+
+    <section>
+        <h2>Basic Responsive Structure</h2>
+        <p class="p-meta">
+            With responsive grids, you specify the width you want on specific display sizes (out of a grid of 12). Start with xs, then sm, md, lg. At minimum you need to specify col-xs-##, and only need to specify larger view widths if the columns are expected to change/adapt.
+            <br/><br/>
+            The correct format for grid classes are <code>col-[[viewsize]]-[[# 1-12]]</code>. For example <code>col-sm-12</code> or <code>col-lg-4</code>
+            <br/><br/>
+            If your column widths do not add up to exactly 12, there will be whitespace left over.
+        </p>    
+
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="_grid-display">&nbsp;</div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section>
+        <h2>Offset</h2>
+        <p class="p-meta">
+            Offset columns within a row and create whitespace.
+        </p>    
+
+
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-10"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-8"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-6"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-4"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-2"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-xs-offset-0"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+
+        <pre>
+            <code>&lt;div class="row"&gt;</code>
+            <code>    &lt;div class="<b>col-xs-offset-3</b> col-xs-9"&gt;</code>
+            <code>        Offset Column</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+        
+    </section>
+
+
+
+    <section>
+        <h2>Auto Width Columns</h2>
+        <p class="p-meta">
+            While you can specify how many columns content takes up, you can also have a column fill any space is left in the row simply by not specifying a column width. Example <code>col-xs</code>
+        </p>    
+
+
+        <div class="row">
+            <div class="col-xs-2"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+
+        <pre>
+            <code>&lt;div class="row"&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        3-width-column</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="<b>col-xs</b>"&gt;</code>
+            <code>        Auto-width column fills remainder</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+        
+    </section>
+
+
+
+    <section>
+        <h2>Align Elements</h2>
+        <p class="p-meta">
+            Easy classes to align elements at the start, end, or center of a row, or the top, middle, or bottom of a column. You can use these to have different alignment on different view sizes.
+        </p>    
+
+        <h2 class="_code-header"><code>.start-</code></h2>
+        <div class="row start-xs _grid-row-colored">
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs-2"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>start-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Row with elements aligned start</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+        <br/>
+
+        <h2 class="_code-header"><code>.center-</code></h2>
+        <div class="row center-xs _grid-row-colored">
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs-2"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>center-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Row with elements aligned center</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+        <br/>
+
+        <h2 class="_code-header"><code>.end-</code></h2>
+        <div class="row end-xs _grid-row-colored">
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs-2"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>end-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Row with elements aligned end</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+
+        <br/>
+
+        <h2 class="_code-header"><code>.top-</code></h2>
+        <div class="row top-xs _grid-row-colored">
+            <div class="col-xs-6"><div class="_grid-display">&nbsp;<br/>&nbsp;<br/>&nbsp;<br/></div></div>
+            <div class="col-xs-6"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>top-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Column aligned top</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+
+        <br/>
+
+        <h2 class="_code-header"><code>.middle-</code></h2>
+        <div class="row middle-xs _grid-row-colored">
+            <div class="col-xs-6"><div class="_grid-display">&nbsp;<br/>&nbsp;<br/>&nbsp;<br/></div></div>
+            <div class="col-xs-6"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>middle-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Column aligned middle</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+        <br/>
+
+        <h2 class="_code-header"><code>.bottom-</code></h2>
+        <div class="row bottom-xs _grid-row-colored">
+            <div class="col-xs-6"><div class="_grid-display">&nbsp;<br/>&nbsp;<br/>&nbsp;<br/></div></div>
+            <div class="col-xs-6"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>bottom-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Column aligned bottom</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+        
+    </section>
+
+    <section>
+        <h2>Element Distribution</h2>
+        <p class="p-meta">
+            Add classes to distribute and space columns within a row.
+        </p>   
+
+
+        <h2 class="_code-header"><code>.around-</code></h2>
+        <div class="row around-xs _grid-row-colored">
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>around-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Row with space around elements</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+        <br/>
+
+        <h2 class="_code-header"><code>.between-</code></h2>
+        <div class="row between-xs _grid-row-colored">
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+            <div class="col-xs-3"><div class="_grid-display">&nbsp;</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>between-xs</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-6"&gt;</code>
+            <code>        Row with space between elements</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+    </section>
+
+
+    <section>
+        <h2>Reordering Elements</h2>
+        <p class="p-meta">
+            Add classes to columns to reorder them without changing the html element order.
+        </p>   
+
+
+        <h2 class="_code-header"><code>.first-</code></h2>
+        <div class="row _grid-row-colored">
+            <div class="col-xs-3"><div class="_grid-display">1</div></div>
+            <div class="col-xs-3"><div class="_grid-display">2</div></div>
+            <div class="col-xs-3"><div class="_grid-display">3</div></div>
+            <div class="col-xs-3 first-xs"><div class="_grid-display">4</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row"&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        1</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        2</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        3</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3 <b>first-xs</b>"&gt;</code>
+            <code>        4</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+        <br/>
+
+        <h2 class="_code-header"><code>.last-</code></h2>
+        <div class="row _grid-row-colored">
+            <div class="col-xs-3 last-xs"><div class="_grid-display">1</div></div>
+            <div class="col-xs-3"><div class="_grid-display">2</div></div>
+            <div class="col-xs-3"><div class="_grid-display">3</div></div>
+            <div class="col-xs-3"><div class="_grid-display">4</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row"&gt;</code>
+            <code>    &lt;div class="col-xs-3 <b>last-xs</b>"&gt;</code>
+            <code>        1</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        2</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        3</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        4</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+    </section>
+
+
+    <section>
+        <h2>Reverse Order</h2>
+        <p class="p-meta">
+            Simply reverse the order of columns within a row.
+        </p>   
+
+
+        <h2 class="_code-header"><code>.reverse-</code></h2>
+        <div class="row reverse _grid-row-colored">
+            <div class="col-xs-3"><div class="_grid-display">1</div></div>
+            <div class="col-xs-3"><div class="_grid-display">2</div></div>
+            <div class="col-xs-3"><div class="_grid-display">3</div></div>
+            <div class="col-xs-3"><div class="_grid-display">4</div></div>
+        </div>
+        <pre>
+            <code>&lt;div class="row <b>reverse</b>"&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        1</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        2</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        3</code>
+            <code>    &lt;/div&gt;</code>
+            <code>    &lt;div class="col-xs-3"&gt;</code>
+            <code>        4</code>
+            <code>    &lt;/div&gt;</code>
+            <code>&lt;/div&gt;</code>
+        </pre>
+
+    </section>
+
+</div>

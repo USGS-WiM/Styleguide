@@ -1,0 +1,864 @@
+<div class="container">
+    <div class="row around-xs">
+
+        <div class="_styleguide-sidebar col-lg-3 col-md-3 col-sm-4 col-xs-8">
+            <ul class="links-list"> 
+                <li>
+                    <a href="#uicoloring" class="active">UI Coloring</a>
+                </li> 
+                <li>
+                    <a href="#banners">Banners</a>
+                </li> 
+                <li>
+                    <a href="#badges">Badges</a>
+                </li> 
+                <li>
+                    <a href="#callout">Callouts</a>
+                </li> 
+                <li>
+                    <a href="#data">Data Elements</a>
+                </li> 
+                <li>
+                    <a href="#toast">Toast Notifications</a>
+                </li> 
+                <li>
+                    <a href="#modals">Modals</a>
+                </li> 
+                <li>
+                    <a href="#pageloaders">Page Loaders</a>
+                </li> 
+                <li>
+                    <a href="#helpers">UI Helper Classes</a>
+                </li> 
+            </ul>
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <section>
+                <h1>UI Elements</h1>
+
+                <p>
+                    UI Elements and transformations that can be used throughout applications.
+                </p>
+
+                <br/>
+                <hr/>
+                <br/>
+
+
+                <a class="_anchor-offset" id="uicoloring"></a>
+                <h2>UI Coloring</h2>
+
+                <p class="p-meta">
+                    You can change the background and border color of any element by adding classes to it. This applies to <i>any</i> element, including the specific UI elements listed on this page.
+                </p>
+
+                <div class="row margin--x1">
+                    <div class="col-xs-6 col-md-3 success _uicolor">
+                        .success
+                    </div>
+                    <div class="col-xs-6 col-md-3 info _uicolor">
+                        .info
+                    </div>
+                    <div class="col-xs-6 col-md-3 warning _uicolor">
+                        .warning
+                    </div>
+                    <div class="col-xs-6 col-md-3 error _uicolor">
+                        .error
+                    </div>
+                </div>
+
+                <p class="p-meta">
+                    You can use more intense/vibrant colors by adding the class <code>.intense</code> along with the coloring class. Use these infrequently.
+                </p>
+
+                <div class="row margin--x1">
+                    <div class="col-xs-6 col-md-3 success intense _uicolor">
+                        .success .intense
+                    </div>
+                    <div class="col-xs-6 col-md-3 info intense _uicolor">
+                        .info .intense
+                    </div>
+                    <div class="col-xs-6 col-md-3 warning intense _uicolor">
+                        .warning .intense
+                    </div>
+                    <div class="col-xs-6 col-md-3 error intense _uicolor">
+                        .error .intense
+                    </div>
+                </div>
+
+            </section>
+
+            <hr/>
+
+            <section>
+                <a class="_anchor-offset" id="banners"></a>
+                <h2>Banners</h2>
+
+                <p class="p-meta">
+                    Banners should be used to tell users why something happened, or give them tips about what they could or should do to make something happen.
+                </p>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.bannner</code></h2>
+                        <div class="banner basic">
+                            <div class="banner-body">
+                                <h5>Hello!</h5>
+                                <p>Welcome back! You've earned $10.35 since your last visit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .intense</code></h2>
+                        <div class="banner basic intense">
+                            <div class="banner-body">
+                                <h5>Hello!</h5>
+                                <p>Welcome back! You've earned $10.35 since your last visit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .success</code></h2>
+                        <div class="banner success">
+                            <div class="banner-body">
+                                <h5>Success!</h5>
+                                <p>You have successfully withdrawn your rewards. Look for a deposit in your bank in 3 days.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .success .intense</code></h2>
+                        <div class="banner success intense">
+                            <div class="banner-body">
+                                <h5>Success!</h5>
+                                <p>You have successfully withdrawn your rewards. Look for a deposit in your bank in 3 days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .info</code></h2>
+                        <div class="banner info">
+                            <div class="banner-body">
+                                <h5>Protect your account</h5>
+                                <p>It's best not to reuse passwords, try to pick one unique to WiM.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .info .intense</code></h2>
+                        <div class="banner info intense">
+                            <div class="banner-body">
+                                <h5>Protect your account</h5>
+                                <p>It's best not to reuse passwords, try to pick one unique to WiM.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .warning</code></h2>
+                        <div class="banner warning">
+                            <div class="banner-body">
+                                <h5>Insecure password</h5>
+                                <p>That password is not very long - longer passwords are more secure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .warning .intense</code></h2>
+                        <div class="banner warning intense">
+                            <div class="banner-body">
+                                <h5>Insecure password</h5>
+                                <p>That password is not very long - longer passwords are more secure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .error</code></h2>
+                        <div class="banner error">
+                            <div class="banner-body">
+                                <h5>Invoice not sent</h5>
+                                <p>Please <a href="#">check your internet</a> connection then try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h2 class="_code-header"><code>.banner .error .intense</code></h2>
+                        <div class="banner error intense">
+                            <div class="banner-body">
+                                <h5>Invoice not sent</h5>
+                                <p>Please <a href="#">check your internet</a> connection then try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <br/>
+
+                <pre>
+                    <code>&lt;div class="banner warning"&gt;</code>
+                    <code>    &lt;div class="banner-body&gt;</code>
+                    <code>        &lt;h5&gt;Invoice not sent&lt;/h5&gt;</code>
+                    <code>        &lt;p&gt;Please check your internet connection then try again.&lt;/p&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/div&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Banner with button</h4>
+                <div class="banner">
+                    <div class="banner-body">
+                        <h5>New data is available!</h5>
+                        <p>Would you like to reload the page to see it?</p>
+                    </div>
+                    <button>Reload</button>
+                </div>
+
+                <br/>
+                
+                <pre>
+                    <code>&lt;div class="banner"&gt;</code>
+                    <code>    &lt;div class="banner-body&gt;</code>
+                    <code>        &lt;h5&gt;New data is available!&lt;/h5&gt;</code>
+                    <code>        &lt;p&gt;Would you like to reload the page to see it?&lt;/p&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>    <b>&lt;button&gt;</b></code>
+                    <code>        <b>Reload</b></code>
+                    <code>    <b>&lt;/button&gt;</b></code>
+                    <code>&lt;/div&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Banner without a title</h4>
+                <p class="p-meta">
+                    Remove the <code>h5</code> element from the banner body to get a single-line banner.
+                </p>
+                <div class="banner">
+                    <div class="banner-body">
+                        <p>Click the home button on the map to zoom to your location.</p>
+                    </div>
+                </div>
+
+                <br/>
+
+                <h4>banner without icon</h4>
+                <p class="p-meta">
+                    Use the class <code>banner-no-icon</code> to remove the icon from the banner element.
+                </p>
+                <div class="banner error banner-no-icon">
+                    <div class="banner-body">
+                        <h5>An error occured</h5>
+                        <p>We could not connect to the internet. Please try again later or <a href="#">click here</a> to try again now.</p>
+                    </div>
+                </div>
+
+
+
+            </section>
+
+            <hr/>
+
+            <section>
+                <a class="_anchor-offset" id="badges"></a>
+                <h2>Badges</h2>
+
+                <p class="p-meta">
+                    Badges are used to show important small blocks of text, whether that's marking a notification, labeling something, or providing feedback to the user. They should be used to give additional context to elements that are already on the page.
+                </p>
+
+                
+
+                <ul class="horizontal-list"> 
+                    <li>
+                        <span class="badge">Basic</span>
+                    </li>
+                    <li>
+                        <span class="badge success">Success</span>
+                    </li>
+                    <li>
+                        <span class="badge info">Info</span>
+                    </li>
+                    <li>
+                        <span class="badge warning">Warning</span>
+                    </li>
+                    <li>
+                        <span class="badge error">Error</span>
+                    </li>
+                </ul>
+
+                <p class="p-meta">
+                    Add the <code>.intense</code> class for intense colors.
+                </p>
+
+                <ul class="horizontal-list"> 
+                    <li>
+                        <span class="badge intense">Basic</span>
+                    </li>
+                    <li>
+                        <span class="badge success intense">Success</span>
+                    </li>
+                    <li>
+                        <span class="badge info intense">Info</span>
+                    </li>
+                    <li>
+                        <span class="badge warning intense">Warning</span>
+                    </li>
+                    <li>
+                        <span class="badge error intense">Error</span>
+                    </li>
+                </ul>
+                
+
+                <pre>
+                    <code>&lt;span class="badge"&gt;Basic&lt;/&gt;</code>
+                    <code>&lt;span class="badge success"&gt;Success&lt;/&gt;</code>
+                    <code>&lt;span class="badge info"&gt;Info&lt;/&gt;</code>
+                    <code>&lt;span class="badge warning"&gt;Warning&lt;/&gt;</code>
+                    <code>&lt;span class="badge error"&gt;Error&lt;/&gt;</code>
+                    <code>&nbsp;</code>
+                    <code>&lt;span class="badge error <b>intense</b>"&gt;Error&lt;/&gt;</code>
+                </pre>
+            </section>
+
+            <hr/>
+
+            <section>
+                <a class="_anchor-offset" id="callout"></a>
+                <h2>Callout Boxes</h2>
+
+                <p class="p-meta">
+                    Callout elements should be used to provide the user with details or tips. Things that are not essential to using the website or application, but are nice to know.
+                </p>
+
+                <h4>Basic Callout</h4>
+                <div class="callout">
+                    <p>
+                        <b>New release: Version 1.0.9.</b> We fixed some bugs in this version. It should no longer freeze when trying to load the topographic map.  
+                    </p>
+                </div>
+
+                <pre>
+                    <code>&lt;div class="callout"&gt;</code>
+                    <code>    &lt;p&gt;</code>
+                    <code>        &lt;b&gt;No release: Version 1.0.9.&lt;/b&gt; We fixed some bugs...</code>
+                    <code>    &lt;/p&gt;</code>
+                    <code>&lt;div&gt;</code>
+                </pre>
+
+                <br/>
+
+
+                <h4>Callout with Ionicon</h4>
+                <p class="p-meta">
+                    You can add any <a href="http://ionicons.com" target="_blank">Ionicons icon</a> before the <code>&lt;p&gt;</code> tag to add an icon to the callout.
+                </p>
+                <div class="callout">
+                    <i class="ion-heart"></i>
+                    <p>
+                        <b>Save it for later!</b> If you like this configuration, click save and you will be able to come back and easily view it at any time. We save the configuration in your browser.
+                    </p>
+                </div>
+
+                <div class="callout">
+                    <i class="ion-chatboxes"></i>
+                    <p>
+                        <b>We want your feedback.</b> If you notice any issues with this application, or have any requests for features you would like to see in the future, please contact us!
+                    </p>
+                </div>
+                 <div class="callout">
+                    <i class="ion-cloud"></i>
+                    <p>
+                        <b>This is a cloud.</b> I can't think of a useful example to put here, but hopefully you can. Or just don't use the cloud class. I'm not really sure why I included it.
+                    </p>
+                </div>
+
+                <div class="callout">
+                    <i class="ion-android-map"></i>
+                    <p>
+                        <b>More maps available.</b> You can change the map view on the left hand side. There are several different basemaps to choose from that will change the look of the map.
+                    </p>
+                </div>
+
+
+                <pre>
+                    <code>&lt;div class="callout"&gt;</code>
+                    <code>    <b>&lt;i class="ion-heart"&gt;&lt;/i&gt;</b></code>
+                    <code>    &lt;p&gt;</code>
+                    <code>        &lt;b&gt;Save it for later!&lt;/b&gt; If you like this configuration...</code>
+                    <code>    &lt;/p&gt;</code>
+                    <code>&lt;div&gt;</code>
+                </pre>
+            </section>
+
+            
+            <hr/>
+
+
+            <section>
+                <a class="_anchor-offset" id="data"></a>
+                <h2>Data Elements</h2>
+
+                <p class="p-meta">
+                    Use the elements below for displaying different types of data.
+                </p>
+
+                <br/>
+
+                <h4>Meters</h4>
+
+                <p class="p-meta">
+                    The progress percentages should be programatically changed with Javascript.
+                </p>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="meter">
+                            <div class="meter-info">
+                                <span class="description">22/50 Sensors Updated</span>
+                                <span class="percent">44%</span>
+                            </div>
+                            <div class="meter-display">
+                                <div class="progress" style="width:44%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+                
+                <pre>
+                    <code>&lt;div class="meter"&gt;</code>
+                    <code>    &lt;div class="meter-info"&gt;</code>
+                    <code>        &lt;span class="description"&gt;22/50 Sensors Updated&lt;/span&gt;</code>
+                    <code>        &lt;span class="percent"&gt;44%&lt;/span&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>    &lt;div class="meter-display"&gt;</code>
+                    <code>        &lt;div class="progress" style="width: 44%"&gt;&lt;/div&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/div&gt;</code>
+                </pre>
+
+                <br/>
+ 
+
+
+                <h4>Statistics</h4>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        <div class="statistics">
+                            <div class="stat">
+                                2,124ft
+                                <label>Elevation</label>
+                            </div>
+                            <div class="stat">
+                                124mi
+                                <label>Distance</label>
+                            </div>
+                            <div class="stat">
+                                210sqmi
+                                <label>Area</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+                
+                <pre>
+                    <code>&lt;div class="statistics"&gt;</code>
+                    <code>    &lt;div class="stat"&gt;</code>
+                    <code>        2,124ft</code>
+                    <code>        &lt;label&gt;Elevation&lt;/label&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>    &lt;div class="stat"&gt;</code>
+                    <code>        124mi</code>
+                    <code>        &lt;label&gt;Distance&lt;/label&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>    ....</code>
+                    <code>&lt;/div&gt;</code>
+                </pre>
+
+                <br/>
+
+
+                <h4>Statistics no border</h4>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        <div class="statistics-borderless">
+                            <div class="stat">
+                                <label>Change in CO2</label>
+                                +24%
+                            </div>
+                            <div class="stat">
+                                <label>Change in Temperature</label>
+                                -18C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+                
+                <pre>
+                    <code>&lt;div class="statistics-borderless"&gt;</code>
+                    <code>    &lt;div class="stat"&gt;</code>
+                    <code>        &lt;label&gt;Change in CO2&lt;/label&gt;</code>
+                    <code>        +24%</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>    &lt;div class="stat"&gt;</code>
+                    <code>        &lt;label&gt;Change in Temperature&lt;/label&gt;</code>
+                    <code>        -18C</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>    ....</code>
+                    <code>&lt;/div&gt;</code>
+                </pre>
+
+            </section>
+
+
+            <hr/>
+
+
+            <section>
+                <a class="_anchor-offset" id="toast"></a>
+                <h2>Toast Notifications</h2>
+
+                <p class="p-meta">
+                    Toast notifications should be used to show important information to the user, whether good or bad. 
+                    <br/>
+                    You will need to write your own JS code to show/hide the notifications. It should disappear automatically after ~3-5 seconds and/or when clicked.
+                    <br/>
+                    You could also use the toast element as a permanent banner.
+                </p>
+
+                <br/>
+
+                <button id="_show-toast">Hold to Show Toast</button>
+
+                <div class="toast info" id="_example-toast">
+                    Data has been updated, now showing the most recent data.
+                </div>
+
+                <br/>
+                <br/>
+
+                <p class="p-meta">
+                    You can also change the colors of toasts using the classes <code>.success</code>, <code>.info</code>, <code>.warning</code>, or <code>.error</code>. You can also use the <code>.intense</code> class on toast notifications.
+                </p>
+
+                <br/>
+
+                <button id="_show-toast2">Hold to Show Intense Toast Notification</button>
+
+                <div class="toast intense error" id="_example-toast2">
+                    Something went wrong. Please try again later.
+                </div>
+
+                <br/>
+                <br/>
+
+                <pre>
+                    <code>&lt;div class="toast error"&gt;</code>
+                    <code>    Something went wrong. Please try again later.</code>
+                    <code>&lt;div&gt;</code>
+                </pre>
+
+            </section>
+
+
+            <hr/>
+
+
+            <section>
+                <a class="_anchor-offset" id="modals"></a>
+                <h2>Modals</h2>
+
+                <h4>Alert or confirm modal</h4>
+                <p class="p-meta">
+                    Use this to either alert users that something has happened, or to make them confirm that they want to complete an action.
+                </p>
+                <br/>
+                <button id="_show-modal">Hold to Show Confirmation Modal</button>
+
+
+                <div class="modal-wrapper" id="_example-modal">
+                    <div class="modal">
+                        <div class="modal-header">
+                            Are you sure?
+                            <div class="close-modal">
+                                <i class="ion-close-circled"></i>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <p class="p-meta alignc">Do you really want to clear the map?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#">No, Cancel</a>
+                            <button>Yes, Clear It</button>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+                <br/>
+
+                <p class="p-meta">
+                    <b>Tip:</b> When labeling the buttons in a confirmation modal, make sure they say exactly what they will do. For example, using "No, Cancel" and "Yes, Clear It" instead of just "No" and "Yes".
+                </p>
+
+                <br/>
+
+                <pre>
+                    <code>&lt;div class="modal-wrapper"&gt;</code>
+                    <code>    &lt;div class="modal"&gt;</code>
+                    <code>        &lt;div class="modal-header"&gt;</code>
+                    <code>            Are you sure?</code>
+                    <code>            &lt;div class="close-modal"&gt;</code>
+                    <code>                &lt;class="ion-close-circled"&gt;&lt;/i&gt;</code>
+                    <code>            &lt;/div&gt;</code>
+                    <code>        &lt;/div&gt;</code>
+                    <code>        &lt;div class="modal-body"&gt;</code>
+                    <code>            &lt;p class="p-meta alignc"&gt;Do you really want to clear the map?&lt;/p&gt;</code>
+                    <code>        &lt;/div&gt;</code>
+                    <code>        &lt;div class="modal-footer"&gt;</code>
+                    <code>            &lt;a href="#"&gt;No, Cancel&lt;/a&gt;</code>
+                    <code>            &lt;button&gt;Yes, Clear It&lt;/button&gt;</code>
+                    <code>        &lt;/div&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/div&gt;</code>
+                </pre>
+
+
+            </section>
+
+
+            <hr/>
+
+
+            <section>
+                <a class="_anchor-offset" id="pageloaders"></a>
+                <h2>Page Loaders</h2>
+
+                <p class="p-meta">
+                    Page loaders should only be shown when entire pages or views are loading. When waiting for an action to complete, instead use loading buttons.
+                </p>
+
+                <br/>
+
+                <button id="_show-page-loader">Hold to Show Page Loader</button>
+
+                <div class="page-loader" id="_example-page-loader">
+                    Loading Map Layers...
+                </div>
+
+                <br/>
+                <br/>
+
+                <pre>
+                    <code>&lt;div class="page-loader"&gt;</code>
+                    <code>    Loading Map Layers...</code>
+                    <code>&lt;div&gt;</code>
+                </pre>
+
+            </section>
+
+
+            <hr/>
+
+
+            <section>
+                <a class="_anchor-offset" id="helpers"></a>
+                <h2>UI Helper Classes</h2>
+
+                <h4>Transformation Helpers</h4>
+                <p class="p-meta">
+                    Use these classes to quickly transform a UI element looks or behaves.
+                </p>
+                <ul class="data-list smalltext"> 
+                    <li>
+                        <span><b>Class</b></span> 
+                        <span><b>Description</b></span>
+                    </li> 
+                    <li>
+                        <span><code>.fullwidth</code></span> 
+                        <span>Display: block & width: 100%</span>
+                    </li> 
+                    <li>
+                        <span><code>.invisible</code></span> 
+                        <span>Visibility hidden</span>
+                    </li> 
+                    <li>
+                        <span><code>.hide</code></span> 
+                        <span>Display none</span>
+                    </li> 
+                    <li>
+                        <span><code>.inline</code></span> 
+                        <span>Display inline</span>
+                    </li> 
+                    <li>
+                        <span><code>.inlineblock</code></span> 
+                        <span>Display inline-block</span>
+                    </li> 
+                    <li>
+                        <span><code>.overflowhidden</code></span> 
+                        <span>Element overflow is hidden</span>
+                    </li> 
+                    <li>
+                        <span><code>.overflowauto</code></span> 
+                        <span>Element overflow is auto/default</span>
+                    </li> 
+                    <li>
+                        <span><code>.overflowvisible</code></span> 
+                        <span>Element overflow is visible</span>
+                    </li> 
+                    <li>
+                        <span><code>.overflowtext</code></span> 
+                        <span>Cuts text off with an ellipsis. See example below.</span>
+                    </li> 
+                </ul>
+
+                <p class="overflowtext p-meta">
+                    With the class <code>overflowtext</code>, when text overflows a view, it will end with an ellipsis. You can see that if I keep typing and this text gets too long.
+                </p>
+
+
+                <br/>
+
+                <h4>Spacing Helpers</h4>
+                <p class="p-meta">
+                    Use these classes to quickly add spacing, margins, and padding to elements.
+                </p>
+
+
+                <ul class="data-list smalltext"> 
+                    <li>
+                        <span><b>Class</b></span> 
+                        <span><b>Description</b></span>
+                    </li> 
+                    <li>
+                        <span><code>&lt;hr/&gt;</code></span> 
+                        <span>Dashed spacer line</span>
+                    </li> 
+                    <li>
+                        <span><code>.margin--xauto</code></span> 
+                        <span>Applys margin: 0 auto, centering element</span>
+                    </li> 
+                    <li>
+                        <span><code>.margin--x0</code></span> 
+                        <span>Removes all margins</span>
+                    </li> 
+                    <li>
+                        <span><code>.padding--x0</code></span> 
+                        <span>Removes all padding</span>
+                    </li> 
+                    <li>
+                        <span><code>.margin--x<i>[#]</i></code></span> 
+                        <span>Equal margin on all sides</span>
+                    </li> 
+                    <li>
+                        <span><code>.padding--x<i>[#]</i></code></span> 
+                        <span>Equal padding on all sides</span>
+                    </li> 
+                    <li>
+                        <span><code>.margin-<i>[side]</i>--x<i>[#]</i></code></span> 
+                        <span>Margin applied only on <i>[side]</i></span>
+                    </li> 
+                    <li>
+                        <span><code>.padding-<i>[side]</i>--x<i>[#]</i></code></span> 
+                        <span>Padding applied only on <i>[side]</i></span>
+                    </li> 
+                </ul>
+
+
+                <p class="p-meta">
+                    <code><i>[side]</i></code> is the side you want the margin or padding to be applied to. Your options are <code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code>. 
+                </p>
+                <p class="p-meta">
+                    <code><i>[#]</i></code> is the <i>level</i> (0-6) of margin or padding you want. The levels are displayed below.
+                </p>
+
+                <br/>
+
+
+                <div class="_spacingDisplay padding--x1">
+                    <div class="_innerBox">Level 1: 10px</div>
+                </div>
+                <div class="_spacingDisplay padding--x2">
+                    <div class="_innerBox">Level 2: 18px</div>
+                </div>
+                <div class="_spacingDisplay padding--x3">
+                    <div class="_innerBox">Level 3: 26px</div>
+                </div>
+                <div class="_spacingDisplay padding--x4">
+                    <div class="_innerBox">Level 4: 34px</div>
+                </div>
+                <div class="_spacingDisplay padding--x5">
+                    <div class="_innerBox">Level 5: 42px</div>
+                </div>
+                <div class="_spacingDisplay padding--x6">
+                    <div class="_innerBox">Level 6: 50px</div>
+                </div>
+
+
+                <br/>
+
+
+                <pre>
+                    <code>&lt;!-- No margin or padding --&gt;</code>
+                    <code>&lt;div class="<b>margin--x0 padding--x0</b>"&gt;</code>
+                    <code>&nbsp;</code>
+                    <code>&lt;!-- Level 2 (18px) margin on all sides --&gt;</code>
+                    <code>&lt;div class="<b>margin--x2</b>"&gt;</code>
+                    <code>&nbsp;</code>
+                    <code>&lt;!-- Level 1 (10px) padding on all sides --&gt;</code>
+                    <code>&lt;div class="<b>padding--x1</b>"&gt;</code>
+                    <code>&nbsp;</code>
+                    <code>&lt;!-- Level 3 (26px) margin on top only --&gt;</code>
+                    <code>&lt;div class="<b>margin-top--x3</b>"&gt;</code>
+                    <code>&nbsp;</code>
+                    <code>&lt;!-- Level 5 (42px) padding on left only --&gt;</code>
+                    <code>&lt;div class="<b>padding-left--x5</b>"&gt;</code>
+                    <code>&nbsp;</code>
+                    <code>&nbsp;</code>
+                    <code>&lt;!-- Level 5 (42px) padding on right, level 3 padding on top, & level 6 margin on bottom --&gt;</code>
+                    <code>&lt;div class="<b>padding-right--x5 padding-top--x3 margin-bottom--x6</b>"&gt;</code>
+                </pre>
+
+
+
+
+
+            </section>
+
+
+
+        </div>
+    </div>
+    
+
+
+
+
+
+
+</div>

@@ -1,0 +1,454 @@
+<div class="container">
+    <div class="row around-xs">
+
+        <div class="_styleguide-sidebar col-lg-3 col-md-3 col-sm-4 col-xs-8">
+            <ul class="links-list"> 
+                <li>
+                    <a href="#buttons" class="active">Buttons</a>
+                </li> 
+                <li>
+                    <a href="#textinputs">Text Inputs</a>
+                </li> 
+                <li>
+                    <a href="#inputhints">Input Hints</a>
+                </li> 
+                <li>
+                    <a href="#checkradio">Checkboxes & Radio</a>
+                </li> 
+            </ul>
+        </div>
+
+
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <section>
+
+                <h1>Form Elements</h1>
+
+                <p>
+                    Forms should <b>always</b> be wrapped in a form tag, and the form layouts shoud be created using the grid system. Each input should have a label element along side it.
+                </p>
+
+                <br/>
+                <hr/>
+                <br/>
+
+                <a class="_anchor-offset" id="buttons"></a>
+                <h2>Buttons</h2>
+
+                <h4>Standard Buttons</h4>
+
+                    <p class="p-meta">
+                    Simply using the <code>&lt;button&gt;</code> tag will style a button and make grey. To color buttons use the classes <code>.btn-black</code>, <code>.btn-blue</code>, <code>.btn-red</code>.
+                </p>
+
+                <div class="row start-xs _button-display">
+                    <div class="col-xs-12">
+                        <button>Standard</button>
+                        <button class="btn-black">Action Button</button>
+                        <button class="btn-blue">Info Button</button>
+                        <button class="btn-red">Problem Button</button>
+                        <button disabled>Disabled Button</button>
+                    </div>
+                </div>
+                
+                <br/>
+
+                <pre>
+                    <code>&lt;button&gt;Standard&lt;/button&gt;</code>
+                    <code>&lt;button class="btn-black"&gt;Action Button&lt;/button&gt;</code>
+                    <code>&lt;button class="btn-blue"&gt;Info Button&lt;/button&gt;</code>
+                    <code>&lt;button class="btn-red"&gt;Problem Button&lt;/button&gt;</code>
+                    <code>&lt;button disabled&gt;Disabled Button&lt;/button&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Large buttons</h4>
+                <p class="p-meta">
+                    Large buttons are available, but should be used <b>as little as possible</b>. To make a button large, add the class <code>.btn-lg</code> to a button element.
+                </p>
+
+                <div class="row start-xs _button-display">
+                    <div class="col-xs-12">
+                        <button class="btn-lg">Large Button</button>
+                        <button class="btn-black btn-lg">Large Colored Button</button>
+                    </div>
+                </div>
+                <pre>
+                    <code>&lt;button class="btn-lg"&gt;Large Button&lt;/button&gt;</code>
+                </pre>
+
+                <br/>
+
+
+                <h4>Link buttons</h4>
+                <p class="p-meta">
+                    Link buttons are good to use when a button element is necessary, but it is less important. Look at the confirmation modal on the UI page for an example of how this should be used.
+                    <br/>
+                    Link buttons can only be black or white.
+                </p>
+
+                <div class="row start-xs">
+                    <div class="col-xs-3 _link-button-display">
+                        <button class="btn-link">Black Link Button</button>
+                    </div>
+                    <div class="col-xs-3 _link-button-display">
+                        <button class="btn-link white">White Link Button</button>
+                    </div>
+                </div>
+                
+                <br/>
+
+                <pre>
+                    <code>&lt;button class="btn-link"&gt;Black Link Button&lt;/button&gt;</code>
+                    <code>&lt;button class="btn-link white"&gt;White Link Button&lt;/button&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Other elements styled as buttons</h4>
+                <p class="p-meta">
+                    You can turn basically any element (<code>&lt;div&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;input&gt;</code>, etc) into a button by adding the <code>.button</code> class to them.
+                </p>
+
+                <div class="row start-xs _button-display">
+                    <div class="col-xs-12">
+                        <a class="button">Anchor Button</a>
+                        <div class="button">Div Button</div>
+                        <input type="button" value="Input Button" class="button" />
+                    </div>
+                </div>
+
+
+                <pre>
+                    <code>&lt;a class="button"&gt;Anchor Button&lt;/a&gt;</code>
+                    <code>&lt;div class="button"&gt;Div Button&lt;/div&gt;</code>
+                    <code>&lt;input type="button" value="Input button" class="button" /&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Loading buttons</h4>
+                    <p class="p-meta">
+                        When an action is being performed, such as data loading from an API after a button click, use a loading button to show the user that something is happening.
+                        <br/>
+                        To start a loading button, add the class <code>.loading</code> to the button <b>after</b> it is clicked. You should also set the button to <code>disabled</code> to prevent multiple clicks/submissions.
+                </p>
+
+                <br/>                        
+
+                <div class="row start-xs _button-display">
+                    <div class="col-xs-12">
+                        <button class="_loader-example">Hold me</button>
+                    </div>
+                </div>
+
+                <pre>
+                    <code>&lt;button <b>class="loading"</b>&gt;Click Me&lt;/button&gt;</code>
+                </pre>
+
+            </section>
+
+
+            <hr/>
+
+
+            <section>
+
+                <a class="_anchor-offset" id="textinputs"></a>
+                <h2>Text Inputs</h2>
+
+                <p class="p-meta">
+                    Input elements will default to 100% width. To make them smaller, wrap them in a grid and set the width using columns. Forms and form elements should always be grouped alone in a div or column, only with a label, not other form elements.
+                </p>
+
+
+                <h4>Basic text inputs</h4>
+
+                <form class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <label>Text Input</label>
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label>Disabled Input</label>
+                        <input type="text" disabled/>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label>Dropdown</label>
+                        <select>
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>Arizona</option>
+                            <option>Arkansas</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label>Textarea</label>
+                        <textarea></textarea>
+                    </div>
+                </form>
+
+                <br/>
+
+                <p class="p-meta">
+                    <b>Tip:</b> To simplify code when using the grid, you can add the class <code>.row</code> to a <code>&lt;form&gt;</code> instead of having a separate div for the <code>.row</code>.
+                </p>
+
+                <br/>
+
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12 col-md-6&gt;</code>
+                    <code>        &lt;label&gt;Text Input&lt;/label&gt;</code>
+                    <code>        &lt;input type="text" placeholder="Search..."/&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+            </section>
+
+
+            <hr/>
+
+
+            <section>
+
+                <a class="_anchor-offset" id="inputhints"></a>
+                <h2>Input Hints</h2>
+
+                <p class="p-meta">
+                    Use the elements and classes below to help users understand what they need to be doing with a form.
+                </p>
+
+
+                <h4>Text input with helper</h4>
+
+                <form class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <label>Address</label>
+                        <input type="text" placeholder="Type..." />
+                        <div class="input-helper">Only your house number and street.</div>
+                    </div>
+                </form>
+
+                <br/>
+
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12&gt;</code>
+                    <code>        &lt;label&gt;Address&lt;/label&gt;</code>
+                    <code>        &lt;input type="text" placeholder="Type..."/&gt;</code>
+                    <code>        <b>&lt;div class="input-helper"&gt;Only your house number and street.&lt;/div&gt;</b></code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Invalid Item</h4>
+
+                <form class="row">
+                    <div class="col-xs-12 col-md-6 form-invalid">
+                        <label>Email Address</label>
+                        <input type="text" value="hello usgs.gov" />
+                        <div class="input-invalid-warning">That email is not valid.</div>
+                    </div>
+                </form>
+
+                <br/>
+
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12 <b>form-invalid</b>&gt;</code>
+                    <code>        &lt;label&gt;Email Address&lt;/label&gt;</code>
+                    <code>        &lt;input type="text" value="hello usgs.gov"/&gt;</code>
+                    <code>        <b>&lt;div class="input-helper"&gt;That email is not valid.&lt;/div&gt;</b></code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Required Item</h4>
+
+                <p class="p-meta">
+                    Add a label with the class <code>.required</code> <b>above</b> any input to mark it as required. The input should also have a required tag for form validation.
+                </p>
+
+                <form class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <label class="required">Full Name</label>
+                        <input type="text" placeholder="John Smith" required />
+                    </div>
+                </form>
+
+                <br/>
+
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12&gt;</code>
+                    <code>        &lt;label <b>class="required"</b>&gt;Full Name&lt;/label&gt;</code>
+                    <code>        &lt;input type="text" placeholder="John Smith" <b>required</b>/&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+            </section>
+
+
+            <hr/>
+
+
+            <section>
+
+                <a class="_anchor-offset" id="checkradio"></a>
+                <h2>Checkboxes & Radio</h2>
+
+                <p class="p-meta">
+                    Checkboxes and radio elements are tricky to style and position. They <b>absolutely must</b> be wrapped in a <code>.row</code> and <code>.col-</code> element to esure the label stays with the radio or checkbox.
+                </p>
+
+
+                <h4>Single line checkboxes and radios</h4>
+
+
+                <form class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <label for="checkbox1" class="chx">
+                            <input type="checkbox" id="checkbox1"/>
+                            <span>Checkbox</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label for="radio1" class="rdo">
+                            <input type="radio" id="radio1" />
+                            <span>Radio</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label for="checkbox2" class="chx">
+                            <input type="checkbox" id="checkbox2" disabled />
+                            <span>Disabled Checkbox</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label for="radio2" class="rdo">
+                            <input type="radio" id="radio2" disabled />
+                            <span>Disabled Radio</span>
+                        </label>
+                    </div>
+                </form>
+
+
+                <br/>
+
+                <h5>Checkbox code</h5>
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12 col-md-6&gt;</code>
+                    <code>        &lt;label for="inputname" class="<b>chx</b>"&gt;</code>
+                    <code>            &lt;input <b>type="checkbox"</b> id="inputname"/&gt;</code>
+                    <code>            &lt;span&gt;Checkbox Input&lt;/span&gt;</code>
+                    <code>        &lt;/label&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+
+                <h5>Radio code</h5>
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12 col-md-6&gt;</code>
+                    <code>        &lt;label for="inputname" class="<b>rdo</b>"&gt;</code>
+                    <code>            &lt;input <b>type="radio"</b> id="inputname"/&gt;</code>
+                    <code>            &lt;span&gt;Radio Input&lt;/span&gt;</code>
+                    <code>        &lt;/label&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Multi-line checkbox or radio</h4>
+                <p class="p-meta">
+                    Nest a <code>&lt;p&gt;</code> tag inside the <code>&lt;span&gt;</code> tag within the label of a checkbox or radio input.
+                </p>
+                <form class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <label for="checkboxlong" class="chx">
+                            <input type="checkbox" id="checkboxlong" />
+                            <span>
+                                <p>
+                                    <b>By checking this box...</b>
+                                    I agree to the WiM Privacy Policy and Terms of Use of this application. I also agree to add my email to WiM's email list for important product announcements.
+                                </p>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+
+                <br/>
+
+                
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12 col-md-6&gt;</code>
+                    <code>        &lt;label for="inputname" class="rdo"&gt;</code>
+                    <code>            &lt;input type="radio" name="inputname"/&gt;</code>
+                    <code>            <b>&lt;span&gt;</b></code>
+                    <code>                <b>&lt;p&gt;</b></code>
+                    <code>                   <b>&lt;b&gt;By checking this box...&lt;/b&gt;</b></code>
+                    <code>                   <b>I agree to the WiM Privacy Policy and Terms of Use...</b></code>
+                    <code>                <b>&lt;/p&gt;</b></code>
+                    <code>            <b>&lt;span&gt;</b></code>
+                    <code>        &lt;/label&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+
+                <br/>
+
+                <h4>Switches</h4>
+                <p class="p-meta">
+                    Switches are simply checkboxes styled to look like switches. To use one, add the class <code>.switch</code> alongside a <code>input type="checkbox"</code>.
+                </p>
+                <form class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <label for="switch1" class="switch">
+                            <input type="checkbox" id="switch1" />
+                            <span>Switch Off</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label for="switch2" class="switch">
+                            <input type="checkbox" id="switch2" checked />
+                            <span>Switch On</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <label for="switch3" class="switch">
+                            <input type="checkbox" id="switch3" disabled />
+                            <span>Disabled Switch</span>
+                        </label>
+                    </div>
+                </form>
+
+                <br/>
+
+                
+
+
+                <pre>
+                    <code>&lt;form class="row&gt;</code>
+                    <code>    &lt;div class="col-xs-12 col-md-6&gt;</code>
+                    <code>        &lt;label for="switchname" class="<b>switch</b>"&gt;</code>
+                    <code>            &lt;input type="<b>checkbox</b>" name="switchname"/&gt;</code>
+                    <code>            &lt;span&gt;Switch&lt;/span&gt;</code>
+                    <code>        &lt;/label&gt;</code>
+                    <code>    &lt;/div&gt;</code>
+                    <code>&lt;/form&gt;</code>
+                </pre>
+
+
+            </section>
+        </div>
+    </div>
+</div>

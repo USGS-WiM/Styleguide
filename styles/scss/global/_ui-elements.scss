@@ -1,0 +1,710 @@
+// 
+// 
+// ================================================================================= banner
+.banner{
+    display: flex;
+    width: 100%;
+    margin: 15px 0%;
+    box-sizing: border-box;
+    padding: 12px 12px 14px 0;
+    border-radius: 3px;
+    background-color: fade-out($grey, 0.6);
+    align-items: center;
+    border: 1px solid darken($grey, 0.08);
+
+    &:before{
+        content: '\f26b';
+        font-family: $ionicons;
+        min-width: 50px;
+        color: $black;
+        text-align: center;
+        font-size: 28px;
+        padding-top: 2px;
+    }
+    &.intense{
+        background-color: $black;
+        border-color: #000;
+        *{
+            color: $white;
+        }
+        &:before{
+            color: $white;
+        }
+    }    
+    
+
+    .banner-body{
+        flex-grow: 4;
+        h5{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+            line-height: 16px;
+            width: 100%;
+            max-width: none;
+        }
+        a{
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+    button{
+        width: 150px;
+        background-color: $white;
+        font-size: 13px;
+        letter-spacing: 0.45px;
+        height: 36px;
+        vertical-align: middle;
+        color: $black;
+        transition: $transition;
+        align-self: middle;
+        &:hover{
+            cursor: pointer;
+            transition: $transition;
+            background-color: $grey-light;
+        }
+    }
+
+    // Change images for different colors
+    &.success{
+        &:before{
+            content: '\f120';
+        }
+    }
+    &.info{
+        &:before{
+            content: '\f149';
+        }
+    }
+    &.warning{
+        &:before{
+            content: '\f314';
+        }
+    }
+    &.error{
+        &:before{
+            content: '\f128';
+        }
+    }
+
+    // Remove button
+    &.banner-no-icon{
+        &:before{
+            content: '';
+            display: none;
+        }
+        padding: 10px 12px 12px 12px;
+    }
+}
+
+// 
+// 
+// ================================================================================= Badges
+.badge{
+    background-color: fade-out($grey, 0.6);
+    border: 1px solid darken($grey, 0.08);
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 100px;
+    color: $text;
+    padding: 0 9px;
+    line-height: normal;
+    margin: 0 5px;
+    display: inline-block;
+
+    &.intense{
+        color: $white;
+        background-color: $black;
+        border-color: #000;
+    }
+}
+
+
+// 
+// 
+// ================================================================================= Callout Box
+.callout{
+    background-color: $white;
+    border: 1px solid $grey;
+    border-radius: 3px;
+    padding: 10px 15px 10px 15px;
+    box-sizing: border-box;
+    display: flex;
+    max-width: 650px;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 40px auto;
+    background-position: 15px center;
+    margin: 15px 0;
+    
+
+    p{
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 0.3px;
+        line-height: 20px;
+
+        b{
+            font-weight: 600;
+        }
+
+        a{
+            color: $text;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        
+    }
+
+    i{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        content: '\f314';
+        min-width: 38px;
+        font-family: $ionicons;
+        font-size: 28px;
+        color: $black;
+        text-align: left;
+        margin-right: 2px;
+    }
+}
+
+
+// 
+// 
+// ================================================================================= Data
+.meter{
+    display: block;
+
+    .meter-info{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+
+        .description{
+            color: $black;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 3;
+        }
+        .percent{
+            color: $black;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .meter-display{
+        margin-top: 8px;
+        display: flex;
+        width: 100%;
+        height: 15px;
+        border: 1px solid $grey;
+        border-radius: 3px;
+        background-color: transparent;
+        .progress{
+            background-color: $success;
+            height: 100%;
+        }
+    }
+}
+
+
+// Statistics
+.statistics{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    border: 1px solid $grey;
+    border-radius: 3px;
+
+    .stat{
+        border-left: 1px solid $grey;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        flex-grow: 1;
+        flex-basis: 0;
+        padding: 24px 5px;
+        font-weight: 600;
+        font-size: 17px;
+        color: $black;
+
+        &:first-child{
+            border-left: 0px;
+        }
+
+        label{
+            font-size: 14px;
+            color: fade-out($black, 0.3);
+            font-weight: 400;
+            padding-top: 5px;
+        }
+    }
+}
+
+// Borderless Statistics
+.statistics-borderless{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    border-radius: 3px;
+
+    .stat{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+        flex-grow: 1;
+        flex-basis: 0;
+        padding: 6px 0;
+        font-weight: 600;
+        font-size: 17px;
+        color: $black;
+
+        label{
+            font-size: 14px;
+            color: fade-out($black, 0.3);
+            font-weight: 400;
+            padding-bottom: 5px;
+        }
+    }
+}
+
+
+// 
+// 
+// ================================================================================= Toast & Banner
+.toast{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    min-height: 46px;
+    height: auto;
+    text-align: center;
+    color: $black;
+    font-size: 10pt;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    background-color: $grey-light;
+    z-index: 5000;
+    box-shadow: 2px 2px 10px rgba(0, 0, 30, 0.09);
+    box-sizing: border-box;
+    transition: 0.1s;
+    padding: 0 55px;
+
+    &:after{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: 46px;
+        width: 46px;
+        width: 0;
+        z-index: 5001;
+        content: '\f128';
+        color: $black;
+        font-family: $ionicons;
+        font-size: 24px;
+        float: right;
+        position: absolute;
+        transition: 0.1s;
+        opacity: 0.2;
+        right: 0;
+        top: 0;
+    }
+
+    &:hover{
+        transition: 0.1s;
+        cursor: pointer;
+        &:after{
+            width: 46px;
+            opacity: 0.82;
+            transition: 0.1s;
+        }
+    }
+
+    &.intense{
+        background-color: $black;
+        color: $white;
+        &:after{
+            color: $white;
+            opacity: 1;
+        }
+    }
+
+}
+
+
+// 
+// 
+// ================================================================================= Modals
+.modal-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: fade-out($black, 0.5);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+
+    .modal{
+        display: block;
+        background-color: $white;
+        margin: 0 auto;
+        width: 94%;
+        max-width: 420px;
+        box-shadow: 3px 3px 10px rgba(0,0,40,0.2);
+
+        .modal-header{
+            display: block;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 0 0px 0 35px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $black;
+            height: 50px;
+            line-height: 50px;
+            color: $black;
+            background-color: $grey-light;
+            
+
+            .close-modal{
+                opacity: 0.3;
+                width: 30px;
+                margin-right: 5px;
+                float: right;
+                height: 50px;
+                font-size: 18px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transition: $transition;
+                
+                img{
+                    height: 22px;
+                    width: 22px;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                    transition: $transition;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .modal-image{
+            img{
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .modal-body{
+            display: block;
+            box-sizing: border-box;
+            padding: 30px 15px;
+        }
+
+        .feature-modal-footer,
+        .modal-footer{
+            display: flex;
+            justify-content: flex-end;
+            height: 70px;
+            box-sizing: border-box;
+            border-top: 1px dashed $grey;
+            padding: 15px 15px;
+
+            a{
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 13px;
+                text-decoration: underline;
+                color: darken($grey, 50%);
+                transition: $transition;
+                margin-right: 10px;
+                &:hover{
+                    cursor: pointer;
+                    color: $black;
+                    transition: $transition;
+                }
+            }
+
+            button{
+                display: block;
+                margin-left: 15px;
+                font-size: 13px;
+                color: $white;
+                background-color: $black;
+                box-sizing: border-box;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }
+        .feature-modal-footer{
+            justify-content: center;
+            button{
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
+    }
+}
+
+
+// 
+// 
+// ================================================================================= Page Loader
+.page-loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 210px 0 0 0;
+    width: 100%;
+    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000000;
+    background-color: fade-out($black, 0.08);
+    color: $white;
+    font-weight: 400;
+    //TODO: Add CDN Link
+    background-image: url(../images/usgsanimated.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80px auto;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+
+// 
+// 
+// ================================================================================= Miscellaneous Small Elements
+hr{
+    display: block;
+    width: 100%;
+    border: none;   border-bottom: 1px dashed fade-out($black, 0.7);
+    margin: 35px 0;
+}
+
+
+// 
+// 
+// ================================================================================= UI Helper Classes
+.invisible{
+    visibility: hidden;
+}
+.hide{
+    display: none !important;
+}
+.inline{
+    display: inline;
+}
+.block{
+    display:block !important;
+}
+.inlineblock{
+    display:inline-block !important;
+}
+.overflowhidden{
+    overflow: hidden
+}
+.overflowauto{
+    overflow: auto;
+}
+.overflowvisible{
+    overflow: visible !important;
+}
+.overflowtext{
+    white-space:nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+.floatl{
+    float: left;
+}
+.floatr{
+    float: right;
+}
+
+.fullwidth{
+    display: block;
+    width: 100%;
+}
+
+
+// 
+// 
+// ================================================================================= UI Element Color Classes
+// Error, Red
+.error{
+    background-color: lighten($error, 30%);
+    border-color: lighten($error, 24%);
+
+    &.intense{
+        background-color: $error;
+        border-color: darken($error, 18%);
+        *{color: $white;}
+    }
+}
+// Warning, Yellow
+.warning{
+    background-color: lighten($warning, 17%);
+    border-color: lighten($warning, 6%);
+
+    &.intense{
+        background-color: lighten($warning, 0%);
+        border-color: darken($warning, 10%);
+        *{color: $white;}
+    }
+}
+// Success, Green
+.success{
+    background-color: lighten($success, 22%);
+    border-color: lighten($success, 16%);
+
+    &.intense{
+        background-color: $success;
+        border-color: darken($success, 10%);
+        *{color: $white;}
+    }
+}
+// Info, Blue
+.info{
+    background-color: lighten($info, 27%);
+    border-color: lighten($info, 22%);
+
+    &.intense{
+        background-color: $info;
+        border-color: darken($info, 10%);
+        *{color: $white;}
+    }
+}
+
+// 
+// 
+// ================================================================================= Spacing Helper Classes
+// Level 0 0px
+.margin--x0{margin: 0 !important;}
+.margin--xauto{margin: 0 auto;}
+.padding--x0{padding: 0 !important;}
+
+// Level 1 10px
+.margin--x1{margin: 10px;}
+.margin-top--x1{margin-top: 10px;}
+.margin-left--x1{margin-left: 10px;}
+.margin-bottom--x1{margin-bottom: 10px;}
+.margin-right--x1{margin-right: 10px;}
+
+.padding--x1{padding: 10px;}
+.padding-top--x1{padding-top: 10px;}
+.padding-left--x1{padding-left: 10px;}
+.padding-bottom--x1{padding-bottom: 10px;}
+.padding-right--x1{padding-right: 10px;}
+
+// Level 2 18px
+.margin--x2{margin: 18px;}
+.margin-top--x2{margin-top: 18px;}
+.margin-left--x2{margin-left: 18px;}
+.margin-bottom--x2{margin-bottom: 18px;}
+.margin-right--x2{margin-right: 18px;}
+
+.padding--x2{padding: 18px;}
+.padding-top--x2{padding-top: 18px;}
+.padding-left--x2{padding-left: 18px;}
+.padding-bottom--x2{padding-bottom: 18px;}
+.padding-right--x2{padding-right: 18px;}
+
+// Level 3 26px
+.margin--x3{margin: 26px;}
+.margin-top--x3{margin-top: 26px;}
+.margin-left--x3{margin-left: 26px;}
+.margin-bottom--x3{margin-bottom: 26px;}
+.margin-right--x3{margin-right: 26px;}
+
+.padding--x3{padding: 26px;}
+.padding-top--x3{padding-top: 26px;}
+.padding-left--x3{padding-left: 26px;}
+.padding-bottom--x3{padding-bottom: 26px;}
+.padding-right--x3{padding-right: 26px;}
+
+// Level 4 34px
+.margin--x4{margin: 34px;}
+.margin-top--x4{margin-top: 34px;}
+.margin-left--x4{margin-left: 34px;}
+.margin-bottom--x4{margin-bottom: 34px;}
+.margin-right--x4{margin-right: 34px;}
+
+.padding--x4{padding: 34px;}
+.padding-top--x4{padding-top: 34px;}
+.padding-left--x4{padding-left: 34px;}
+.padding-bottom--x4{padding-bottom: 34px;}
+.padding-right--x4{padding-right: 34px;}
+
+// Level 5 42px
+.margin--x5{margin: 42px;}
+.margin-top--x5{margin-top: 42px;}
+.margin-left--x5{margin-left: 42px;}
+.margin-bottom--x5{margin-bottom: 42px;}
+.margin-right--x5{margin-right: 42px;}
+
+.padding--x5{padding: 42px;}
+.padding-top--x5{padding-top: 42px;}
+.padding-left--x5{padding-left: 42px;}
+.padding-bottom--x5{padding-bottom: 42px;}
+.padding-right--x5{padding-right: 42px;}
+
+// Level 6 50px
+.margin--x6{margin: 50px;}
+.margin-top--x6{margin-top: 50px;}
+.margin-left--x6{margin-left: 50px;}
+.margin-bottom--x6{margin-bottom: 50px;}
+.margin-right--x6{margin-right: 50px;}
+
+.padding--x6{padding: 50px;}
+.padding-top--x6{padding-top: 50px;}
+.padding-left--x6{padding-left: 50px;}
+.padding-bottom--x6{padding-bottom: 50px;}
+.padding-right--x6{padding-right: 50px;}

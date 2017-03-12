@@ -1,0 +1,35 @@
+// ================================================================================= Imports
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+// ================================================================================= Fonts
+$sans: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$ionicons: 'Ionicons';
+
+// ================================================================================= Colors
+// Primary
+$primary: #0F8AFF;
+    $blue: $primary;
+    $primary-dark: darken($primary, 10%);
+    $primary-light: lighten($primary, 10%);
+
+// Semantic (Success, error, warning, info)
+$success: #25DF7A;
+$error: #FF0B40;
+$warning: #FEBE32;
+$info: $primary;
+
+// Neutral
+// $black: #262930;
+$black: #10152C;
+    $text: $black;
+$grey: rgb(224, 227, 230);
+    $grey-light: #F4F5F6;
+$white: #FFFFFF;
+
+
+
+// 
+// 
+// ================================================================================= Constants
+$transition: 0.1s;
+

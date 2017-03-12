@@ -1,0 +1,56 @@
+._button-display{
+    button,
+    .button{
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+
+._link-button-display{
+    text-align: left;
+    padding: 5px 0;
+    text-align: center;
+
+    &:nth-child(2){
+        background-color: $black;
+    }
+}
+
+// Example loader on click
+._loader-example{
+    
+    &:active{
+        font-size: 0;
+        background-color: $grey-light;
+        background-image: url(../images/ripple.svg);
+        background-size: 36px auto;
+        background-repeat: no-repeat;
+        background-position: 5px center;
+        padding-left: 46px;
+        &:before{
+            content: 'Loading...';
+            display: block;
+            font-size: 13px;
+            color: fade-out($black, 0.4);
+            letter-spacing: 0.25px;
+        }
+        &:active{
+            text-decoration: none;
+        }
+        &:hover{
+            cursor: default;
+        }
+        &.btn-lg{
+            line-height: 46px;
+            height: 48px;
+            font-size: 15px;
+            padding-left: 38px;
+            background-position: 9px center;
+        }
+
+        &:active{
+            background-color: $grey-light;
+        }
+    }
+}

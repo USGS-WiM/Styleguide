@@ -1,0 +1,118 @@
+// Spacer for fixed nav
+.app-nav-spacer{
+    display: block;
+    height: 100px;
+    width: 100%;
+}
+
+// Actual nav
+.app-nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-family: $sans;
+    background-color: $black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    z-index: 5000;
+    box-shadow: 2px 2px 5px fade-out($black, 0.5);
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+
+        // Logo
+        .nav-branding{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 0 0 3px 0;
+            img{
+                display: block;
+                height: 50px;
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+
+        // Link wrapper
+        .nav-links{
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 2;
+            box-sizing: border-box;
+            padding: 0 0;
+
+            // Normal links
+            a{
+                height: 22px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                box-sizing: border-box;
+                padding: 0 2px;
+                font-size: 9.25pt;
+                font-weight: 600;
+                font-family: $sans;
+                letter-spacing: 0.15px;
+                margin: 24px 0 0 20px;
+                color: $white;
+                border-top: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                &:hover{
+                    cursor: pointer;
+                    border-bottom: 2px solid $white;
+                    transition: $transition;
+                }
+            }
+
+            // Button in nav
+            .nav-button{
+                border-bottom: none;
+                height: 40px;
+                padding: 0 20px;
+                margin: 14px 0 0 25px;
+                background-color: $white;
+                color: $black;
+                font-weight: 600;
+                transition: $transition;
+                letter-spacing: 0.5px;
+                &:hover{
+                    background-color: darken($white, 10%);
+                    transition: $transition;
+                    border-bottom: none;
+                }
+            }
+
+            // Login and Signup Links
+            .nav-controls{
+                display: flex;
+                flex-direction: row;
+                margin-left: 65px;
+
+                a{
+                    box-sizing: border-box;
+                    margin: 24px auto 0 auto;
+
+                    &:first-child{
+                        padding: 0 15px 0 0;
+                    }
+                    &:last-child{
+                        padding: 0 0 0 15px;
+                        border-left: 1px solid $grey;
+                    }
+
+                    &:hover{
+                        border-bottom-color: transparent;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

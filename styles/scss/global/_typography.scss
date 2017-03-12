@@ -1,0 +1,346 @@
+// 
+// 
+// ================================================================================= Links
+a{
+	color: $blue;
+	text-decoration: none;
+
+	&:focus,
+	&:hover{
+		color: darken($blue, 7%);
+    }
+
+    &.astrong{
+        font-weight: 700;
+        text-decoration: underline;
+    }
+}
+
+
+// 
+// 
+// ================================================================================= Headers
+h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+    outline: 0;
+    color: $text;
+    display: block;
+}
+
+// H1
+// Display Header
+h1 {
+    font-size: 42px;
+    line-height: 1.6em;
+    font-weight: 300;
+    margin-bottom: .2em;
+    letter-spacing: 0.5px;
+}
+// H2
+// Main Header
+h2{
+    font-size: 30px;
+    line-height: 1.6em;
+    margin-bottom: .2em;
+    letter-spacing: -0.029em;
+    font-weight: 600;
+}
+
+// H3
+// Secondary Header
+h3 {
+    font-size: 25px;
+    line-height: 1.44em;
+    margin-bottom: 1.92em;
+    letter-spacing: -0.024em;
+}
+
+// H4
+// Section Header
+h4 {
+    font-size: 21px;
+    line-height: 1.14285714em;
+    margin-bottom: 1.14285714em;
+    letter-spacing: -0.025em;
+    font-style: italic;
+    font-weight: 600;
+}
+
+// H5
+// Section subheader
+h5 {
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+// H6
+// Bold content within body or form labels
+h6 {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+
+// 
+// 
+// ================================================================================= Paragraph/Body Copy
+p{
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 12px;
+    color: $text;
+    font-weight: 400;
+    display: block;
+    max-width: 680px;
+    &.p-meta{
+        font-size: 13px;
+        line-height: 26px;
+    }
+    &.p-light{
+        opacity: 0.8;
+    }
+}
+label{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+// Bold and Strong tags
+b,
+strong{
+	font-weight: bold;
+}
+
+ 
+// 
+// 
+// ================================================================================= Additional Typography
+blockquote{
+	margin-left: 0;
+	margin-right: 0;
+    box-sizing: border-box;
+    padding: 13px;
+    line-height: 1.6em;
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 12px;
+    color: $text;
+    font-weight: 600;
+    opacity: 0.8;
+    border-left: 5px solid $grey-light;
+
+	*:last-child{
+		margin-bottom: 0;
+    }
+
+    em{
+        display: block;
+        font-style: italic;
+    }
+}
+
+
+// Code Styling
+code{
+	background: $grey-light;
+	white-space: nowrap;
+    font-family: 'Courier New', monospace;
+    color: $text;
+    box-sizing: border-box;
+    padding: 2px 4px;
+    font-weight: 500 !important;
+    letter-spacing: 0.4px;
+
+    .cmt{
+        color: #adadad;
+    }
+    .tag{
+        color: $blue;
+    }
+
+    b{
+        color: lighten($black, 0.2);
+    }
+}
+pre{
+	overflow-y: hidden;
+    font-family: 'Courier New', monospace;
+    margin: 15px 0;
+    box-sizing: border-box;
+    padding: 5px 15px 5px 6px;
+    font-size: 13px;
+    font-weight: lighter;
+    background-color: $white;
+    border: 2px solid $grey-light;
+    border-left: 40px solid $grey-light;
+    border-radius: 4px;
+    line-height: 0.4em;
+
+	& > code{
+		border-radius: 0;
+		display: block;
+		white-space: pre;
+        color: #000;
+        background-color: $white;
+        counter-increment: line;
+    }
+
+    code{
+        &:before{
+            content: counter(line);
+            display: inline-block;
+            padding: 0 5px 0 0;
+            margin-right: 10px;
+            color: #888;
+            text-align: right;
+            width: 30px;
+            position: absolute;
+            z-index: 500;
+            margin-left: -45px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+    }
+    
+}
+
+
+// 
+// 
+// ================================================================================= Lists
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0;
+}
+
+ul.data-list{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    li{
+        box-sizing: border-box;
+        padding: 6px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        span:first-child{
+            display: flex;
+            flex-grow: 5;
+            &:after{
+                display: block;
+                flex-grow: 5;
+                content: '\00a0';
+                border-bottom: 1px dotted darken($grey, 20%);
+                margin: 0 10px;
+            }
+        } 
+    }
+}
+
+ul.links-list{
+    display: flex;
+    flex-direction: column;
+
+    li{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 2px 0;
+
+        a{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            color: $black;
+            font-weight: 500;
+            font-size: 14px;
+            background-color: transparent;
+            transition: $transition;
+
+            &:hover{
+                cursor: pointer;
+                background-color: $grey-light;
+                transition: $transition;
+            }
+            &.active{
+              background-color: lighten($grey, 2.5%);
+            }
+        }
+    }
+}
+
+ul.horizontal-list{
+    li{
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        &:first-child{
+            padding-left: 0;
+        }
+    }
+    &.bullets{
+        li{
+            padding: 5px 5px;
+            &:before{
+                content: '\2022';
+                padding-right: 10px;
+            }
+            &:first-child{
+                &:before{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+ 
+
+
+// 
+// 
+// ================================================================================= Helper Classes
+// Left Align
+.alignl{
+    text-align: left;
+}
+// Right Align
+.alignr{
+    text-align: right;
+}
+// Center Align
+.alignc{
+    text-align: center;
+}
+// Full Width Paragraphs
+.fullwidth{
+    max-width: none;
+    width: 100%;
+}
+// Lowercase Text
+.lowercase{
+    text-transform: lowercase;
+}
+// Uppercase Text
+.uppercase{
+    text-transform: uppercase;
+}
+// Capitalize Text
+.capitalize{
+    text-transform: capitalize
+}
+// Smaller text (same as meta paragraph)
+.smalltext{
+    font-size: 13px;
+    line-height: 26px;
+}

@@ -1,0 +1,15 @@
+// Footer
+.footer{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 55px;
+    height: 30px; 
+    width: 100vw;
+    border-top: 30px solid $grey-light;
+    background-color: $grey;
+    border-bottom: 30px solid $black;
+    box-sizing: content-box;
+}

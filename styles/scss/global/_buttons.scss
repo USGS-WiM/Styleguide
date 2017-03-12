@@ -1,0 +1,169 @@
+// Buttons
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+button,
+.button,
+input[type='button'],
+input[type='reset'],
+input[type='submit']{
+    color: $text;
+    background-color: $grey;
+    transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+    font-weight: 500;
+    font-family: "Open Sans",Helvetica,sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 19px;
+    border: 0 none;
+    border-radius: 2px;
+    letter-spacing: 0.25px;
+    display: inline-block;
+    font-size: 13px;
+    height: 38px;
+    line-height: 36px;
+    outline: none !important;
+    transition: $transition;
+
+    &:focus{
+        text-decoration: underline;
+    }
+    &:hover{
+        background-color: lighten($grey, 4%);
+        cursor: pointer;
+        transition: $transition;
+        color: inherit;
+    }
+    &:active{
+        background-color: lighten($grey, 6%);
+        transition: $transition;
+    }
+
+    // Black Button
+    &.btn-black{
+        background-color: $black;
+        color: $white;
+        &:hover{
+            background-color: darken($grey, 70%);
+        }
+        &:active{
+            background-color: darken($grey, 65%);
+        }
+    }
+
+    // Red Button
+    &.btn-red{
+        background-color: $error;
+        color: $white;
+        &:hover{
+            background-color: darken($error, 3%);
+        }
+        &:active{
+            background-color: darken($error, 6%);
+        }
+    }
+
+    // Blue Button
+    &.btn-blue{
+        background-color: $info;
+        color: $white;
+        &:hover{
+            background-color: darken($info, 5%);
+        }
+        &:active{
+            background-color: darken($info, 8%);
+        }
+    }
+
+    // Disabled Button
+    &:disabled{
+        background-color: $grey-light;
+        color: darken($grey-light, 30%);
+        &:hover{
+            cursor: default;
+        }
+    }
+
+    // Large Button
+    &.btn-lg{
+        line-height: 46px;
+        height: 48px;
+        font-size: 15px;
+        padding: 0 24px;
+    }
+
+    // Link buttons
+    &.btn-link{
+        background-color: transparent;
+        text-decoration: underline;
+        color: $text;
+        transition: $transition;
+        font-weight: 500;
+
+        &:hover{
+            color: darken($grey, 55%);
+            transition: $transition;
+        }
+        &:active{
+            color: $black;
+            transition: $transition;
+        }
+
+        &.white{
+            color: $white;
+            &:hover{
+                color: darken($white, 12%);
+                transition: $transition;
+            }
+            &:active{
+                color: $white;
+                transition: $transition;
+            }
+        }
+    }
+
+    // Loading buttons
+    &.loading{
+
+        &:hover{
+            border-color: transparent;
+            background-color: $grey-light;
+            color: $black;
+        }   
+
+        font-size: 0;
+        background-color: $grey-light;
+        background-image: url(../images/ripple.svg);
+        background-size: 36px auto;
+        background-repeat: no-repeat;
+        background-position: 5px center;
+        padding-left: 46px;
+        &:before{
+            content: 'Loading...';
+            display: block;
+            font-size: 13px;
+            color: fade-out($black, 0.4);
+            letter-spacing: 0.25px;
+        }
+        &:focus{
+            text-decoration: none;
+        }
+        &:hover{
+            cursor: default;
+        }
+
+        &.btn-lg{
+            line-height: 46px;
+            height: 48px;
+            font-size: 15px;
+            padding-left: 38px;
+            background-position: 9px center;
+        }
+    }
+}

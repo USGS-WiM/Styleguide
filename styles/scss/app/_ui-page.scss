@@ -1,0 +1,100 @@
+// UI Colors
+._uicolor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: $text;
+    margin: 0 auto;
+            
+    &.intense{
+        color: $white;
+    }
+}
+
+
+// Toasts
+#_example-toast{
+    display: none;
+}
+#_show-toast{
+    &:active{
+        &+#_example-toast{
+            display: flex;
+        }
+    }
+}
+#_example-toast2{
+    display: none;
+}
+#_show-toast2{
+    &:active{
+        &+#_example-toast2{
+            display: flex;
+        }
+    }
+}
+
+
+// Confirmation Modal
+#_example-modal{
+    display: none;
+}
+#_show-modal{
+    &:active{
+        &+#_example-modal{
+            display: flex;
+        }
+    }
+}
+// Featured Modal
+#_example-featured-modal{
+    display: none;
+}
+#_show-featured-modal{
+    &:active{
+        &+#_example-featured-modal{
+            display: flex;
+        }
+    }
+}
+
+
+// Page Loader
+#_example-page-loader{
+    display: none;
+}
+#_show-page-loader{
+    &:active{
+        &+#_example-page-loader{
+            display: flex;
+        }
+    }
+}
+
+
+// Spacing Helpers
+._spacingDisplay{
+    display: block;
+    margin: 22px auto;
+    background-color: $grey;
+
+    ._innerBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 40px;
+        font-weight: 400;
+        background-color: $black;
+        font-size: 13px;
+        letter-spacing: 0.35px;
+        box-sizing: border-box;
+        color: $white;
+    }
+}

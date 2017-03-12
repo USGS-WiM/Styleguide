@@ -1,0 +1,32 @@
+// Layout
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Containers have a max width
+.container{
+    margin: 0 auto;
+	position: relative;
+	width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+// Sections within help with the container spacing
+section{
+    display: block;
+    margin: 35px 0 65px 0;
+    padding: 5px 0 0 0;
+    box-sizing: border-box;
+    width: 100%;
+    @media only screen and (max-width: 38em) {
+        margin: 55px 0;
+    }
+}
+
+// Always have image max width
+image{
+    max-width: 100%;
+}
