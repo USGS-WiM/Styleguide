@@ -221,8 +221,7 @@ gulp.task('default', ['browser-sync', 'sass', 'minify-css'], function() {
  * 3. copy and minimize images
  * 5. build index.html
  * 6. minify and copy all JS files
- * 7. copy fonts
- * 8. show build folder size
+ * 7. show build folder size
  * 
  */
 gulp.task('build', function(callback) {

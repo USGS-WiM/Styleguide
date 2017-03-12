@@ -30,3 +30,10 @@ app.config(function($routeProvider) {
     });
 
 });
+
+app.controller('mainController', function($scope, $location, $anchorScroll, $routeParams) {
+    $scope.scrollTo = function(id) {
+        $location.hash(id);
+        $anchorScroll();
+    }
+});
