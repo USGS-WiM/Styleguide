@@ -1,11 +1,10 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ngSanitize']);
 
 app.config(function($routeProvider) {
     $routeProvider
 
     .when('/', {
         templateUrl : '../views/home.html',
-        controller  : 'homeController'
     })
     .when('/colors', {
         templateUrl : '../views/colors.html'
@@ -29,9 +28,5 @@ app.config(function($routeProvider) {
     .otherwise({
         redirectTo: "/"
     });
-
-});
-
-app.controller('homeController', function($scope) {
 
 });

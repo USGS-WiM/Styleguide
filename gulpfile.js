@@ -56,11 +56,17 @@ gulp.task('minify-html', function() {
     .pipe(gulp.dest('./_build/'));
 });
 
-// copy fonts from a module outside of our project (like Bower)
-gulp.task('fonts', function() {
-  gulp.src('./fonts/**/*.{ttf,woff,eof,eot,svg}')
-    .pipe($.changed('./_build/fonts'))
-    .pipe(gulp.dest('./_build/fonts'));
+// copy Views to build
+gulp.task('views', function () {
+    return gulp.src(['./views/*'], {
+        base: './views'
+    }).pipe(gulp.dest('./_build/views/'));
+});
+// copy App.js to build
+gulp.task('appjs', function () {
+    return gulp.src(['./app.js'], {
+        base: './'
+    }).pipe(gulp.dest('./_build/'));
 });
 
 // start webserver
@@ -167,26 +173,11 @@ gulp.task('usemin', function() {
       libs: [$.uglify()],
       nonangularlibs: [$.uglify()],
       angularlibs: [$.uglify()],
-      appcomponents: [$.uglify()],
       mainapp: [$.uglify()]
     }))
     .pipe(gulp.dest('./_build/'));
 });
 
-// make templateCache from all HTML files
-gulp.task('templates', function() {
-  return gulp.src([
-      './**/*.html',
-      '!bower_components/**/*.*',
-      '!node_modules/**/*.*',
-      '!_build/**/*.*'
-    ])
-    .pipe($.minifyHtml())
-    .pipe($.angularTemplatecache({
-      module: 'boilerplate'
-    }))
-    .pipe(gulp.dest('_build/js'));
-});
 
 // reload all Browsers
 gulp.task('bs-reload', function() {
@@ -228,7 +219,6 @@ gulp.task('default', ['browser-sync', 'sass', 'minify-css'], function() {
  * 1. clean /_build folder
  * 2. compile SASS files, minify and uncss compiled css
  * 3. copy and minimize images
- * 4. minify and copy all HTML files into $templateCache
  * 5. build index.html
  * 6. minify and copy all JS files
  * 7. copy fonts
@@ -240,9 +230,9 @@ gulp.task('build', function(callback) {
     'clean:build',
     'sass:build',
     'images',
-    'templates',
+    'views',
+    'appjs',
     'usemin',
-    'fonts',
     'build:size',
     callback);
 });
