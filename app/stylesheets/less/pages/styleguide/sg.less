@@ -1,0 +1,676 @@
+//////////////////////////////////////
+//////////////////////////////////////
+////////      STYLEGUIDE      ////////
+//////////////////////////////////////
+//////////////////////////////////////
+
+// Set Style Guide Version
+// And add it to sg_version content
+@sg_version: "0.5.2";
+.sg_version:after{
+    content: '@{sg_version}';
+}
+
+// Add project name with CSS Pseudo elements
+.sg_project_name:after{
+    content: '@{project}';
+}
+
+////////////////////////////////////////
+////////////////////////////////////////
+//////      Reusable  Styles      //////
+////////////////////////////////////////
+////////////////////////////////////////
+
+
+////////////////////
+// Anchor  Target //
+////////////////////
+.sg_anchor_target{
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+    float: right;
+    display: block;
+    position: relative;
+    top: -80px;
+}
+/////////////////////
+// Call out / hint //
+/////////////////////
+.sg_callout{
+    display: block;
+    background-color: @blue_lighter;
+    color: @blue_text;
+    border-radius: @border_radius;
+    max-width: 500px;
+    box-shadow: @shadow;
+    border-left: 10px solid @primary;
+
+    code{
+        background-color: @primary;
+        color: @primary_text;
+    }
+}
+//////////////////
+// Split Table //
+////////////////
+// Title on left (small), example and description on right
+.sg_split_list{
+    display: block;
+    
+    .sg_sl_item{
+        display: flex;
+        box-sizing: border-box;
+        margin: 8px 0;
+        padding: 8px;
+
+        &:nth-child(even){
+            background-color: @grey_lighter;
+            border-radius: @border_radius;
+        }
+
+        @media (min-width: @screen_md) {
+            margin: 15px 0;
+            padding: 15px;
+        }
+        
+        .left{
+            min-width: 22%;
+            max-width: 22%;
+            margin-right: 15px;
+        }
+        
+        .right{
+            flex-grow: 3;
+        }
+    }
+}
+
+///////////////////
+// Grid Display //
+/////////////////
+.sg_grid_display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    justify-content: space-around;
+    @media (min-width: @screen_sm) {
+        justify-content: flex-start;
+    }
+
+    .sg_grid_item{
+        display: flex;
+        flex-direction: column;
+        background-color: @grey_lighter;
+        border-radius: @border_radius;
+        box-shadow: @shadow;
+        overflow: hidden;
+        width: 100%;
+        margin-right: 0;
+        height: 200px;
+
+        max-width: 300px;
+        
+        @media (min-width: @screen_sm) {
+            width: 48%;
+            margin-right: 2%;
+            height: 220px;
+        }
+        @media (min-width: @screen_md) {
+            width: 31%;
+            margin-right: 2%;
+            height: 230px;
+        }
+        @media (min-width: @screen_lg) {
+            width: 23%;
+            margin-right: 2%;
+            height: 240px;
+        }
+        @media (min-width: @screen_xl) {
+            width: 18%;
+            margin-right: 2%;
+            height: 240px;
+        }
+
+
+        .sg_grid_example{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            flex-grow: 3;
+
+            .sg_grid_example_float{
+                display: block;
+                width: fit-content;
+                margin: 0 auto;
+                max-height: 100%;
+
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                    height: auto;
+                    width: auto;
+                    box-sizing: border-box;
+                    padding: 5px;
+                }
+            }
+        }
+
+        .sg_grid_info{
+            box-sizing: border-box;
+            height: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            display: flex;
+            background-color: @white;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+////////////////////////////////////////
+////////////////////////////////////////
+//////      Specific  Styles      //////
+////////////////////////////////////////
+////////////////////////////////////////
+
+//////////
+// Nav //
+/////////
+.sg_nav{
+    height: auto;
+    // position: fixed;
+    // top: 24px;
+    // left: 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid @grey;
+    border-top: 1px solid @grey;
+    width: 100%;
+    color: @ink;
+    box-sizing: border-box;
+    padding: 0 0 2px 0;
+    background-color: @ink_darker;
+    background-color: @white;
+    font-size: 14px;
+    z-index: 5;
+
+
+    a{
+        margin: 4px 8px;
+        font-weight: 600;
+    }
+
+    @media (max-width: @screen_mobile) {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+////////////
+// Intro //
+//////////
+.sg_intro_logo{
+    display: block;
+    max-height: 70px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+/////////////////
+// Typography //
+///////////////
+.sg_sans_font:after{
+    content: '@{sans}';
+}
+.sg_serif_font:after{
+    content: '@{serif}';
+    font-family: @serif;
+}
+.sg_font_bold:after{
+    content: '@{bold_weight}';
+}
+.sg_font_light:after{
+    content: '@{light_weight}';
+}
+
+// Hide size toggle
+#sgDesktopTypography,
+#sgSansTypography{
+    display: none;
+}
+@media (max-width: @screen_mobile) {
+    // Show desktop button instead when mobile
+    #sgDesktopTypography,
+    #sgSansTypography{
+        display: block;
+    }
+    #sgMobileTypography,
+    #sgSerifTypography{
+        display: none;
+    }
+}
+#sgSansTypography,
+#sgSerifTypography,
+#sgDesktopTypography,
+#sgMobileTypography{
+    @media (max-width: @screen_mobile) {
+        margin: 0 auto 25px auto;
+        width: 200px;
+    }
+}
+
+.sg_typography{
+
+    .sg_type_row{
+        display: flex;
+        box-sizing: border-box;
+        padding: 10px;
+
+        // Wrap table on mobile
+        @media (max-width: @screen_md) {
+            flex-wrap: wrap;
+        }
+
+        &:nth-child(even){
+            background-color: @grey_lighter;
+            border-radius: @border_radius;
+        }
+
+        &.sg_type_header_row{
+            font-weight: 700;
+            text-align: center;
+            padding: 0 0 15px 0;
+        }
+
+        
+        
+        div{
+            flex-grow: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 16%;
+            flex: 1 1 0;
+            text-align: center;
+            box-sizing: border-box;
+
+            // Expand first col (example text) on mobile
+            
+            
+
+            // Example type
+            &.sg_type_example{
+                flex-grow: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 20%;
+                text-align: left;
+
+                @media (max-width: @screen_md) {
+                    &:nth-child(1){
+                        min-width: 100%;
+                        text-align: center;
+                    } 
+                }
+            }
+
+            // Tags and classes
+            code{
+                display: block;
+                margin: 3px auto;
+            }
+        }
+    }
+}
+
+
+//////////////////
+// Text Styles //
+////////////////
+
+// Link color
+.sg_link_color{
+    &:before{
+        content: 'darker primary';
+    }
+    code{
+        &:after{
+            content: '@{primary_darker}';
+        }
+    }
+}
+// Code background color
+.sg_code_background{
+    &:before{
+        content: 'grey';
+    }
+    code{
+        &:after{
+            content: '@{grey}';
+        }
+    }
+}
+// Code font face
+.sg_code_font{
+    &:before{
+        content: 'monospace';
+    }
+    code{
+        &:after{
+            content: '@{monospace}';
+        }
+    }
+}
+
+
+/////////////////
+//   Inputs   //
+///////////////
+.sg_input_display{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+    .sg_input_item{
+        
+        .caption{
+            margin-top: 10px;
+            display: block;
+        }
+    }
+}
+
+// Fill Button Heights
+.sg_btn_height:before{
+    content: '@{button_height}';
+}
+.sg_btn_height_sm:before{
+    content: '@{button_sm_height}';
+}
+
+////////////////////
+//   Responsive   //
+////////////////////
+.sg_responsive_display{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: @grey_lighter;
+    border: 1px solid @grey_dark;
+    border-radius: @border_radius;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding: 15px;
+
+    .sg_responsive_value{
+        display: block;
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: -0.75px;
+    }
+
+    .sg_rd_lg,
+    .sg_rd_md,
+    .sg_rd_sm,
+    .sg_rd_xs{
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: fade(@grey, 50%);
+        border: 1px solid @grey_dark;
+        border-radius: @border_radius;
+        flex-wrap: wrap;
+        padding: 15px;
+        margin-top: 15px;
+        flex-grow: 3;
+    }
+
+    code{
+        background-color: @ink;
+        padding: 2px 4px;
+        font-weight: 500;
+        color: @white;
+    }
+
+    // Large
+    .sg_rd_lg{
+        max-width: 80%;
+        min-width: 260px;
+    }
+    .sg_rd_md{
+        max-width: 70%;
+        min-width: 200px;
+    }
+    .sg_rd_sm{
+        max-width: 65%;
+        min-width: 160px;
+    }
+    .sg_rd_xs{
+        max-width: 60%;
+        min-width: 120px;
+        width: auto;
+        text-align: center;
+    }
+}
+
+
+//////////////
+// Spacing //
+////////////
+.sg_screen_sm:before{content: '@{screen_sm}';}
+.sg_screen_md:before{content: '@{screen_md}';}
+.sg_screen_lg:before{content: '@{screen_lg}';}
+.sg_screen_xl:before{content: '@{screen_xl}';}
+
+
+//////////////
+// Layout  //
+////////////
+.sg_flex_example{
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: @primary_lighter;
+    box-shadow: @shadow;
+    margin-top: 15px;
+
+    .sg_flex_box{
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: @ink;
+    }
+
+    // Wrap
+    &.sg_flex_example_wrap{
+        flex-wrap: wrap;
+
+        .sg_flex_box{
+            width: 60px;
+
+            &:last-child{
+                margin-top: 15px;
+            }
+        }
+    }
+
+    // Column
+    &.sg_flex_example_col{
+
+        .sg_flex_box{
+            margin-bottom: 15px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+//////////////////
+//    Footer    //
+//////////////////
+.sg_footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    a{
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+
+        &.sg_footer_version{
+            font-size: 12px;
+            color: @grey_darker;
+            transition: @transition_fast;
+
+            &:before,
+            &:after{
+                opacity: 0.2;
+            }
+
+            &:hover{
+                color: @ink;
+                transition: @transition_fast;
+            }
+        }
+    }
+}
+
+
+
+////////////////////
+// Mobile Toggle //
+//////////////////
+
+&.sg_force_desktop{
+    .text-body, p{
+        font-size: @bt_fs;
+        line-height: @bt_lh;
+        font-weight: @light_weight;
+    }
+    h1, .text-xl{
+        font-size: @xl_fs;
+        line-height: @xl_lh;
+        font-weight: @bold_weight;
+    }
+    h2, .text-lg{
+        font-size: @lg_fs;
+        line-height: @lg_lh;
+        font-weight: @bold_weight;
+    }
+    h3, .text-md{
+        font-size: @md_fs;
+        line-height: @md_lh;
+        font-weight: @light_weight; 
+    }
+    h4, .text-sm{
+        font-size: @sm_fs;
+        line-height: @sm_lh;
+        font-weight: @light_weight;
+    }
+    h5, .heading{
+        font-size: @hd_fs;
+        line-height: @hd_lh;
+        font-weight: @bold_weight;
+    }
+    h6,
+    .subheading{
+        font-size: @sh_fs;
+        line-height: @sh_lh;
+        font-weight: @bold_weight;
+        text-transform: uppercase;  
+    }
+    .caption{
+        font-size: @cp_fs;
+        line-height: @cp_lh;
+        font-weight: @light_weight;
+    }
+}
+
+&.sg_force_mobile{
+    .text-body, p{
+        font-size: @bt_fs_m;
+        line-height: @bt_lh_m;
+        font-weight: @light_weight;
+    }
+    h1, .text-xl{
+        font-size: @xl_fs_m;
+        line-height: @xl_lh_m;
+        font-weight: @bold_weight;
+    }
+    h2, .text-lg{
+        font-size: @lg_fs_m;
+        line-height: @lg_lh_m;
+        font-weight: @bold_weight;
+    }
+    h3, .text-md{
+        font-size: @md_fs_m;
+        line-height: @md_lh_m;
+        font-weight: @light_weight; 
+    }
+    h4, .text-sm{
+        font-size: @sm_fs_m;
+        line-height: @sm_lh_m;
+        font-weight: @light_weight;
+    }
+    h5, .heading{
+        font-size: @hd_fs_m;
+        line-height: @hd_lh_m;
+        font-weight: @bold_weight;
+    }
+    h6,
+    .subheading{
+        font-size: @sh_fs_m;
+        line-height: @sh_lh_m;
+        font-weight: @bold_weight;
+        text-transform: uppercase;  
+    }
+    .caption{
+        font-size: @cp_fs_m;
+        line-height: @cp_lh_m;
+        font-weight: @light_weight;
+    }
+}
+
+
+///////////////////////////////
+// Typography size function //
+/////////////////////////////
+// This function creates classes for each size of text
+// The classes can be used to fill elements with the value
+// prefix: xl, lg, md, sm, hd (heading), sh (subheading), bt (body text), and cp (caption)
+// type: fs = fontsize. lh = lineheight. ls = letterspacing.
+// value = value
+
+.typo-class(@prefix: xl;);
+.typo-class(@prefix: lg;);
+.typo-class(@prefix: md;);
+.typo-class(@prefix: sm;);
+.typo-class(@prefix: hd;);
+.typo-class(@prefix: sh;);
+.typo-class(@prefix: bt;);
+.typo-class(@prefix: cp;);
+
+.typo-class(@prefix;) {
+    .@{prefix}_fs:before{ content: '@{@{prefix}_fs}'; }
+    .@{prefix}_lh:before{ content: '@{@{prefix}_lh}'; }
+    .@{prefix}_ls:before{ content: '@{@{prefix}_ls}'; }
+    .sg_force_mobile .@{prefix}_fs:before{ content: '@{@{prefix}_fs_m}'; }
+    .sg_force_mobile .@{prefix}_lh:before{ content: '@{@{prefix}_lh_m}'; }
+    .sg_force_mobile .@{prefix}_ls:before{ content: '@{@{prefix}_ls_m}'; }
+}

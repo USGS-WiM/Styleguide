@@ -1,0 +1,87 @@
+
+// Standard width for page elements
+.standard-width{
+    max-width: @standard_width;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+}
+
+
+
+////////////////////////
+//  Display Helpers  //
+//////////////////////
+.inline-block{
+    display: inline-block;
+}
+.block{
+    display: block;
+}
+.nodisplay{
+    display: none;
+}
+
+
+////////////////////////
+//       FLEX        //
+//////////////////////
+
+// Flex Between
+
+.f-wrap{
+    flex-wrap: wrap;
+}
+
+// Global - xs
+.make-flex(@prefix: xs;);
+// Small Screen
+@media (min-width: @screen_sm) {
+    .make-flex(@prefix: sm;);
+}
+// Medium Screen
+@media (min-width: @screen_md) {
+    .make-flex(@prefix: md;);
+}
+// Large Screen
+@media (min-width: @screen_lg) {
+    .make-flex(@prefix: lg;);
+}
+// XLarge Screen
+@media (min-width: @screen_xl) {
+    .make-flex(@prefix: xl;);
+}
+
+// Less Function
+.make-flex(@prefix;) {
+
+    .@{prefix}-flex,
+    .@{prefix}-f-start{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .@{prefix}-f-end{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .@{prefix}-f-btw{
+        display: flex;
+        justify-content: space-between;
+    }
+    .@{prefix}-f-around{
+        display: flex;
+        justify-content: space-around;
+    }
+    .@{prefix}-f-center{
+        display: flex;
+        justify-content: center;
+    }
+    .@{prefix}-f-col{
+        display: flex;
+        flex-direction: column;
+    }
+    .@{prefix}-f-wrap{
+        flex-wrap: wrap;
+    }
+}
+

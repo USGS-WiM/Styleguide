@@ -1,0 +1,191 @@
+///////////
+// Fonts //
+///////////
+.serif{
+    font-family: @serif;
+}
+
+//////////////////
+// Font Sizing //
+////////////////
+.text-body, p{
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: @light_weight;
+    letter-spacing: @bt_ls_m;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+h1, .text-xl{
+    font-size: 27px;
+    line-height: 36px;
+    font-weight: @bold_weight;
+    letter-spacing: @xl_ls_m;
+}
+h2, .text-lg{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: @bold_weight;
+    letter-spacing: @lg_ls_m;
+}
+h3, .text-md{
+    font-size: 21px;
+    line-height: 28px;
+    font-weight: @light_weight;
+    letter-spacing: @md_ls_m;
+}
+h4, .text-sm{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: @light_weight;
+    letter-spacing: @sm_ls_m;
+}
+h5, .heading{
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: @bold_weight;
+    letter-spacing: @hd_ls_m;
+}
+h6,
+.subheading{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: @bold_weight;
+    text-transform: uppercase;  
+    letter-spacing: @sh_ls_m;
+}
+.caption{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: @light_weight;
+    letter-spacing: @cp_ls_m;
+}
+
+//////////////////////
+// Responsive Text //
+////////////////////
+@media (min-width: @screen_mobile) {
+    .text-body, p{
+        font-size: @bt_fs;
+        letter-spacing: @bt_ls;
+    }
+    h1, .text-xl{
+        font-size: @xl_fs;
+        line-height: @xl_lh;
+        letter-spacing: @xl_ls;
+    }
+    h2, .text-lg{
+        font-size: @lg_fs;
+        line-height: @lg_lh;
+        letter-spacing: @lg_ls;
+    }
+    h3, .text-md{
+        font-size: @md_fs;
+        line-height: @md_lh;
+        letter-spacing: @md_ls;
+    }
+    h4, .text-sm{
+        font-size: @sm_fs;
+        letter-spacing: @sm_ls;
+    }
+    h5, .heading{
+        font-size: @hd_fs;
+        letter-spacing: @hd_ls;
+    }
+    h6, .subheading{
+        font-size: @sh_fs;
+        letter-spacing: @sh_ls;
+    }
+    .caption{
+        font-size: @cp_fs;
+        line-height: @cp_lh;
+        letter-spacing: @cp_ls;
+    }
+}
+
+
+//////////////////
+// Font Styles //
+////////////////
+// Emphasis
+b,
+strong{
+    font-weight: @bold_weight;
+}
+
+// Links
+a{
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color: inherit;
+    font-weight: inherit;
+    color: inherit;
+    box-sizing: border-box;
+    text-decoration: underline;
+
+    &:hover{
+        transition: @transition_fast;
+        color: @primary;
+    }
+    &:focus{
+        transition: @transition_fast;
+        outline: @focus_outline;
+    }
+    &:active{
+        transition: @transition_fast;
+    }
+}
+
+// Subdued text/elements
+.subdued{
+    opacity: 0.65;
+}
+
+/////////////////////////////////
+// Other Typographic Elements //
+///////////////////////////////
+code{
+    font-family: @monospace;
+    background-color: @grey;
+    border-radius: @border_radius;
+    padding: 2px;
+    box-sizing: border-box;
+}
+pre{
+    white-space: pre-wrap;
+    background-color: @grey;
+    font-family: @monospace;
+    box-sizing: border-box;
+    padding: 6px;
+    border-radius: @border_radius;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: @light_weight;
+}
+
+
+
+//////////////
+// Helpers //
+////////////
+.align-c{
+    text-align: center;
+}
+.align-l{
+    text-align: left;
+}
+.align-r{
+    text-align: right;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.lowercase{
+    text-transform: lowercase;
+}
