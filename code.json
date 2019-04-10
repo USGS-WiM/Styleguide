@@ -3,7 +3,7 @@
     "name": "wim-styleguide",
     "organization": "U.S. Geological Survey",
     "description": "Frontend development styleguide for WIM",
-    "version": "v1.0.0",
+    "version": "v2.0.0",
     "status": "Production",
 
     "permissions": {
