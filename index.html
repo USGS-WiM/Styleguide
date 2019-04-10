@@ -1,0 +1,100 @@
+<html  ng-app="app">
+
+	<head>
+
+		<base href="/">
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>WiM Styleguide</title>
+		<meta name="description" content="WiM Styleguide for use across WiM Applications">
+
+		<!-- mobile meta -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+		<!--[if IE]>
+			<link rel="shortcut icon" href="favicon.png">
+		<![endif]-->
+		<!-- or, set /favicon.ico for IE10 win -->
+		<meta name="msapplication-TileColor" content="#0F8AFF">
+		<meta name="theme-color" content="#0F8AFF">
+
+
+		<!-- CSS -->
+		<!-- build:css css/style.min.css -->
+		<link rel="stylesheet" type="text/css" href="styles/app.ui.css" />
+		<link rel="stylesheet" type="text/css" href="styles/wim.global.css" />
+		<!-- endbuild -->
+
+		<!-- Vendors -->
+		<!-- Angular external libraries for application -->
+		<!-- build:angularlibs js/angularlibs.js -->
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<!-- endbuild -->
+
+		<script type="text/javascript" src="app.js"></script>
+
+	</head>
+
+
+
+	<body ng-controller="mainController">
+		<div class="app-nav-spacer">
+		</div>
+
+		<div class="app-nav">
+			<div class="container">
+				<a href="/#/" class="nav-branding">
+					<img src="images/nav_logo_abbr.png" />
+				</a>
+				<div class="nav-links">
+					<a href="/#/">Home</a>
+					<a href="/#/grid" >Grid</a>
+					<a href="/#/colors" >Colors</a>
+					<a href="/#/forms" >Forms</a>
+					<a href="/#/typography" >Typography</a>
+					<a href="/#/ui" >UI</a>
+
+					<!--<a href="https://wim.usgs.gov" target="_blank" class="nav-button">
+						Wim.usgs.gov
+					</a>-->
+
+					<!--<div class="nav-controls">
+						<a href="#">Sign In</a>
+						<a href="#">Get Started</a>
+					</div>-->
+				</div>
+			</div>
+		</div>
+
+
+		<div ng-view></div>
+
+	
+	</body>
+
+
+
+
+	
+
+	<!-- Application sections -->
+	<!-- build:mainapp js/mainapp.js -->
+	<!--<script type="text/javascript" src="app/controller.js"></script>-->
+	<!-- endbuild -->
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+	    // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	    // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	    // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	    // e.src='https://www.google-analytics.com/analytics.js';
+	    // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	    // ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+	</script>
+
+</html>
