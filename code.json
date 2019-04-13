@@ -29,9 +29,6 @@
     ],
 
     "languages": [
-      "Javascript",
-      "HTML",
-      "LESS/CSS"
     ],
 
     "contact": {
@@ -40,7 +37,7 @@
     },
 
     "date": {
-      "metadataLastUpdated": "2019-04-10"
+      "metadataLastUpdated": "2019-04-13"
     }
   }
 ]
