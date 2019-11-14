@@ -113,7 +113,7 @@ textarea{
         // Hover
         &:hover{
             cursor: pointer;
-            // text-decoration: underline;
+            text-decoration: underline;
             transition: 0.1s all;
             color: @@text;
 
@@ -126,7 +126,8 @@ textarea{
         &:focus{
             transition: 0.1s all;
             text-decoration: underline;
-            border-color: @@dark;
+			border-color: @@dark;
+			text-decoration-style: wavy;
 
             outline: @focus_outline;
             color: @@text;
@@ -138,13 +139,10 @@ textarea{
 
         // Active
         &:active{
-            background-color: @@color;
+			background-color: darken(@@color, 5%);
             transition: 0.1s all;
-            border-color: @@color;
+			text-decoration-style: wavy;
             color: @@text;
-            border-bottom: 1px solid @@dark;
-            margin-top: 1px;
-            position: relative;
         }
 
         
