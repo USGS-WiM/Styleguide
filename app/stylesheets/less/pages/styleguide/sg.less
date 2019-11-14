@@ -6,7 +6,7 @@
 
 // Set Style Guide Version
 // And add it to sg_version content
-@sg_version: "0.5.2";
+@sg_version: "0.6.1";
 .sg_version:after{
     content: '@{sg_version}';
 }
@@ -140,21 +140,25 @@
             flex-direction: column;
             justify-content: center;
             box-sizing: border-box;
-            flex-grow: 3;
+			max-height: 120px;
+			min-height: 120px;
+
 
             .sg_grid_example_float{
                 display: block;
                 width: fit-content;
                 margin: 0 auto;
-                max-height: 100%;
+				max-height: 100%;
+				text-align: center;
 
                 img{
                     max-width: 100%;
-                    max-height: 100%;
+                    max-height: 100px;
                     height: auto;
                     width: auto;
                     box-sizing: border-box;
-                    padding: 5px;
+					padding: 5px;
+					margin: 0 auto;
                 }
             }
         }

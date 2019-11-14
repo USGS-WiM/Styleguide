@@ -2,13 +2,13 @@
   font-family: 'Merriweather';
   font-style: normal;
   font-weight: 400;
-  src: local('Merriweather Regular'), local('Merriweather-Regular'), url(https://fonts.gstatic.com/s/merriweather/v20/u-440qyriQwlOrhSvowK_l5-fCZJ.ttf) format('truetype');
+  src: local('Merriweather Regular'), local('Merriweather-Regular'), url(https://fonts.gstatic.com/s/merriweather/v21/u-440qyriQwlOrhSvowK_l5-fCZJ.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Merriweather';
   font-style: normal;
   font-weight: 700;
-  src: local('Merriweather Bold'), local('Merriweather-Bold'), url(https://fonts.gstatic.com/s/merriweather/v20/u-4n0qyriQwlOrhSvowK_l52xwNZWMf_.ttf) format('truetype');
+  src: local('Merriweather Bold'), local('Merriweather-Bold'), url(https://fonts.gstatic.com/s/merriweather/v21/u-4n0qyriQwlOrhSvowK_l52xwNZWMf_.ttf) format('truetype');
 }
 html,
 body,
@@ -4821,21 +4821,24 @@ a.btn-icon:focus span,
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  flex-grow: 3;
+  max-height: 120px;
+  min-height: 120px;
 }
 .sg_grid_display .sg_grid_item .sg_grid_example .sg_grid_example_float {
   display: block;
   width: fit-content;
   margin: 0 auto;
   max-height: 100%;
+  text-align: center;
 }
 .sg_grid_display .sg_grid_item .sg_grid_example .sg_grid_example_float img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 100px;
   height: auto;
   width: auto;
   box-sizing: border-box;
   padding: 5px;
+  margin: 0 auto;
 }
 .sg_grid_display .sg_grid_item .sg_grid_info {
   box-sizing: border-box;
