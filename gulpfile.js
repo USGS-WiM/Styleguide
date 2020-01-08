@@ -24,7 +24,7 @@ gulp.task('useref', function(){
             console.log(e);
         })))
         // Minifies only if it's a CSS file
-        .pipe(gulpIf('*.css', cssnano()))
+        // .pipe(gulpIf('*.css', cssnano()))
 
         .pipe(gulp.dest('public'))
 });
@@ -40,9 +40,13 @@ gulp.task('clean:dist', function() {
 // Move static files //
 ///////////////////////
 var filesToMove = [
-        './app/assets/**/**/*',
+        // '/app/assets/**/*',
+        // '/app/assets/fontawesome/*',
+        // '/app/assets/publicsans/*',
+        // '/app/assets/slackmojis/*',
+		'./app/assets/**/*',
         './app/manifest.json'
-    ];
+];
 gulp.task('static', function(){
     gulp.src(filesToMove, { base: './app/' })
         .pipe(gulp.dest('public'));
@@ -77,9 +81,10 @@ gulp.task('purgeCSS', function () {
 gulp.task('build', function (callback) {
     runSequence(
         'clean:dist',
-        ['useref', 'static'],
+		'static',
+        ['useref'],
         // ['useref', 'static', 'purgeCSS'],
-        ['cacheBuster'],
+        // ['cacheBuster'],
         callback
     )
 })
