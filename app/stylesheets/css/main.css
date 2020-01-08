@@ -4837,6 +4837,25 @@ a.btn-icon:focus span,
   flex-direction: column;
   justify-content: center;
 }
+.sg_emoji_display {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.sg_emoji_display .emoji {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 4px 4px 0;
+}
+.sg_emoji_display .emoji img {
+  height: 24px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
 .sg_nav {
   height: auto;
   position: sticky;
