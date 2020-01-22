@@ -2,11 +2,12 @@ on:
   push:
     branches:
     - staging
-name: Deploy to Test Site
+name: "Push to test.wim.usgs.gov/styleguide (TEST)"
 jobs:
-  DeployToProd:
-    name: Deploy to Test Site
+  pushToTest:
+    name: Push to TEST
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@master
     - name: Set Up Node
@@ -14,17 +15,26 @@ jobs:
       with:
         node-version: '10.15'
     - run: npm run-script build
-    - name: GitHub Action for AWS
-      uses: actions/aws/cli@efb074ae4510f2d12c7801e4461b65bf5e8317e6
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        args: s3 cp /github/workspace/public/ s3://test.wim.usgs.gov/styleguide/
-          --recursive
-    - name: GitHub Action for Slack
-      uses: Ilshidur/action-slack@7a89f92c279a0c0ef7e51514adbe9896cead2e66
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+    - run: aws s3 cp /home/runner/work/Styleguide/Styleguide/public/ s3://test.wim.usgs.gov/styleguide --recursive
+
+    - name: AWS Test Failure
+      if: failure()
+      uses: Ilshidur/action-slack@2a8ddb6db23f71a413f9958ae75bbc32bbaa6385
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       with:
-        args: "Successfully deployed to test site :rocket:"
+        args: ":warning: Error deploying *Styleguide* to :test:test.wim.usgs.gov - GitHub Action Failed"
+
+    - name: GitHub Action for Slack
+      uses: Ilshidur/action-slack@2a8ddb6db23f71a413f9958ae75bbc32bbaa6385
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      with:
+        args: ":test: Successfully deployed TEST to test.wim.usgs.gov/styleguide :fire:"
