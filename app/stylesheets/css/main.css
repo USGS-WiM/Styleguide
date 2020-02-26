@@ -4837,6 +4837,9 @@ a.btn-icon:focus span,
   flex-direction: column;
   justify-content: center;
 }
+.sg_grid_display.dark .sg_grid_item {
+  background-color: #0c141e;
+}
 .sg_emoji_display {
   display: flex;
   justify-content: flex-start;
