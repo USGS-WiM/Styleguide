@@ -2,10 +2,10 @@ on:
   push:
     branches:
     - master
-name: "Push to wim.usgs.gov/styleguide (PROD)"
+name: "Production"
 jobs:
   pushToTest:
-    name: Push to PROD
+    name: Push to PRODUCTION
     runs-on: ubuntu-latest
 
     steps:
@@ -30,11 +30,11 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       with:
-        args: ":warning: Error deploying *Styleguide* to :prod:wim.usgs.gov - GitHub Action Failed"
+        args: ":warning::production: Error deploying *Styleguide* to wim.usgs.gov - GitHub Action Failed"
 
     - name: GitHub Action for Slack
       uses: Ilshidur/action-slack@2a8ddb6db23f71a413f9958ae75bbc32bbaa6385
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       with:
-        args: ":prod: Successfully deployed TEST to wim.usgs.gov/styleguide :fire:"
+        args: ":production: Successfully deployed *Styleguide* to wim.usgs.gov/styleguide :fire:"
