@@ -85,6 +85,7 @@ gulp.task('build', function (callback) {
 // Compile less on save
 // inject CSS to browser
 // Live reload for HTML and JS
+// Also has UI for controlling browsersync
 
 // Styleguide LESS -> CSS
 gulp.task('compile-styleguide-less', function () {
