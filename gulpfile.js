@@ -51,7 +51,6 @@ gulp.task('static', function(){
         .pipe(gulp.dest('public'));
 });
 
-
 //////////////////
 // Cache Buster //
 //////////////////
@@ -77,7 +76,6 @@ gulp.task('build', function (callback) {
 })
 
 
-
 /////////////////
 // Browsersync //
 /////////////////
@@ -85,6 +83,7 @@ gulp.task('build', function (callback) {
 // Compile less on save
 // inject CSS to browser
 // Live reload for HTML and JS
+// Also has UI for controlling browsersync - can access by ip
 
 // Styleguide LESS -> CSS
 gulp.task('compile-styleguide-less', function () {
