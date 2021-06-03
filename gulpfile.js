@@ -6,7 +6,6 @@ var cssnano = require('gulp-cssnano');
 var del = require('del');
 var runSequence = require('run-sequence');
 var cacheBuster = require('gulp-cache-bust');
-var purgecss = require('gulp-purgecss');
 var replace = require('gulp-replace');
 var less = require('gulp-less');
 var browserSync = require("browser-sync").create();
@@ -52,7 +51,6 @@ gulp.task('static', function(){
         .pipe(gulp.dest('public'));
 });
 
-
 //////////////////
 // Cache Buster //
 //////////////////
@@ -61,18 +59,6 @@ gulp.task('cacheBuster', function () {
         .pipe(cacheBuster())
         .pipe(gulp.dest('public'));
 });
-
-//////////////////////
-// Purge unused CSS //
-//////////////////////
-gulp.task('purgeCSS', function () {
-    return gulp.src('public/css/main.css')
-        .pipe(purgecss({
-            content: ["public/**/*.html"]
-        }))
-        .pipe(gulp.dest('public/css'))
-});
-
 
 ////////////////////
 // Build sequence //
@@ -83,12 +69,11 @@ gulp.task('build', function (callback) {
         'clean:dist',
 		'static',
         ['useref'],
-        // ['useref', 'static', 'purgeCSS'],
+        // ['useref', 'static'],
         // ['cacheBuster'],
         callback
     )
 })
-
 
 
 /////////////////
@@ -98,10 +83,20 @@ gulp.task('build', function (callback) {
 // Compile less on save
 // inject CSS to browser
 // Live reload for HTML and JS
-gulp.task('compile-less', function () {
-    gulp.src('./app/stylesheets/less/main.less')
+// Also has UI for controlling browsersync - can access by ip
+
+// Styleguide LESS -> CSS
+gulp.task('compile-styleguide-less', function () {
+    gulp.src('./app/stylesheets/styleguide/styleguide.less')
         .pipe(less())
-        .pipe(gulp.dest('./app/stylesheets/css/'))
+        .pipe(gulp.dest('./app/stylesheets/etc/'))
+        .pipe(browserSync.stream());
+}); 
+// Compile LESS for styleguide UI seperately
+gulp.task('compile-ui-less', function () {
+    gulp.src('./app/stylesheets/etc/ui/ui.less')
+        .pipe(less())
+        .pipe(gulp.dest('./app/stylesheets/etc/'))
         .pipe(browserSync.stream());
 }); 
 
@@ -116,7 +111,8 @@ gulp.task('serve', function () {
         server: "./app/"
     });
 
-    gulp.watch("app/stylesheets/less/**/*.less", ['compile-less']);
+    gulp.watch("app/stylesheets/styleguide/**/*.less", ['compile-styleguide-less']);
+    gulp.watch("app/stylesheets/etc/**/*.less", ['compile-ui-less']);
     gulp.watch("./app/**/*.html").on("change", reload);
     gulp.watch("./app/**/*.js").on("change", reload);
 });

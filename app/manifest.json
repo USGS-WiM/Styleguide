@@ -1,6 +1,6 @@
 {
-  "short_name": "WIM Styles",
-  "name": "WIM Styles",
+  "short_name": "WIM Styleguide",
+  "name": "WIM Styleguide",
   "description": "Web Informatics & Mapping frontend development styleguide and cheatsheet.",
   "icons": [{
     "src": "assets/branding/meta/touch48.png",
