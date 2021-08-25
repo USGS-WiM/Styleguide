@@ -279,9 +279,54 @@
 }
 
 /////////////////
-// Typography //
+// Colors //
 ///////////////
+.sg_color_display{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
+	.sg_color{
+		box-sizing: border-box;
+		padding: 20px;
+		width: 30%;
+		min-width: 30%;
+		max-width: 30%;
+		min-height: 200px;
+		display: flex;
+		flex-direction: column;
+		border-radius: 5px;
+		line-height: 24px;
+		font-size: 16px;
+		margin-bottom: 45px;
+
+		b{
+			font-size: 22px;
+			padding-bottom: 15px;
+		}
+		span{
+			font-family: monospace;
+			font-weight: bold;
+		}
+	}
+
+	#usgsGreen{
+		background-color: #006E4E;
+		color: white;
+	}
+	#colDarkBlue{
+		background-color: #03274B;
+		color: white;
+	}
+	#colBlue{
+		background-color: #0552D6;
+		color: white;
+	}
+	#colText{
+		background-color: #0B141E;
+		color: white;
+	}
+}
 
 //////////////////
 //    Footer    //
