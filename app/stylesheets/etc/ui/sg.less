@@ -172,6 +172,16 @@
             background-color: @white;
             flex-direction: column;
             justify-content: center;
+
+			.logo-links{
+				font-size: 12px;
+				padding: 8px 0 0 0;
+
+				a{
+					margin-right: 10px;
+					display: inline-block;
+				}
+			}
         }
     }
 }
@@ -190,9 +200,7 @@
 
 
 ////////////////////////////////////////
-////////////////////////////////////////
 //////       Emoji  Display       //////
-////////////////////////////////////////
 ////////////////////////////////////////
 .sg_emoji_display{
 	display: flex;
@@ -217,11 +225,8 @@
 }
 
 ////////////////////////////////////////
-////////////////////////////////////////
 //////      Specific  Styles      //////
 ////////////////////////////////////////
-////////////////////////////////////////
-
 //////////
 // Nav //
 /////////
@@ -246,7 +251,12 @@
 
     a{
         margin: 4px 8px;
-        font-weight: 600;
+        font-weight: 500;
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
     }
 
     @media (max-width: @screen_mobile) {
@@ -271,297 +281,7 @@
 /////////////////
 // Typography //
 ///////////////
-.sg_sans_font:after{
-    content: '@{sans}';
-}
-.sg_serif_font:after{
-    content: '@{serif}';
-    font-family: @serif;
-}
-.sg_font_bold:after{
-    content: '@{bold_weight}';
-}
-.sg_font_light:after{
-    content: '@{light_weight}';
-}
 
-// Hide size toggle
-#sgDesktopTypography,
-#sgSansTypography{
-    display: none;
-}
-@media (max-width: @screen_mobile) {
-    // Show desktop button instead when mobile
-    #sgDesktopTypography,
-    #sgSansTypography{
-        display: block;
-    }
-    #sgMobileTypography,
-    #sgSerifTypography{
-        display: none;
-    }
-}
-#sgSansTypography,
-#sgSerifTypography,
-#sgDesktopTypography,
-#sgMobileTypography{
-    @media (max-width: @screen_mobile) {
-        margin: 0 auto 25px auto;
-        width: 200px;
-    }
-}
-
-.sg_typography{
-
-    .sg_type_row{
-        display: flex;
-        box-sizing: border-box;
-        padding: 10px;
-
-        // Wrap table on mobile
-        @media (max-width: @screen_md) {
-            flex-wrap: wrap;
-        }
-
-        &:nth-child(even){
-            background-color: @grey_lighter;
-            border-radius: @border_radius;
-        }
-
-        &.sg_type_header_row{
-            font-weight: 700;
-            text-align: center;
-            padding: 0 0 15px 0;
-        }
-
-        
-        
-        div{
-            flex-grow: 3;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 16%;
-            flex: 1 1 0;
-            text-align: center;
-            box-sizing: border-box;
-
-            // Expand first col (example text) on mobile
-            
-            
-
-            // Example type
-            &.sg_type_example{
-                flex-grow: 2;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                width: 20%;
-                text-align: left;
-
-                @media (max-width: @screen_md) {
-                    &:nth-child(1){
-                        min-width: 100%;
-                        text-align: center;
-                    } 
-                }
-            }
-
-            // Tags and classes
-            code{
-                display: block;
-                margin: 3px auto;
-            }
-        }
-    }
-}
-
-
-//////////////////
-// Text Styles //
-////////////////
-
-// Link color
-.sg_link_color{
-    &:before{
-        content: 'darker primary';
-    }
-    code{
-        &:after{
-            content: '@{primary_darker}';
-        }
-    }
-}
-// Code background color
-.sg_code_background{
-    &:before{
-        content: 'grey';
-    }
-    code{
-        &:after{
-            content: '@{grey}';
-        }
-    }
-}
-// Code font face
-.sg_code_font{
-    &:before{
-        content: 'monospace';
-    }
-    code{
-        &:after{
-            content: '@{monospace}';
-        }
-    }
-}
-
-
-/////////////////
-//   Inputs   //
-///////////////
-.sg_input_display{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    
-    .sg_input_item{
-        
-        .caption{
-            margin-top: 10px;
-            display: block;
-        }
-    }
-}
-
-// Fill Button Heights
-.sg_btn_height:before{
-    content: '@{button_height}';
-}
-.sg_btn_height_sm:before{
-    content: '@{button_sm_height}';
-}
-
-////////////////////
-//   Responsive   //
-////////////////////
-.sg_responsive_display{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: @grey_lighter;
-    border: 1px solid @grey_dark;
-    border-radius: @border_radius;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    padding: 15px;
-
-    .sg_responsive_value{
-        display: block;
-        width: 100%;
-        text-align: left;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: -0.75px;
-    }
-
-    .sg_rd_lg,
-    .sg_rd_md,
-    .sg_rd_sm,
-    .sg_rd_xs{
-        display: flex;
-        justify-content: center;
-        box-sizing: border-box;
-        background-color: fade(@grey, 50%);
-        border: 1px solid @grey_dark;
-        border-radius: @border_radius;
-        flex-wrap: wrap;
-        padding: 15px;
-        margin-top: 15px;
-        flex-grow: 3;
-    }
-
-    code{
-        background-color: @ink;
-        padding: 2px 4px;
-        font-weight: 500;
-        color: @white;
-    }
-
-    // Large
-    .sg_rd_lg{
-        max-width: 80%;
-        min-width: 260px;
-    }
-    .sg_rd_md{
-        max-width: 70%;
-        min-width: 200px;
-    }
-    .sg_rd_sm{
-        max-width: 65%;
-        min-width: 160px;
-    }
-    .sg_rd_xs{
-        max-width: 60%;
-        min-width: 120px;
-        width: auto;
-        text-align: center;
-    }
-}
-
-
-//////////////
-// Spacing //
-////////////
-.sg_screen_sm:before{content: '@{screen_sm}';}
-.sg_screen_md:before{content: '@{screen_md}';}
-.sg_screen_lg:before{content: '@{screen_lg}';}
-.sg_screen_xl:before{content: '@{screen_xl}';}
-
-
-//////////////
-// Layout  //
-////////////
-.sg_flex_example{
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: @primary_lighter;
-    box-shadow: @shadow;
-    margin-top: 15px;
-
-    .sg_flex_box{
-        display: block;
-        width: 30px;
-        height: 30px;
-        background-color: @ink;
-    }
-
-    // Wrap
-    &.sg_flex_example_wrap{
-        flex-wrap: wrap;
-
-        .sg_flex_box{
-            width: 60px;
-
-            &:last-child{
-                margin-top: 15px;
-            }
-        }
-    }
-
-    // Column
-    &.sg_flex_example_col{
-
-        .sg_flex_box{
-            margin-bottom: 15px;
-
-            &:last-child{
-                margin-bottom: 0;
-            }
-        }
-    }
-}
 
 //////////////////
 //    Footer    //
@@ -596,125 +316,3 @@
 }
 
 
-
-////////////////////
-// Mobile Toggle //
-//////////////////
-
-&.sg_force_desktop{
-    .text-body, p{
-        font-size: @bt_fs;
-        line-height: @bt_lh;
-        font-weight: @light_weight;
-    }
-    h1, .text-xl{
-        font-size: @xl_fs;
-        line-height: @xl_lh;
-        font-weight: @bold_weight;
-    }
-    h2, .text-lg{
-        font-size: @lg_fs;
-        line-height: @lg_lh;
-        font-weight: @bold_weight;
-    }
-    h3, .text-md{
-        font-size: @md_fs;
-        line-height: @md_lh;
-        font-weight: @light_weight; 
-    }
-    h4, .text-sm{
-        font-size: @sm_fs;
-        line-height: @sm_lh;
-        font-weight: @light_weight;
-    }
-    h5, .heading{
-        font-size: @hd_fs;
-        line-height: @hd_lh;
-        font-weight: @bold_weight;
-    }
-    h6,
-    .subheading{
-        font-size: @sh_fs;
-        line-height: @sh_lh;
-        font-weight: @bold_weight;
-        text-transform: uppercase;  
-    }
-    .caption{
-        font-size: @cp_fs;
-        line-height: @cp_lh;
-        font-weight: @light_weight;
-    }
-}
-
-&.sg_force_mobile{
-    .text-body, p{
-        font-size: @bt_fs_m;
-        line-height: @bt_lh_m;
-        font-weight: @light_weight;
-    }
-    h1, .text-xl{
-        font-size: @xl_fs_m;
-        line-height: @xl_lh_m;
-        font-weight: @bold_weight;
-    }
-    h2, .text-lg{
-        font-size: @lg_fs_m;
-        line-height: @lg_lh_m;
-        font-weight: @bold_weight;
-    }
-    h3, .text-md{
-        font-size: @md_fs_m;
-        line-height: @md_lh_m;
-        font-weight: @light_weight; 
-    }
-    h4, .text-sm{
-        font-size: @sm_fs_m;
-        line-height: @sm_lh_m;
-        font-weight: @light_weight;
-    }
-    h5, .heading{
-        font-size: @hd_fs_m;
-        line-height: @hd_lh_m;
-        font-weight: @bold_weight;
-    }
-    h6,
-    .subheading{
-        font-size: @sh_fs_m;
-        line-height: @sh_lh_m;
-        font-weight: @bold_weight;
-        text-transform: uppercase;  
-    }
-    .caption{
-        font-size: @cp_fs_m;
-        line-height: @cp_lh_m;
-        font-weight: @light_weight;
-    }
-}
-
-
-///////////////////////////////
-// Typography size function //
-/////////////////////////////
-// This function creates classes for each size of text
-// The classes can be used to fill elements with the value
-// prefix: xl, lg, md, sm, hd (heading), sh (subheading), bt (body text), and cp (caption)
-// type: fs = fontsize. lh = lineheight. ls = letterspacing.
-// value = value
-
-.typo-class(@prefix: xl;);
-.typo-class(@prefix: lg;);
-.typo-class(@prefix: md;);
-.typo-class(@prefix: sm;);
-.typo-class(@prefix: hd;);
-.typo-class(@prefix: sh;);
-.typo-class(@prefix: bt;);
-.typo-class(@prefix: cp;);
-
-.typo-class(@prefix;) {
-    .@{prefix}_fs:before{ content: '@{@{prefix}_fs}'; }
-    .@{prefix}_lh:before{ content: '@{@{prefix}_lh}'; }
-    .@{prefix}_ls:before{ content: '@{@{prefix}_ls}'; }
-    .sg_force_mobile .@{prefix}_fs:before{ content: '@{@{prefix}_fs_m}'; }
-    .sg_force_mobile .@{prefix}_lh:before{ content: '@{@{prefix}_lh_m}'; }
-    .sg_force_mobile .@{prefix}_ls:before{ content: '@{@{prefix}_ls_m}'; }
-}
