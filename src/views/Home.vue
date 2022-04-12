@@ -12,13 +12,17 @@ Home.vue
 				Use the dropdown above to navigate between guides and pages.
 			</p>
 
-			<h3 class="mtop-lg mbottom-md">Shortcuts</h3>
+			<h2 class="mtop-lg mbottom-md">Tools</h2>
+			<router-link class="button  big mright-md mbottom-md" to="/qr">
+				<i class="fas fa-qrcode"></i>
+				<span>QR Code Generator</span>
+			</router-link>
 			<router-link class="button  big mright-md mbottom-md" to="/markers">
-				<i class="far fa-map-marker"></i>
+				<i class="fas fa-map-marker"></i>
 				<span>Map Marker Designer</span>
 			</router-link>
 			<router-link class="button big mright-md mbottom-md" to="/loaders">
-				<i class="far fa-loader"></i>
+				<i class="fas fa-loader"></i>
 				<span>Animated Loaders</span>
 			</router-link>
 

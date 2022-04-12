@@ -1,11 +1,7 @@
 ![WiM](wimlogo.png)
 
 
-# Frame Templates Generator
-
-This project takes a URL (Storymap, Experience, Tableau, other) and other information and generates a single index.html file with government headers and footers, with the URL in an iFrame in between, giving you a website compliant with the USGS Visual identity guidelines for websites. 
-
-Also includes templates for Geoplatform and National Park Service.
+# WIM Styleguide & Frontend tools
 
 ### Prerequisites
 

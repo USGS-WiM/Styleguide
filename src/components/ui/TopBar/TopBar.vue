@@ -115,14 +115,15 @@ export default {
 		return {
 			showAccountPopover: false,
 
-			guides: ["Home", "Colors", "Logos & Branding", "Interface Icons", "Map Symbols", "Animated Loaders", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components",],
+			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components",],
 			guidePaths: {
 				"Home": "/",
 				"Colors": "/colors",
 				"Logos & Branding": "/logos",
-				"Interface Icons": "/icons",
 				"Map Symbols": "/markers",
 				"Animated Loaders": "/loaders",
+				"QR Code Generator": "/qr",
+				"Interface Icons": "/icons",
 				"CSS Variables": "/variables",
 				"Meta Tags": "/meta",
 				"USWDS": "/uswds",

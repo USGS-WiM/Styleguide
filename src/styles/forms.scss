@@ -507,7 +507,7 @@ button{
 	&:hover{
 		cursor: pointer;
 		text-decoration: underline;
-		background-color: var(--primaryDark);
+		color: var(--white);
 		transition: var(--transition);
 	}
 	&:active{

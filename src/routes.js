@@ -34,15 +34,6 @@ export const routes = [
 				title: "Logos & Branding — " + AppName,
 			}
 		},
-		// Icons & Map Symbols
-		{
-			path: "/icons",
-			name: "icons",
-			component: () => import(/* webpackChunkName: "icons" */ "./views/guides/Icons.vue"),
-			meta: {
-				title: "Icons — " + AppName,
-			}
-		},
 		// Map Symbols
 		{
 			path: "/markers",
@@ -61,6 +52,25 @@ export const routes = [
 				title: "Animated Loaders — " + AppName,
 			}
 		},
+		// QR Code Generator
+		{
+			path: "/qr",
+			name: "qr",
+			component: () => import(/* webpackChunkName: "qr" */ "./views/guides/QR.vue"),
+			meta: {
+				title: "QR Code Generator — " + AppName,
+			}
+		},
+		// Icons
+		{
+			path: "/icons",
+			name: "icons",
+			component: () => import(/* webpackChunkName: "icons" */ "./views/guides/Icons.vue"),
+			meta: {
+				title: "Icons — " + AppName,
+			}
+		},
+		
 		// CSS Variables
 		{
 			path: "/variables",

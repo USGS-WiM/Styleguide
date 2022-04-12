@@ -16,6 +16,7 @@
     "eslint-loader": "^2.1.2",
     "leaflet": "^1.7.1",
     "lodash": "^4.17.21",
+    "qrcode.vue": "^1.7.0",
     "register-service-worker": "^1.7.2",
     "uswds-vue": "^0.1.38",
     "vue": "^2.6.12",
