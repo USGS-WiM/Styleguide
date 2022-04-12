@@ -1,19 +1,22 @@
-![WIM](wimlogo.png)
+![WiM](wimlogo.png)
 
 
-# WIM Styleguide
+# Frame Templates Generator
 
-WIM frontend design styleguide. 
+This project takes a URL (Storymap, Experience, Tableau, other) and other information and generates a single index.html file with government headers and footers, with the URL in an iFrame in between, giving you a website compliant with the USGS Visual identity guidelines for websites. 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Also includes templates for Geoplatform and National Park Service.
 
 ### Prerequisites
 
-Node, npm, & gulp installed.
+Vue CLI
+```bash
+npm install -g @vue/cli
+```
 
-Install with npm
+## Getting Started
+
+### Installing
 
 ```bash
 npm install
@@ -21,38 +24,40 @@ npm install
 
 ## Building and testing
 
-Serve project from /app/ with
+#### Serve on [localhost:8080](https://localhost:8080)
 ```bash
-gulp
+npm run serve
 ```
-Build it with
+Bundle Analyzer will also be running at :8888
+
+#### Build
 ```bash
-gulp build
-```
-Serve project from build folder with
-```bash
-gulp serve-build
+npm run build
 ```
 
+## Other Commands
 
-## Deployment
-
-Upload build (/build/ folder) server.
+### Run your tests
+```bash
+npm run test
+```
+### Lints and fixes files
+```bash
+npm run lint
+```
 
 ## Built With
 
-* HTML
-* [{less}](http://lesscss.org/) - Styling
-* [Gulp](https://gulpjs.com/) - Workflow Toolkit
-* [Browsersync](https://www.browsersync.io/) - Local server with live refresh
+* [Vue](https://vuejs.org)
+* [USWDS](https://designsystem.digital.gov/)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md]() for details on the process for submitting pull requests to us. Please read [CODE_OF_CONDUCT.md]() for details on adhering by the [USGS Code of Scientific Conduct](https://www2.usgs.gov/fsp/fsp_code_of_scientific_conduct.asp).
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for submitting pull requests to us. Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on adhering by the [USGS Code of Scientific Conduct](https://www2.usgs.gov/fsp/fsp_code_of_scientific_conduct.asp).
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](../../tags). 
 
 Advance the version when adding features, fixing bugs or making minor enhancement. Follow semver principles. To add tag in git, type git tag v{major}.{minor}.{patch}. Example: git tag v2.0.5
 
@@ -62,9 +67,10 @@ To push tags to remote origin: `git push origin --tags`
 
 ## Authors
 
-* **Mitch Samuels**  - *Lead Developer* - [USGS Web Informatics & Mapping](https://wim.usgs.gov/)
+* **[Mitch Samuels](https://github.com/mitchas)**  - *Lead Developer* - [USGS Web Informatics & Mapping](https://wim.usgs.gov/)
+* **[Jamie Velkoverh](mailto:JVELKOVERH@USGS.GOV)** - *Geonarrative Coordinator* -  [USGS Web Informatics & Mapping](https://wim.usgs.gov/)
 
-See also the list of [contributors](https://github.com/USGS-WIM/Styleguide/graphs/contributors) who participated in this project.
+See also the list of [contributors](../../graphs/contributors) who participated in this project.
 
 ## License
 
