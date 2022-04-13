@@ -6,12 +6,6 @@ Simple base code structures for new apps
 <template>
 	<div class="padded mtop-lg pbottom-xl">
 
-		<h1>App Layout Templates</h1>
-
-		<p class="mbottom-md">
-			Create the base layout for a new project.
-		</p>
-
 		<!-- USGS Header -->
 		<div class="mright-md mbottom-sm inline-flex">
 			<div class="flex column flex-center">
@@ -71,7 +65,7 @@ Simple base code structures for new apps
 		</transition>
 		<!-- Vertically -->
 		<transition name="basic">
-			<div class="mright-md mbottom-sm inline-flex" v-if="layout.splitMap">
+			<div class="mright-md mbottom-sm inline-flex" v-if="layout.map && layout.splitMap">
 				<div class="flex column flex-center">
 					<input type="checkbox" class="toggle yes-no" id="verttoggle" v-model="layout.splitVertical"/>
 				</div>
@@ -80,7 +74,7 @@ Simple base code structures for new apps
 		</transition>
 		<!-- Split Percent -->
 		<transition name="basic">
-			<div class="field" v-if="layout.splitMap">
+			<div class="field" v-if="layout.map && layout.splitMap">
 				<label class="big" for="lt_split">Content %</label>
 				<div class="flex gap">
 					<div class="flex column flex-center">
@@ -92,7 +86,6 @@ Simple base code structures for new apps
 		</transition>
 
 
-		<div class="mtop-md"></div>
 
 
 
@@ -152,7 +145,7 @@ Simple base code structures for new apps
 				<a href="//usgs.gov/sitemap" target="_blank">
 					Site Map
 				</a>
-				<span class="block"></span>
+				<div></div>
 				<a href="//doi.gov" target="_blank">
 					U.S. Department of the Interior
 				</a>
@@ -232,7 +225,7 @@ Simple base code structures for new apps
     &lt;a href="//usgs.gov/policies-and-notices" target="_blank"&gt;Legal&lt;/a&gt;
     &lt;a href="//usgs.gov/accessibility-and-us-geological-survey" target="_blank"&gt;Accessibility&lt;/a&gt;
     &lt;a href="//usgs.gov/sitemap" target="_blank"&gt;Site Map&lt;/a&gt;
-    &lt;span class="block"&gt;&lt;/span&gt;
+    &lt;div&gt;&lt;/div&gt;
     &lt;a href="//doi.gov" target="_blank"&gt;U.S. Department of the Interior&lt;/a&gt;
     &lt;a href="//doioig.gov" target="_blank"&gt;DOI Inspector General&lt;/a&gt;
     &lt;a href="//whitehouse.gov" target="_blank"&gt;White House&lt;/a&gt;
@@ -373,26 +366,23 @@ main#content{
 <span v-if="layout.usgsFooter">
 /* USGS Footer */
 footer#usgs{
-	box-sizing: border-box;
-	padding: 6px 15px 8px 15px;
-	color: white;
-	background-color: #00264C;
-	line-height: 13px;
-}
-footer#usgs .block{
-	display: block;
+  box-sizing: border-box;
+  padding: 6px 15px 8px 15px;
+  color: white;
+  background-color: #00264C;
+  line-height: 13px;
 }
 footer#usgs a{
-	font-size: 12px;
-	color: white;
-	text-decoration: none;
-	padding-right: 10px;
-	font-weight: 500;
-	display: inline-block;
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  padding-right: 10px;
+  font-weight: 500;
+  display: inline-block;
 }
 footer#usgs a:focus,
 footer#usgs a:hover{
-	text-decoration: underline;
+  text-decoration: underline;
 }</span>
 					</code>
 				</pre>
@@ -606,9 +596,6 @@ footer#usgs{
 	color: white;
 	background-color: #00264C;
 	line-height: 13px;
-}
-footer#usgs .block{
-	display: block;
 }
 footer#usgs a{
 	font-size: 12px;

@@ -115,7 +115,7 @@ export default {
 		return {
 			showAccountPopover: false,
 
-			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components",],
+			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator",],
 			guidePaths: {
 				"Home": "/",
 				"Colors": "/colors",
@@ -130,6 +130,7 @@ export default {
 				"Dark Mode": "/dark",
 				"Printing": "/printing",
 				"Custom Components": "/components",
+				"App Layout Creator": "/templates",
 			},
 			selectedLink: "",
 		};

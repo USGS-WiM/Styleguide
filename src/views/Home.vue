@@ -38,7 +38,7 @@ Home.vue
 				</router-link>
 				<!-- Loader -->
 				<router-link class="tool-link" to="/loaders">
-					<i class="far fa-loader"></i>
+					<i class="far fa-loader fa-spin"></i>
 					<div class="text">
 						<b>Animated Loaders</b>
 						<small>SVG + CSS animated loaders for websites and applications.</small>
@@ -53,7 +53,7 @@ Home.vue
 				<router-link class="tool-link" to="/templates">
 					<i class="far fa-table-layout"></i>
 					<div class="text">
-						<b>App Templates</b>
+						<b>App Layout Creator</b>
 						<small>Create the base layout for your new app.</small>
 					</div>
 				</router-link>

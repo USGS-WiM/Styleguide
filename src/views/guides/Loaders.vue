@@ -52,6 +52,16 @@ Display and code for animated loaders.
 				/>
 				<label for="shp_usgsbox">USGS Box</label>
 			</div>
+			<div class="field-horizontal mtop-xs">
+				<input
+					type="radio"
+					class="radio mright-xs"
+					id="shp_line"
+					:checked="animationShape == 'line'"
+					@click="animationShape = 'line'"
+				/>
+				<label for="shp_line">Line</label>
+			</div>
 
 		</div>
 
@@ -223,7 +233,7 @@ Display and code for animated loaders.
 		</div>
 
 		<!-- Size -->
-		<div class="sg--filters-group">
+		<div class="sg--filters-group" v-if="animationShape != 'line'">
 			<div class="field">
 				<label class="big" for="sze_input">Size in pixels</label>
 				<input
@@ -238,7 +248,7 @@ Display and code for animated loaders.
 		</div>
 
 		<!-- Text -->
-		<div class="sg--filters-group" v-if="display != 'blockloader'">
+		<div class="sg--filters-group" v-if="display != 'blockloader' && animationShape != 'line'">
 			<div class="field">
 				<label class="big" for="ld_title">Title</label>
 				<input
@@ -274,7 +284,7 @@ Display and code for animated loaders.
 	<div :class="'sg--loader-stage mtop-md ' + display">
 
 		<!-- Full Screen info paragraph -->
-		<div v-if="display == 'fullscreen'" class="padded">
+		<div v-if="display == 'fullscreen' && animationShape != 'line'" class="padded">
 			<p class="text-red" v-if="showFullscreen">
 				You can currently click through the loader to change settings. 
 				<br/>
@@ -288,13 +298,16 @@ Display and code for animated loaders.
 
 		<!-- Demo parent content -->
 		<div class="padded align-left" v-if="display == 'fillparent'">
-			<p>
+			<p v-if="animationShape != 'line'">
 				When set to fill parent, it will expand to match the height and width of the parent.
+			</p>
+			<p v-else>
+				When set to fill parent, the line will display at the top of the parent element.
 			</p>
 			<p>
 				The parent must have <code>position:relative;</code> for it to work.
 			</p>
-			<button class="button green mtop-sm">
+			<button class="button green mtop-sm" v-if="animationShape != 'line'">
 				<i class="far fa-times"></i>
 				<span>Can't touch this</span>
 			</button>
@@ -342,9 +355,6 @@ Display and code for animated loaders.
 					<path d="M4 92C106.5 65 128.5 165 218.5 154C262 143 288 101.5 389.5 47" class="animation-usgswave-7"></path>
 					<path d="M3.5 59C106.5 52.5 100.5 132.5 184 128.5C240 121 287.5 59 389 4.5" class="animation-usgswave-8"></path>
 				</svg>
-
-
-				
 			</div>
 			<!-- USGS Box -->
 			<div class="loader-object" v-if="animationShape == 'usgsbox'">
@@ -358,18 +368,18 @@ Display and code for animated loaders.
 				</svg>
 			</div>
 			<!-- Line -->
-			<!-- <div class="loader-object" v-if="animationShape == 'line'">
+			<div class="loader-object" v-if="animationShape == 'line'">
 				<div class="loader-line-track">
 					<div class="loader-line"></div>
 				</div>
-			</div> -->
+			</div>
 
 			
 			<!-- Title and subtitle -->
-			<div :class="'loader-title loader-' + loaderColor" v-if="loaderTitle && display != 'blockloader'">
+			<div :class="'loader-title loader-' + loaderColor" v-if="loaderTitle && display != 'blockloader' && animationShape != 'line'">
 				{{loaderTitle}}
 			</div>
-			<div :class="'loader-subtitle loader-' + loaderColor"  v-if="loaderTitle && display != 'blockloader'">
+			<div :class="'loader-subtitle loader-' + loaderColor"  v-if="loaderTitle && display != 'blockloader' && animationShape != 'line'">
 				{{loaderSubtitle}}
 			</div>
 
@@ -387,22 +397,20 @@ Display and code for animated loaders.
 
 	<!-- Conditional styles user can change get placed and updated on the view with this directive -->
 	<v-style>
-
 		<!-- Actual Loader styles -->
 		<!-- Text colors -->
 		.loader-wrapper{
 			color: {{ loaderColor == 'white' ? 'white' : 'black' }};
 		}
-
-		<!-- Background Color -->
+		.loader-wrapper.blockloader{
+			display: block;
+		}
+	</v-style>
+	<v-style v-if="animationShape != 'line'">
+		<!-- Fullscreen, SVG -->
 		.loader-wrapper.fillparent,
 		.loader-wrapper.fullscreen{
 			background-color: {{ loaderColor == 'white' ? 'rgba(10,10,30,0.65)' : 'rgba(255,255,255,0.65)' }};
-		}
-
-		<!-- Display and positioning -->
-		.loader-wrapper.blockloader{
-			display: block;
 		}
 		.loader-wrapper.fullscreen{
 			display: flex;
@@ -429,6 +437,9 @@ Display and code for animated loaders.
 			height: 100%;
 			z-index: 1000;
 		}
+	</v-style>
+	<v-style>	
+		
 		<!-- Center the SVG -->
 		.loader-wrapper.fullscreen .loader-object,
 		.loader-wrapper.fillparent .loader-object{
@@ -794,13 +805,21 @@ Display and code for animated loaders.
 		.loader-green .loader-line{background-color:var(--usgsGreen);}
 		.loader-blue .loader-line{background-color:var(--usgsBlue);}
 		.linestroke .loader-line {
-			animation: animation-line-stroke  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+			animation: animation-line-stroke  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 		}
 		.lineshake .loader-line {
-			animation: animation-line-shake  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s linear 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+			animation: animation-line-shake  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 		}
 		.linepulse .loader-line {
-			animation: animation-line-pulse  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+			animation: animation-line-pulse  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		<!-- Fullscreen, top of page -->
+		.fillparent .loader-line-track{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			max-width: unset;
 		}
 		<!-- Fullscreen, top of page -->
 		.fullscreen .loader-line-track{
@@ -835,11 +854,11 @@ Display and code for animated loaders.
 			<pre>
 				<code id="elementHTML">
 <b>&lt;!-- Element HTML --&gt;</b>
-&lt;div class="loader-wrapper loader-{{loaderColor}} {{animationShape}}{{animationType}} {{animationShape}} {{display}}"&gt;
+&lt;div class="loader-wrapper"&gt;
 
-  &lt;div class="loader-object"&gt;
-    &lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;<span v-if="animationShape == 'wimpin'">
+  &lt;div class="loader-object"&gt;<span v-if="animationShape == 'wimpin'">
     &lt;!-- WIM Pin SVG --&gt;
+    &lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;
     &lt;svg width="340" height="345" viewBox="0 0 340 345" xmlns="http://www.w3.org/2000/svg"&gt;
       &lt;path d="M78.5006 261.446L138.781 321.727C156.132 339.077 184.262 339.077 201.612 321.727L261.893 261.446C312.535 210.804 312.535 128.696 261.893 78.054C211.25 27.4117 129.143 27.4117 78.5005 78.054C27.8582 128.696 27.8582 210.804 78.5006 261.446Z" class="svg-wimpin-main" &gt;&lt;/path&gt;
       &lt;mask id="mask0_682_231" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="50" y="50" width="240" height="275"&gt;
@@ -856,6 +875,7 @@ Display and code for animated loaders.
       &lt;/g&gt;
     &lt;/svg&gt;</span><span v-if="animationShape == 'usgswave'">
     &lt;!-- USGS Wave SVG --&gt;
+    &lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;
     &lt;svg width="392" height="306" viewBox="0 0 392 306" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
       &lt;path d="M200.5 197.5C321 341 375 295 389.5 289.017" class="animation-usgswave-1"&gt;&lt;/path&gt;
       &lt;path d="M200.5 202.5C334.5 312.5 375 253.5 389.5 247.517" class="animation-usgswave-2"&gt;&lt;/path&gt;
@@ -867,6 +887,7 @@ Display and code for animated loaders.
       &lt;path d="M3.5 59C106.5 52.5 100.5 132.5 184 128.5C240 121 287.5 59 389 4.5" class="animation-usgswave-8"&gt;&lt;/path&gt;
     &lt;/svg&gt;</span><span v-if="animationShape == 'usgsbox'">
     &lt;!-- USGS Box SVG --&gt;
+    &lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;
     &lt;svg width="100%" height="100%" fill="none" viewBox="0 0 1271 1379" xmlns="http://www.w3.org/2000/svg" &gt;
       &lt;rect x="45.0002" y="45.0001" width="1181" height="1289" class="usgsbox-1"&gt;&lt;/rect&gt;
       &lt;rect x="1226" y="1334" width="1181" height="1289" transform="rotate(-180 1226 1334)" class="usgsbox-2" &gt;&lt;/rect&gt;
@@ -874,14 +895,18 @@ Display and code for animated loaders.
       &lt;path  d="M54.5001 873.279C54.5001 911.779 54.0001 925.78 54.0001 994.78C133.68 944.15 214.393 886.783 309.862 825.286C349.898 799.496 393.181 776.946 440.469 771.305C622.135 749.635 701.206 900.864 836.5 954C921.253 989.601 990.549 980.218 1050.41 954.602C1065.69 948.064 1079.79 939.139 1093.44 929.657C1144.08 894.47 1188.65 866.088 1218 847.28L1218 722.28C1113 784 1058.5 839.5 980.5 873.279C888.5 920.5 745 894.5 662 797C516.5 694 370.5 648.5 251 740.279C171.988 794.846 99.5001 841.279 54.5001 873.279Z"  class="usgsbox-4" &gt;&lt;/path&gt;
       &lt;path d="M1216.5 600C1216.5 561.5 1217 547.5 1217 478.5C1121 539.5 1020 614 897 690C726.5 806 606 740 515.5 659C323.5 529 208 499 53.0005 626V751C163.5 688 205 606.5 376.5 631.5C522 665 524 771 726.5 823C831.578 854.254 896.5 823 1020 733C1099.01 678.433 1171.5 632 1216.5 600Z" class="usgsbox-5"&gt;&lt;/path&gt;
       &lt;path d="M1216 357.5V236C996.496 363.9 758.695 564.242 631.999 603.069C599.055 613.165 563.255 611.37 529.124 606.641C353.567 582.316 311.249 378.766 52.0002 403.5V506C188.383 454.709 279.008 492.005 353.685 552.725C377.294 571.922 401.094 590.996 426.764 607.335C494.778 650.626 557.824 690.145 655.5 689C779 684 966 507 1216 357.5Z" class="usgsbox-6"&gt;&lt;/path&gt;
-    &lt;/svg&gt;</span>
+    &lt;/svg&gt;</span><span v-if="animationShape == 'line'">
+    &lt;div class="loader-line-track"&gt;
+      &lt;div class="loader-line"&gt;&lt;/div&gt;
+    &lt;/div&gt;</span>
+
   &lt;/div&gt;
 <!-- Title and Subtitle -->
-  <span v-if="loaderTitle && display != 'blockloader'">
+  <span v-if="loaderTitle && display != 'blockloader' && animationShape != 'line'">
   &lt;!-- Title and Subtitle --&gt;
   &lt;div class="loader-title"&gt;
     {{loaderTitle}}
-  &lt;/div&gt;</span><span v-if="loaderSubtitle && display != 'blockloader'">
+  &lt;/div&gt;</span><span v-if="loaderSubtitle && display != 'blockloader'&& animationShape != 'line'">
   &lt;div class="'loader-subtitle"&gt;
     {{loaderSubtitle}}
   &lt;/div&gt;</span>
@@ -903,14 +928,14 @@ Display and code for animated loaders.
 
 /* Colors */
 .loader-wrapper{
-  color: {{ loaderColor == 'white' ? 'white' : 'black' }};<span v-if="display == 'fullscreen' || display == 'fillparent'">
-  background-color: {{ loaderColor == 'white' ? 'rgba(10,10,30,0.65)' : 'rgba(255,255,255,0.65)' }};</span>
+  color: {{ loaderColor == 'white' ? 'white' : 'black' }};
+  <span v-if="animationShape != 'line' && (display == 'fullscreen' || display == 'fillparent')">background-color: {{ loaderColor == 'white' ? 'rgba(10,10,30,0.65)' : 'rgba(255,255,255,0.65)' }};</span>
 }
 
 /*  Display and positioning */<span v-if="display == 'blockloader'">
 .loader-wrapper{
   display: block;
-}</span><span v-if="display == 'fullscreen'">
+}</span><span v-if="display == 'fullscreen' && animationShape != 'line'">
 .loader-wrapper{
   display: flex;
   flex-direction: column;
@@ -923,7 +948,7 @@ Display and code for animated loaders.
   height: 100%;
   z-index: 10000;
   margin: 0 auto;
-}</span><span v-if="display == 'fillparent'">
+}</span><span v-if="display == 'fillparent' && animationShape != 'line'">
 .loader-wrapper{
   display: flex;
   flex-direction: column;
@@ -935,12 +960,12 @@ Display and code for animated loaders.
   width: 100%;
   height: 100%;
   z-index: 1000;
-}</span><span v-if="display == 'fullscreen' || display == 'fillparent'">
+}</span><span v-if="animationShape != 'line' && (display == 'fullscreen' || display == 'fillparent')">
 /*  Center the SVG */
 .loader-wrapper .loader-object{
   margin: 0 auto;
 }</span>
-
+<span v-if="animationShape != 'line'">
 /* Set size */
 .loader-object{
   max-width: {{loaderSize}}px;
@@ -969,7 +994,55 @@ Display and code for animated loaders.
   font-size: 14px;
   padding-top: 15px;
   letter-spacing: 0.2px;
+}</span>
+<span v-if="animationShape == 'line'">
+.loader-line-track{
+  display: block;
+  height: 6px;
+  width: {{loaderSize}}px;
+  max-width: {{loaderSize}}px;
+  z-index: 1000;
+  position: relative;
+  overflow: hidden;
 }
+.loader-line{
+  display: block;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 0px;
+  background-color: {{loaderColor}};
+  margin: 0 auto;
+}<span v-if="animationType == 'stroke'">
+.loader-line {
+  animation: animation-line-stroke  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+}</span><span v-if="animationType == 'shake'">
+.loader-line {
+  animation: animation-line-shake  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+}</span><span v-if="animationType == 'pulse'">
+.loader-line {
+  animation: animation-line-pulse  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+}</span>
+<span v-if="display == 'fillparent'">
+<!-- Fullscreen, top of page -->
+.loader-line-track{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: unset;
+}</span><span v-if="display == 'fullscreen'">
+<!-- Fullscreen, top of page -->
+.loader-line-track{
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: unset;
+}
+</span>
+
+</span>
 <span v-if="animationShape == 'wimpin' && animationType == 'stroke'">
 /* WIM Pin Draw SVG Styles */
 .wimpinstroke path {
@@ -1273,7 +1346,7 @@ Display and code for animated loaders.
   	65% { opacity: 0;}
   	85% {opacity: 1;}
   	100% {opacity: 1;}
-}</span><span v-if="animationType == 'shake'">
+}</span><span v-if="animationType == 'shake' && animationShape != 'line'">
 /* Earthquake/shake animation */
 @keyframes shake {
   0% {transform: translate(0, 0);}
@@ -1293,7 +1366,7 @@ Display and code for animated loaders.
   94% {transform: translate(3px, -2px);}
   100% {transform: translate(0, 0);}
 }
-</span><span v-if="animationType == 'pulse'">
+</span><span v-if="animationType == 'pulse' && animationShape != 'line'">
 /* Pulse animation */
 @keyframes pulse {
   0% {transform: scale(1);}
@@ -1303,7 +1376,69 @@ Display and code for animated loaders.
   85% {transform: scale(1.2);}
   100% {transform: scale(1);}
 }
-</span>
+</span><span v-if="animationShape == 'line'">
+<span v-if="animationType == 'stroke'">/* Draw Animation */
+@keyframes animation-line-stroke {
+  0%{
+    width: 0%;
+    left: 0%;
+  }
+  50%{
+    left: 0%;
+    width: 100%;
+  }
+  100%{
+    width: 0%;
+    left: 100%;
+  }
+}</span><span v-if="animationType == 'shake'">
+/* Shake animation */
+@keyframes animation-line-shake {
+  0%{
+    width: 40%;
+    left: 30%;
+  }
+  20%{left: 15%;}
+  40%{left: 45%;}
+  60%{left: 25%;}
+  80%{left:45%;}
+  100%{
+    width: 40%;
+    left: 30%;
+  }
+}
+</span><span v-if="animationType == 'pulse'">
+@keyframes animation-line-pulse {
+  0%{
+    width: 0%;
+    left: 50%;
+  }
+  15%{
+    width: 0%;
+    left: 50%;
+  }
+  30%{
+    width: 60%;
+    left: 20%;
+  }
+  50%{
+    width: 20%;
+    left: 40%;
+  }
+  70%{
+    width: 100%;
+    left: 0%;
+  }
+  85%{
+    width: 0%;
+    left: 50%;
+  }
+  100%{
+    width: 0%;
+    left: 50%;
+  }
+}
+</span></span>
 				</code>
 			</pre>
 		</div>
@@ -1611,52 +1746,61 @@ export default {
 
 // Line
 @keyframes animation-line-stroke {
-	0.0%{
-		width: 0px;
+	0%{
+		width: 0%;
 		left: 0%;
 	}
 	50%{
-		width: 50%;
+		left: 0%;
+		width: 100%;
 	}
 	100%{
-		width: 50%;
+		width: 0%;
 		left: 100%;
 	}
 }
 @keyframes animation-line-shake {
 	0%{
-		width: 60%;
-		left: 20%;
+		width: 40%;
+		left: 30%;
 	}
-	20%{left: 5%;}
-	30%{left: 0%;}
-	40%{left: 15%;}
-	50%{left: 5%;}
-	60%{left: 20%;}
-	70%{left: 10%;}
-	80%{left: 0%;}
-	90%{left: 15%;}
+	20%{left: 15%;}
+	40%{left: 45%;}
+	60%{left: 25%;}
+	80%{left:45%;}
 	100%{
-		width: 50%;
+		width: 40%;
 		left: 30%;
 	}
 }
 @keyframes animation-line-pulse {
 	0%{
+		width: 0%;
+		left: 50%;
+	}
+	15%{
+		width: 0%;
+		left: 50%;
+	}
+	30%{
+		width: 60%;
+		left: 20%;
+	}
+	50%{
 		width: 20%;
 		left: 40%;
 	}
-	33%{
+	70%{
 		width: 100%;
 		left: 0%;
 	}
-	66%{
-		width: 30%;
-		left: 35%;
+	85%{
+		width: 0%;
+		left: 50%;
 	}
 	100%{
-		width: 70%;
-		left: 10%;
+		width: 0%;
+		left: 50%;
 	}
 }
 
