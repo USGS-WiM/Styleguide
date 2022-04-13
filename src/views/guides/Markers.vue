@@ -90,15 +90,28 @@ Create custom map markers
 							<div class="field mtop-xs">
 								<label class="big" for="mk_brdwt">Border Style</label>
 								<div class="flex gap">
-									<select v-model="marker.borderStyle" :disabled="!marker.border">
+									<select v-model="marker.borderStyle" :disabled="!marker.border" id="mk_brdwt">
 										<option v-for="(style, key) in borderStyles" :key="key" class="capitalize" :value="style">
 											{{style}}
 										</option>
 									</select>
 								</div>
 							</div>
+							<!-- Border Radius -->
+							<transition name="basic">
+								<div class="field mtop-xs" v-if="marker.shape == 'square' || marker.shape == 'diamond'">
+									<label class="big" for="mk_brrd">Border Radius</label>
+									<div class="flex gap">
+										<div class="flex column flex-center">
+											<input type="number" id="mk_brrd" min="1" :max="marker.size / 2" step="1" v-model="marker.borderRadius" class="short" :disabled="!marker.border || marker.shape == 'circle' || marker.shape == 'map-marker' || marker.shape == 'triangle'"/>
+										</div>
+										<input type="range" :max="marker.size / 2" min="0" step="1" v-model="marker.borderRadius" :disabled="!marker.border || marker.shape == 'circle' || marker.shape == 'map-marker' || marker.shape == 'triangle'"/>
+									</div>
+								</div>
+							</transition>
 
 						</section>
+
 						<section key="2" v-if="marker.shape == 'triangle'">
 							<p class="small">
 								<b>
@@ -244,7 +257,7 @@ Create custom map markers
 					</p> 
 					<pre class="mtop-sm"><code>
 	var mapIcon = L.divIcon({className: '<b>{{markerClassName}}</b>'});
-	var marker = marker = L.marker(&lt;Coords&gt;, {icon: mapIcon});
+	var marker = L.marker(&lt;Coords&gt;, {icon: mapIcon});
 	map.addLayer(marker);
 				</code></pre>
 
@@ -317,6 +330,8 @@ Create custom map markers
   <span v-if="marker.shape=='diamond'">transform: rotate(45deg);</span>
 <span v-if="marker.border && marker.shape != 'triangle'">  /* Border */
   border: {{marker.borderWeight}}px {{marker.borderStyle}} {{marker.borderColor}};</span>
+<span v-if="marker.border && marker.shape == 'square' || marker.shape == 'diamond'">  /* Border Radius */
+  border-radius: {{marker.borderRadius}}px;</span>
 <span v-if="marker.border && marker.shape != 'triangle'">
   /* Shadow */
   box-shadow: {{marker.shadowX}}px {{marker.shadowY}}px {{marker.shadowBlur}}px {{marker.shadowSpread}}px {{marker.shadowColor}};</span>
@@ -451,6 +466,12 @@ Create custom map markers
 				border: {{marker.borderWeight}}px {{marker.borderStyle}} {{marker.borderColor}};
 			}
 		</v-style>
+		<!-- Border-radius -->
+		<v-style v-if="marker.border == true && marker.shape != 'triangle' && marker.shape != 'map-marker' && marker.shape != 'circle'">
+			.myicon:after{
+				border-radius: {{marker.borderRadius}}px;
+			}
+		</v-style>
 
 
 		<!-- Shadow -->
@@ -561,6 +582,7 @@ export default {
 				borderWeight: 3,
 				borderColor: "#000000",
 				borderStyle: "solid",
+				borderRadius: 0,
 
 				shadow: true,
 				shadowColor: "rgba(0,0,0,0.25)",
@@ -671,6 +693,10 @@ export default {
 			margin-top: 15px;
 			// max-width: 280px;
 			flex-basis: 280px;
+
+			p{
+				max-width: 262px;
+			}
 
 			&.disabled{
 

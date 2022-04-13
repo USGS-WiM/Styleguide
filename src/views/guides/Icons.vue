@@ -105,7 +105,7 @@ Icons & Map Symbols
 	
 	var mapIcon = L.divIcon({className: 'wmm-pin wmm-blue wmm-icon-noicon wmm-icon-white wmm-size-25'});
 
-	var marker = marker = L.marker(&lt;Coords&gt;, {icon: mapIcon});
+	var marker = L.marker(&lt;Coords&gt;, {icon: mapIcon});
 
 	map.addLayer(marker);
 		</code></pre>
