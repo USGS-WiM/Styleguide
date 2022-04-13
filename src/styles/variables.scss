@@ -1,0 +1,305 @@
+//! Variables
+// Responsive Variables must be sass variables
+// because CSS variables can't be used in @media
+$screenXS: 380px;
+$screenSM: 768px;
+$screenLG: 1020px;
+$screenXL: 1400px;
+
+//  Root variables can be toggled by themes
+:root {
+
+	//* Global variables				
+	// Not specific to light theme 
+	// Fonts
+	--sans: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+	--serif: Merriweather Web, Georgia, Cambria, Times New Roman, Times, serif;
+	--monospace: Roboto Mono Web, Bitstream Vera Sans Mono, Consolas, Courier, monospace;
+	--fontAwesome: 'Font Awesome 6 Pro';
+	--fontAwesomeBrands: 'Font Awesome 6 Brands';
+	--systemFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	
+	// Measurements
+	--maxWidthSmall: 450px;
+	--maxWidth: 700px;
+	--maxWidthLarge: 1000px;
+	--padding: 40px;
+	@media (max-width: $screenSM) {--padding: 20px;}
+	@media (max-width: $screenSM) {--padding: 10px;}
+
+	// Misc
+	--borderRadius: 4px;
+	--transition: 0.1s;
+	--inputHeight: 40px;
+
+	--gap: 40px;
+	@media (max-width: $screenSM) {--gap: 20px;}
+	@media (max-width: $screenSM) {--gap: 10px;}
+
+
+	// Universal Color Definitions
+	--black: #07070f;
+	--white: #FFFFFF;
+
+
+	// Light Theme Specific Colors
+	--background: #ffffff;
+	--layer: var(--grey100);
+	--transparent: rgba(255,255,255,0.5);
+
+	// Main Colors
+	--usgsBlue: #00264C;
+	--usgsGreen: #016D4D;
+
+	--primary100: var(--blue100);
+		--primary200: var(--blue200);
+		--primary300: var(--blue300);
+		--primary400: var(--blue400);
+		--primary500: var(--blue500);
+		--primary600: var(--blue600);
+		--primary700: var(--blue700);
+		--primary800: var(--blue800);
+		--primary900: var(--blue900);
+	--red100: #ffd8da;
+		--red200: #ffb1b5;
+		--red300: #ff8a90;
+		--red400: #ff636b;
+		--red500: #ff3c46;
+		--red600: #cc3038;
+		--red700: #99242a;
+		--red800: #66181c;
+		--red900: #330c0e;
+	--orange100: #ffe2d4;
+		--orange200: #ffc4aa;
+		--orange300: #ffa77f;
+		--orange400: #ff8955;
+		--orange500: #FF6C2A;
+		--orange600: #cc5622;
+		--orange700: #994119;
+		--orange800: #662b11;
+		--orange900: #331608;
+	--yellow100: #fff9d5;
+		--yellow200: #fff3ab;
+		--yellow300: #ffed81;
+		--yellow400: #ffe757;
+		--yellow500: #ffe12d;
+		--yellow600: #ccb424;
+		--yellow700: #99871b;
+		--yellow800: #665a12;
+		--yellow900: #332d09;
+	--green100: #cdf3e7;
+		--green200: #9be8ce;
+		--green300: #68dcb6;
+		--green400: #36d19d;
+		--green500: #04c585;
+		--green600: #039e6a;
+		--green700: #027650;
+		--green800: #024f35;
+		--green900: #01271b;
+	--green100: #cdf3e7;
+		--green200: #9be8ce;
+		--green300: #68dcb6;
+		--green400: #36d19d;
+		--green500: #04c585;
+		--green600: #039e6a;
+		--green700: #027650;
+		--green800: #024f35;
+		--green900: #01271b;
+	--blue100: #cce4f7;
+		--blue200: #99c8ef;
+		--blue300: #66ade6;
+		--blue400: #3391de;
+		--blue500: #0076d6;
+		--blue600: #005eab;
+		--blue700: #004780;
+		--blue800: #002f56;
+		--blue900: #00182b;
+	--indigo100: #e1e2f4;
+		--indigo200: #c2c4e9;
+		--indigo300: #a4a7de;
+		--indigo400: #8589d3;
+		--indigo500: #676cc8;
+		--indigo600: #5256a0;
+		--indigo700: #3e4178;
+		--indigo800: #292b50;
+		--indigo900: #151628;
+	--violet100: #e6e1f0;
+		--violet200: #cdc3e1;
+		--violet300: #b3a4d1;
+		--violet400: #9a86c2;
+		--violet500: #8168b3;
+		--violet600: #67538f;
+		--violet700: #4d3e6b;
+		--violet800: #342a48;
+		--violet900: #1a1524;
+	--magenta100: #f7d5e4;
+		--magenta200: #efabc9;
+		--magenta300: #e781af;
+		--magenta400: #df5794;
+		--magenta500: #d72d79;
+		--magenta600: #ac2461;
+		--magenta700: #811b49;
+		--magenta800: #6c173d;
+		--magenta900: #2b0918;
+	--grey100: #F0F2F5;
+		--grey200: #D6DAE0;
+		--grey300: #b3b9c2;
+		--grey400: #808a99;
+		--grey500: #4d5b70;
+		--grey600: #33435b;
+		--grey700: #1a2c47;
+		--grey800: #001432;
+		--grey900: #001028;
+
+
+	// Text Colors
+	--text: var(--grey900);
+		--textFade: var(--grey500);
+		--textLight: var(--grey700);
+
+	// Borders
+	--border: var(--grey700);
+		--borderFade: var(--grey200);
+		--borderLight: var(--grey300);
+		--borderDark: var(--grey900);
+
+
+	// Accessibility Outline Color
+	--outline: var(--blue700);
+
+	// Scrollbar Thumb Color
+	--scrollThumb: var(--grey900);
+
+	// Links
+	--links: var(--blue500);
+	--linksHover: var(--blue600);
+
+
+	// Box Shadows
+		--shadow: 0px 2px 4px 0px rgba(30, 30, 60, 0.11);
+		--shadowHover: 0px 2px 20px -5px rgba(30, 30, 60, 0.15);
+}
+
+
+
+// Dark Theme changes
+[data-theme="dark"] {
+
+	// Dark Theme Specific Colors
+	--background: #000619;
+	--layer: var(--grey100);
+	--transparent: rgba(255,255,255,0.5);
+
+	// Main Colors
+	--primary100: var(--blue100);
+		--primary200: var(--blue200);
+		--primary300: var(--blue300);
+		--primary400: var(--blue400);
+		--primary500: var(--blue500);
+		--primary600: var(--blue600);
+		--primary700: var(--blue700);
+		--primary800: var(--blue800);
+		--primary900: var(--blue900);
+	--red900: #ffd8da;
+		--red800: #ffb1b5;
+		--red700: #ff8a90;
+		--red600: #ff636b;
+		--red500: #ff3c46;
+		--red400: #cc3038;
+		--red300: #99242a;
+		--red200: #66181c;
+		--red100: #330c0e;
+	--orange900: #ffe2d4;
+		--orange800: #ffc4aa;
+		--orange700: #ffa77f;
+		--orange600: #ff8955;
+		--orange500: #FF6C2A;
+		--orange400: #cc5622;
+		--orange300: #994119;
+		--orange200: #662b11;
+		--orange100: #331608;
+	--yellow900: #fff9d5;
+		--yellow800: #fff3ab;
+		--yellow700: #ffed81;
+		--yellow600: #ffe757;
+		--yellow500: #ffe12d;
+		--yellow400: #ccb424;
+		--yellow300: #99871b;
+		--yellow200: #665a12;
+		--yellow100: #332d09;
+	--green900: #cdf3e7;
+		--green800: #9be8ce;
+		--green700: #68dcb6;
+		--green600: #36d19d;
+		--green500: #04c585;
+		--green400: #039e6a;
+		--green300: #027650;
+		--green200: #024f35;
+		--green100: #01271b;
+	--green900: #cdf3e7;
+		--green800: #9be8ce;
+		--green700: #68dcb6;
+		--green600: #36d19d;
+		--green500: #04c585;
+		--green400: #039e6a;
+		--green300: #027650;
+		--green200: #024f35;
+		--green100: #01271b;
+	--blue900: #cce4f7;
+		--blue800: #99c8ef;
+		--blue700: #66ade6;
+		--blue600: #3391de;
+		--blue500: #0076d6;
+		--blue400: #005eab;
+		--blue300: #004780;
+		--blue200: #002f56;
+		--blue100: #00182b;
+	--indigo900: #e1e2f4;
+		--indigo800: #c2c4e9;
+		--indigo700: #a4a7de;
+		--indigo600: #8589d3;
+		--indigo500: #676cc8;
+		--indigo400: #5256a0;
+		--indigo300: #3e4178;
+		--indigo200: #292b50;
+		--indigo100: #151628;
+	--violet900: #e6e1f0;
+		--violet800: #cdc3e1;
+		--violet700: #b3a4d1;
+		--violet600: #9a86c2;
+		--violet500: #8168b3;
+		--violet400: #67538f;
+		--violet300: #4d3e6b;
+		--violet200: #342a48;
+		--violet100: #1a1524;
+	--magenta900: #f7d5e4;
+		--magenta800: #efabc9;
+		--magenta700: #e781af;
+		--magenta600: #df5794;
+		--magenta500: #d72d79;
+		--magenta400: #ac2461;
+		--magenta300: #811b49;
+		--magenta200: #6c173d;
+		--magenta100: #2b0918;
+	--grey900: #F0F2F5;
+		--grey800: #D6DAE0;
+		--grey700: #b3b9c2;
+		--grey600: #808a99;
+		--grey500: #4d5b70;
+		--grey400: #33435b;
+		--grey300: #1a2c47;
+		--grey200: #001432;
+		--grey100: #001028;
+
+
+	// Box Shadows
+	--shadow:
+		0px 2px 15px -8px rgba(10,10,10,0.6),
+		0px 4px 20px -10px rgba(10,10,10,0.45);
+
+
+}
+[data-theme="high-contrast-dark"] {
+
+}
+

@@ -1,40 +1,43 @@
-on:
-  push:
-    branches:
-    - master
-name: "Production"
-jobs:
-  pushToTest:
-    name: Push to PRODUCTION
-    runs-on: ubuntu-latest
+# Set up for old version of Styleguide. Needs to be redone with current build process
 
-    steps:
-    - uses: actions/checkout@master
-    - name: Set Up Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.15'
-    - run: npm run-script build
+
+# on:
+#   push:
+#     branches:
+#     - master
+# name: "Production"
+# jobs:
+#   pushToTest:
+#     name: Push to PRODUCTION
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - uses: actions/checkout@master
+#     - name: Set Up Node
+#       uses: actions/setup-node@v1
+#       with:
+#         node-version: '10.15'
+#     - run: npm run-script build
       
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-2
-    - run: aws s3 cp /home/runner/work/Styleguide/Styleguide/public/ s3://wim.usgs.gov/styleguide --recursive
+#     - name: Configure AWS Credentials
+#       uses: aws-actions/configure-aws-credentials@v1
+#       with:
+#         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         aws-region: us-east-2
+#     - run: aws s3 cp /home/runner/work/Styleguide/Styleguide/public/ s3://wim.usgs.gov/styleguide --recursive
 
-    - name: AWS Test Failure
-      if: failure()
-      uses: Ilshidur/action-slack@2a8ddb6db23f71a413f9958ae75bbc32bbaa6385
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      with:
-        args: ":warning::production: Error deploying *Styleguide* to wim.usgs.gov - GitHub Action Failed"
+#     - name: AWS Test Failure
+#       if: failure()
+#       uses: Ilshidur/action-slack@2a8ddb6db23f71a413f9958ae75bbc32bbaa6385
+#       env:
+#         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+#       with:
+#         args: ":warning::production: Error deploying *Styleguide* to wim.usgs.gov - GitHub Action Failed"
 
-    - name: GitHub Action for Slack
-      uses: Ilshidur/action-slack@2a8ddb6db23f71a413f9958ae75bbc32bbaa6385
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      with:
-        args: ":production: Successfully deployed *Styleguide* to wim.usgs.gov/styleguide :fire:"
+#     - name: GitHub Action for Slack
+#       uses: Ilshidur/action-slack@2a8ddb6db23f71a413f9958ae75bbc32bbaa6385
+#       env:
+#         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+#       with:
+#         args: ":production: Successfully deployed *Styleguide* to wim.usgs.gov/styleguide :fire:"
