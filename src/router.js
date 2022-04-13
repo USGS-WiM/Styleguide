@@ -14,7 +14,8 @@ Vue.use(Router);
 
 
 const router = new Router({
-	mode: "history",
+	// Uncomment for html 5 (non-hash) URLS
+	// mode: "history", 
 	linkExactActiveClass: "is-active",
 	base: process.env.VUE_APP_BASE_PATH,
 	// Return to top after route change
