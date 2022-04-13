@@ -1,43 +1,46 @@
 [
   {
-    "name": "wim-styleguide",
+    "name": "Styleguide",
     "organization": "U.S. Geological Survey",
-    "description": "Frontend development styleguide for WIM",
-    "version": "v2.0.0",
-    "status": "Production",
+    "description": "WIM Styleguide and dev tools.",
+    "version": "v1.0.0",
+    "status": "Release Candidate",
 
     "permissions": {
       "usageType": "openSource",
       "licenses": [
         {
           "name": "Public Domain, CC0-1.0",
-          "URL": "https://github.com/USGS-WIM/Styleguide/blob/master/LICENSE.md"
+          "URL": "https://github.com/usgs/best-practices/blob/master/LICENSE.md"
         }
       ]
     },
 
-    "homepageURL": "https://wim.usgs.gov/styleguide",
-    "downloadURL": "https://github.com/USGS-WIM/Styleguide/archive/master.zip",
-    "disclaimerURL": "https://github.com/USGS-WIM/Styleguide/blob/master/DISCLAIMER.md",
-    "repositoryUrl": "https://github.com/USGS-WIM/Styleguide",
+    "homepageURL": "https://wim.usgs.gov/styleguide/",
+    "downloadURL": "https://github.com/USGS-WiM/styleguide/archive/master.zip",
+    "disclaimerURL": "https://github.com/USGS-WiM/styleguide/blob/master/DISCLAIMER.md",
+    "repositoryUrl": "https://github.com/USGS-WiM/styleguide",
     "vcs": "git",
 
     "laborHours": null,
 
     "tags": [
-      "Webapp"
+      "Styleguide",
+      "CSS",
     ],
 
     "languages": [
+      "Vue",
+      "CSS"
     ],
 
     "contact": {
       "name": "Mitch Samuels",
-      "email": "msamuels@usgs.gov"
+      "email": "msamuels@contractor.usgs.gov"
     },
 
     "date": {
-      "metadataLastUpdated": "2019-04-13"
+      "metadataLastUpdated": "2022-03-24"
     }
   }
 ]
