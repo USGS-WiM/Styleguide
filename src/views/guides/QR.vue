@@ -43,7 +43,7 @@ QR Code generator
 						<us-form-input name="QRForeground2" v-model="qr.foreground" placeholder="000000/"/>
 					</us-form-group>
 
-						<!-- Transparent -->
+					<!-- Transparent -->
 					<div class="mright-md mbottom-sm flex mtop-md">
 						<div class="flex column flex-center">
 							<input type="checkbox" class="toggle yes-no" id="transToggle" v-model="qr.transparent"/>

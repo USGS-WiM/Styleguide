@@ -31,7 +31,7 @@
 
 
 				<!-- All page content contained within main -->
-				<main id="content">
+				<main id="styleguide">
 
 					<!-- Top bar component -->
 					<TopBar></TopBar>
@@ -245,7 +245,7 @@ export default {
 
 
 	//  Main App Content
-	main#content{
+	main#styleguide{
 		box-sizing: border-box;
 		padding-right: 0;
 		z-index: 1;

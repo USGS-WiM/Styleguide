@@ -272,9 +272,15 @@ Create custom map markers
 					</div>
 
 					<div id="output">
-						<pre>
-							<code>
 
+						<!-- Copy to clipboard -->
+						<button @click="copyBlock('markerCSS')" class="button small transparent mtop-xs mleft-xs">
+							<i class="far fa-copy"></i>
+							<span>Copy to Clipboard</span>
+						</button>
+
+						<pre>
+							<code id="markerCSS">
 <b>/* Marker CSS */</b>
 .{{markerClassName}}{
   position: relative;
@@ -288,7 +294,7 @@ Create custom map markers
   box-sizing: border-box;
   position: relative;
   transform-origin: 50% 50%;
-  margin-left: {{marker.size * .1}}px;
+  margin-left: 5.5px;
   <span v-if="marker.shape == 'triangle'">
   border-left: {{marker.size}}px solid transparent;
   border-right: {{marker.size}}px solid transparent;
@@ -309,8 +315,7 @@ Create custom map markers
   border-bottom-right-radius: 50%;
   transform: rotate(-45deg);</span>
   <span v-if="marker.shape=='diamond'">transform: rotate(45deg);</span>
-<span v-if="marker.border && marker.shape != 'triangle'">
-  /* Border */
+<span v-if="marker.border && marker.shape != 'triangle'">  /* Border */
   border: {{marker.borderWeight}}px {{marker.borderStyle}} {{marker.borderColor}};</span>
 <span v-if="marker.border && marker.shape != 'triangle'">
   /* Shadow */
@@ -338,8 +343,7 @@ Create custom map markers
   <span v-if="marker.shape == 'map-marker'">top:-{{marker.iconSize * 1.5}}px;</span>
   height: 0;
   width: 0;</span>
- 
-  margin-left: {{marker.size * .1}}px;
+  margin-left: 5.5px;
   z-index: 1;
   position: absolute;
   content: "{{marker.iconCharacter || ' '}}";
@@ -381,7 +385,7 @@ Create custom map markers
 				top: -{{marker.size / 2}}px;
 				background-color: {{marker.background}};
 				transform-origin: 50% 50%;
-  				margin-left: {{marker.size * .1}}px;
+  				margin-left: 5.5px;
 			}
 
 			<!-- Highlight shape with custom color -->
@@ -466,12 +470,12 @@ Create custom map markers
 				width: {{marker.iconSize}}px;
 				left: -{{marker.iconSize / 2}}px;
 				top: -{{marker.iconSize / 2}}px;
-  				margin-left: {{marker.size * .1}}px;
 				font-size: {{marker.iconSize - 2}}px;
 				color: {{marker.iconColor}};
 				line-height: {{marker.iconSize - 2}}px;
 				font-weight: 600;
 				text-align: center;
+  				margin-left: 6px;
 			}
 		</v-style>
 		<v-style v-if="!marker.iconCharacter">
@@ -597,7 +601,7 @@ export default {
 
 		var previewIcon = L.divIcon({className: "myicon"});
 		// you can set .my-div-icon styles in CSS
-		L.marker([43.092533,-89.5324482], {icon: previewIcon}).addTo(mainMap);
+		L.marker([43.092533,-89.5324482], {icon: previewIcon}).addTo(mainMap).bindPopup("<b>Hello world!</b><br />I am a popup.");;
 
 
 	},
@@ -636,19 +640,25 @@ export default {
 	margin: 0 auto;
 	justify-content: center;
 	box-sizing: border-box;
-	width: fit-content;
+	width: 100%;
+
+	@media (max-width: $screenLG) {
+		flex-wrap: wrap;
+		flex-direction: row-reverse;
+		margin-bottom: 30vh;
+	}
 
 	#markerGeneratorOptions{
 		box-sizing: border-box;
 		padding: var(--padding);
 		overflow: auto;
-		min-width: 400px;
 		display: flex;
 		flex-wrap: wrap; 
 		gap: 30px;
 		width: fit-content;
 		justify-content: space-around;
 		height: fit-content;
+		width: fit-content;
 		
 		.marker-form-group{
 		}
@@ -659,7 +669,8 @@ export default {
 			padding: 15px;
 			border-radius: var(--borderRadius);
 			margin-top: 15px;
-			max-width: 280px;
+			// max-width: 280px;
+			flex-basis: 280px;
 
 			&.disabled{
 
@@ -678,6 +689,11 @@ export default {
 		padding: var(-padding);
 		width: fit-content;
 		padding-top: 5vh;
+
+		@media (max-width: $screenLG) {
+			width: 100%;
+			padding: 0;
+		}
 	}
 	#map{
 		max-width: 400px;
@@ -688,12 +704,27 @@ export default {
 		z-index: 0;
 		margin: var(--padding);
 		border-radius: calc( var(--borderRadius) * 2);
+		
+		@media (max-width: $screenLG) {
+			width: 100%;
+			margin: 0;
+			position: fixed !important;
+			bottom: 0;
+			left: 0;
+			height: 30vh;
+			z-index: 50;
+		}
+
 	}
 
 	#outputArea{
 		max-width: 400px;
 		width: 100%;
 		margin: 0 auto;
+
+		#output{
+			background-color: var(--grey100);
+		}
 	}
 }
 
@@ -723,633 +754,6 @@ export default {
 		display: none;
 	}
 
-}
-
-
-
-
-
-.wmm-pin.wmm-borderless:after {
-  border: none;
-}
-
-
-
-.wmm-circle.wmm-borderless:after {
-  border: none;
-}
-.wmm-square {
-  display: block;
-  overflow: hidden;
-  position: absolute;
-  overflow: visible;
-}
-.wmm-square:after {
-  content: '';
-  display: block;
-  transition: 0.1s;
-  border: 3px solid rgba(0, 0, 0, 0.5);
-  background-color: white;
-  margin: 0 auto;
-  border-radius: 0%;
-  box-sizing: border-box;
-  position: relative;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
-}
-.wmm-square.wmm-borderless:after {
-  border: none;
-}
-.wmm-triangle {
-  height: 0px !important;
-  width: 0px !important;
-  border-top: none !important;
-  background-color: transparent !important;
-  background-color: transparent;
-  position: absolute;
-  top: 1px;
-  padding: 0;
-  overflow: visible !important;
-  color: white !important;
-  font-size: 14px;
-}
-.wmm-triangle:before {
-  display: none !important;
-}
-.wmm-diamond {
-  display: block;
-  overflow: hidden;
-  position: absolute;
-  overflow: visible !important;
-}
-.wmm-diamond:after {
-  content: '';
-  display: block;
-  transition: 0.1s;
-  border: 3px solid rgba(0, 0, 0, 0.5);
-  background-color: white;
-  margin: 0 auto;
-  border-radius: 0%;
-  box-sizing: border-box;
-  position: relative;
-  transform: rotate(45deg);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
-}
-.wmm-diamond.wmm-borderless:after {
-  border: none;
-}
-.wmm-pin,
-.wmm-circle,
-.wmm-square,
-.wmm-triangle,
-.wmm-diamond {
-  display: block;
-  overflow: hidden;
-  position: absolute !important;
-}
-.wmm-pin:hover,
-.wmm-circle:hover,
-.wmm-square:hover,
-.wmm-triangle:hover,
-.wmm-diamond:hover {
-  transition: 0.1s;
-}
-.wmm-pin:before,
-.wmm-circle:before,
-.wmm-square:before,
-.wmm-triangle:before,
-.wmm-diamond:before {
-  height: 20px;
-  width: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  font-weight: bolder;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 500;
-}
-/*
-Background colors
-Background colors
-Background colors
-*/
-.wmm-black:after {
-  background-color: #06070E;
-  border-color: #06070E;
-  color: #06070E;
-}
-.wmm-white:after {
-  background-color: #ffffff;
-  border-color: #06070E;
-  color: #ffffff;
-}
-.wmm-red:after {
-  background-color: #FC3C4F;
-}
-.wmm-green:after {
-  background-color: #25B9AA;
-}
-.wmm-blue:after {
-  background-color: #3092F4;
-}
-.wmm-orange:after {
-  background-color: #FB833C;
-}
-.wmm-yellow:after {
-  background-color: #FCDC76;
-}
-.wmm-purple:after {
-  background-color: #A06FF9;
-}
-.wmm-altred:after {
-  background-color: #ff4d4d;
-}
-.wmm-darkred:after {
-  background-color: #b8141f;
-}
-.wmm-altorange:after {
-  background-color: #FB833C;
-}
-.wmm-lime:after {
-  background-color: #37FD9F;
-}
-.wmm-sky:after {
-  background-color: #85e4fa;
-}
-.wmm-altblue:after {
-  background-color: #2346f6;
-}
-.wmm-mutedred:after {
-  background-color: #f15b74;
-}
-.wmm-mutedgreen:after {
-  background-color: #75AE8A;
-}
-.wmm-mutedblue:after {
-  background-color: #8CACAF;
-}
-.wmm-mutedorange:after {
-  background-color: #FD896D;
-}
-.wmm-mutedyellow:after {
-  background-color: #F7C781;
-}
-.wmm-mutedpurple:after {
-  background-color: #90748B;
-}
-.wmm-mutedpink:after {
-  background-color: #ffb3ff;
-}
-/*
-Icon Colors
-Icon Colors
-Icon Colors
-*/
-.wmm-icon-red:before {
-  background-color: #FC3C4F;
-  border-bottom-color: #FC3C4F !important;
-}
-.wmm-icon-green:before {
-  background-color: #25B9AA;
-  border-bottom-color: #25B9AA !important;
-}
-.wmm-icon-blue:before {
-  background-color: #3092F4;
-  border-bottom-color: #3092F4 !important;
-}
-.wmm-icon-orange:before {
-  background-color: #FB833C;
-  border-bottom-color: #FB833C !important;
-}
-.wmm-icon-yellow:before {
-  background-color: #FCDC76;
-  border-bottom-color: #FCDC76 !important;
-}
-.wmm-icon-purple:before {
-  background-color: #A06FF9;
-  border-bottom-color: #A06FF9 !important;
-}
-.wmm-icon-black:before {
-  background-color: #06070E;
-  border-bottom-color: #06070E !important;
-}
-.wmm-icon-white:before {
-  background-color: #ffffff;
-  border-bottom-color: #ffffff !important;
-}
-/*
-Icons
-Icons
-Icons
-*/
-.wmm-icon-noicon:before {
-  content: '';
-  display: none;
-}
-.wmm-icon-circle:before {
-  content: '';
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  position: absolute;
-}
-.wmm-icon-triangle:before {
-  content: '';
-  height: 0px;
-  width: 0px;
-  background-color: transparent !important;
-  position: absolute;
-  background-color: transparent;
-}
-.wmm-icon-square:before {
-  content: '';
-  height: 8px;
-  width: 8px;
-  position: absolute;
-}
-.wmm-icon-diamond:before {
-  content: '';
-  height: 8px;
-  width: 8px;
-  position: absolute;
-  transform: rotate(45deg) !important;
-}
-/*
-Marker size
-Marker size
-Marker size
-*/
-.wmm-size-15 {
-  height: 19px !important;
-  width: 15px !important;
-  margin-left: -7px !important;
-}
-.wmm-size-15:after {
-  height: 15px !important;
-  width: 15px !important;
-}
-.wmm-size-15.wmm-pin {
-  margin-top: -8px !important;
-}
-.wmm-size-15.wmm-triangle {
-  height: 0 !important;
-  width: 0 !important;
-  overflow: visible !important;
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-bottom: 16px solid white;
-  top: -2px;
-  left: -2px;
-}
-.wmm-size-15.wmm-triangle:after {
-  content: '\25b2';
-  background-color: transparent;
-  font-size: 14px;
-  font-family: sans-serif;
-  position: relative;
-  left: -7px;
-  top: -1px;
-}
-.wmm-size-15.wmm-icon-circle:before {
-  height: 5px;
-  width: 5px;
-  margin: 5px 0 0 5px;
-}
-.wmm-size-15.wmm-icon-square:before,
-.wmm-size-15.wmm-icon-diamond:before {
-  height: 5px;
-  width: 5px;
-  margin: 5px 0 0 5px;
-}
-.wmm-size-15.wmm-icon-triangle:before {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 7px solid white;
-  margin-top: 3px;
-  margin-left: 4px;
-}
-.wmm-size-20 {
-  height: 24px !important;
-  width: 20px !important;
-  margin-left: -10px !important;
-}
-.wmm-size-20:after {
-  height: 20px !important;
-  width: 20px !important;
-}
-.wmm-size-20.wmm-pin {
-  margin-top: -12px !important;
-}
-.wmm-size-20.wmm-triangle {
-  height: 0 !important;
-  width: 0 !important;
-  overflow: visible !important;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 20px solid white;
-  top: -2px;
-  left: -1px;
-}
-.wmm-size-20.wmm-triangle:after {
-  content: '\25b2';
-  background-color: transparent;
-  font-size: 18px;
-  font-family: sans-serif;
-  position: relative;
-  left: -9px;
-  top: -2px;
-}
-.wmm-size-20.wmm-icon-circle:before {
-  height: 8px;
-  width: 8px;
-  margin: 6px 0 0 6px;
-}
-.wmm-size-20.wmm-icon-square:before,
-.wmm-size-20.wmm-icon-diamond:before {
-  height: 8px;
-  width: 8px;
-  margin: 6px 0 0 6px;
-}
-.wmm-size-20.wmm-icon-triangle:before {
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 10px solid white;
-  margin-top: 4px;
-  margin-left: 5px;
-}
-.wmm-size-25 {
-  height: 30px !important;
-  width: 25px !important;
-  margin-left: -13px !important;
-}
-.wmm-size-25:after {
-  height: 25px !important;
-  width: 25px !important;
-}
-.wmm-size-25.wmm-pin {
-  margin-top: -17px !important;
-}
-.wmm-size-25.wmm-triangle {
-  height: 0 !important;
-  width: 0 !important;
-  overflow: visible !important;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 26px solid white;
-  left: -3px;
-  top: -2px;
-}
-.wmm-size-25.wmm-triangle:after {
-  content: '\25b2';
-  background-color: transparent;
-  font-size: 22px;
-  font-family: sans-serif;
-  position: relative;
-  left: -11px;
-  top: -1px;
-}
-.wmm-size-25.wmm-icon-circle:before {
-  height: 11px;
-  width: 11px;
-  margin: 7px 0 0 7px;
-}
-.wmm-size-25.wmm-icon-square:before,
-.wmm-size-25.wmm-icon-diamond:before {
-  height: 9px;
-  width: 9px;
-  margin: 8px 0 0 8px;
-}
-.wmm-size-25.wmm-icon-triangle:before {
-  border-left: 6px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 12px solid white;
-  margin-top: 5px;
-  margin-left: 7px;
-}
-.wmm-size-30 {
-  height: 36px !important;
-  width: 30px !important;
-  margin-left: -15px !important;
-}
-.wmm-size-30:after {
-  height: 30px !important;
-  width: 30px !important;
-}
-.wmm-size-30.wmm-pin {
-  margin-top: -22px !important;
-}
-.wmm-size-30.wmm-triangle {
-  height: 0 !important;
-  width: 0 !important;
-  overflow: visible !important;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-bottom: 30px solid white;
-  left: -3px;
-  top: -2px;
-}
-.wmm-size-30.wmm-triangle:after {
-  content: '\25b2';
-  background-color: transparent;
-  font-size: 24px;
-  font-family: sans-serif;
-  position: relative;
-  left: -12px;
-  top: 0px;
-}
-.wmm-size-30.wmm-icon-circle:before {
-  height: 14px;
-  width: 14px;
-  margin: 8px 0 0 8px;
-}
-.wmm-size-30.wmm-icon-square:before,
-.wmm-size-30.wmm-icon-diamond:before {
-  height: 12px;
-  width: 12px;
-  margin: 9px 0 0 9px;
-}
-.wmm-size-30.wmm-icon-triangle:before {
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 15px solid white;
-  margin-top: 6px;
-  margin-left: 7px;
-}
-.wmm-size-35 {
-  height: 42px !important;
-  width: 35px !important;
-  margin-left: -18px !important;
-}
-.wmm-size-35:after {
-  height: 35px !important;
-  width: 35px !important;
-}
-.wmm-size-35.wmm-pin {
-  margin-top: -26px !important;
-}
-.wmm-size-35.wmm-triangle {
-  height: 0 !important;
-  width: 0 !important;
-  overflow: visible !important;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 35px solid white;
-  left: -3px;
-  top: -5px;
-}
-.wmm-size-35.wmm-triangle:after {
-  content: '\25b2';
-  background-color: transparent;
-  font-size: 29px;
-  font-family: sans-serif;
-  position: relative;
-  left: -14px;
-  top: -1px;
-}
-.wmm-size-35.wmm-icon-circle:before {
-  height: 19px;
-  width: 19px;
-  margin: 8px 0 0 8px;
-}
-.wmm-size-35.wmm-icon-square:before,
-.wmm-size-35.wmm-icon-diamond:before {
-  height: 15px;
-  width: 15px;
-  margin: 10px 0 0 10px;
-}
-.wmm-size-35.wmm-icon-triangle:before {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-bottom: 18px solid white;
-  margin-top: 7px;
-  margin-left: 9px;
-}
-.wmm-triangle.wmm-black {
-  border-bottom-color: #000000;
-}
-.wmm-triangle.wmm-black:after {
-  color: #06070E;
-}
-.wmm-triangle.wmm-white {
-  border-bottom-color: #a6a6a6;
-}
-.wmm-triangle.wmm-white:after {
-  color: #ffffff;
-}
-.wmm-triangle.wmm-red {
-  border-bottom-color: #83020f;
-}
-.wmm-triangle.wmm-red:after {
-  color: #FC3C4F;
-}
-.wmm-triangle.wmm-green {
-  border-bottom-color: #072421;
-}
-.wmm-triangle.wmm-green:after {
-  color: #25B9AA;
-}
-.wmm-triangle.wmm-blue {
-  border-bottom-color: #06396c;
-}
-.wmm-triangle.wmm-blue:after {
-  color: #3092F4;
-}
-.wmm-triangle.wmm-orange {
-  border-bottom-color: #823203;
-}
-.wmm-triangle.wmm-orange:after {
-  color: #FB833C;
-}
-.wmm-triangle.wmm-yellow {
-  border-bottom-color: #bb9004;
-}
-.wmm-triangle.wmm-yellow:after {
-  color: #FCDC76;
-}
-.wmm-triangle.wmm-purple {
-  border-bottom-color: #4307ae;
-}
-.wmm-triangle.wmm-purple:after {
-  color: #A06FF9;
-}
-.wmm-triangle.wmm-altred {
-  border-bottom-color: #9a0000;
-}
-.wmm-triangle.wmm-altred:after {
-  color: #ff4d4d;
-}
-.wmm-triangle.wmm-darkred {
-  border-bottom-color: #170304;
-}
-.wmm-triangle.wmm-darkred:after {
-  color: #b8141f;
-}
-.wmm-triangle.wmm-altorange {
-  border-bottom-color: #823203;
-}
-.wmm-triangle.wmm-altorange:after {
-  color: #FB833C;
-}
-.wmm-triangle.wmm-lime {
-  border-bottom-color: #018044;
-}
-.wmm-triangle.wmm-lime:after {
-  color: #37FD9F;
-}
-.wmm-triangle.wmm-sky {
-  border-bottom-color: #08a1c4;
-}
-.wmm-triangle.wmm-sky:after {
-  color: #85e4fa;
-}
-.wmm-triangle.wmm-altblue {
-  border-bottom-color: #041462;
-}
-.wmm-triangle.wmm-altblue:after {
-  color: #2346f6;
-}
-.wmm-triangle.wmm-mutedred {
-  border-bottom-color: #8d0c22;
-}
-.wmm-triangle.wmm-mutedred:after {
-  color: #f15b74;
-}
-.wmm-triangle.wmm-mutedgreen {
-  border-bottom-color: #2a4734;
-}
-.wmm-triangle.wmm-mutedgreen:after {
-  color: #75AE8A;
-}
-.wmm-triangle.wmm-mutedblue {
-  border-bottom-color: #384e51;
-}
-.wmm-triangle.wmm-mutedblue:after {
-  color: #8CACAF;
-}
-.wmm-triangle.wmm-mutedorange {
-  border-bottom-color: #b52502;
-}
-.wmm-triangle.wmm-mutedorange:after {
-  color: #FD896D;
-}
-.wmm-triangle.wmm-mutedyellow {
-  border-bottom-color: #ba730c;
-}
-.wmm-triangle.wmm-mutedyellow:after {
-  color: #F7C781;
-}
-.wmm-triangle.wmm-mutedpurple {
-  border-bottom-color: #2d242c;
-}
-.wmm-triangle.wmm-mutedpurple:after {
-  color: #90748B;
-}
-.wmm-triangle.wmm-mutedpink {
-  border-bottom-color: #ff00ff;
-}
-.wmm-triangle.wmm-mutedpink:after {
-  color: #ffb3ff;
 }
 
 

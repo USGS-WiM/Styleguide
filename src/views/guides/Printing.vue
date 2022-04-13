@@ -14,7 +14,7 @@ Help for CSS printing issues
 
 		<h2 class="mtop-lg">Changing styles for printing</h2>
 		<p class="mbottom-sm">
-			CSS lets you change any styles when the user is printing. You can hide things that you don't want to print, like a navigation bar, and you can adjust things like font sizes, colors, or anything else CSS affects.
+			CSS lets you change any styles when the user is printing. You can hide things that you don't want to print, like a navigation bar, and you can adjust things like font sizes, colors, or anything else CSS can change.
 		</p>
 		<p>
 			It works similar to responsive or size media queries:

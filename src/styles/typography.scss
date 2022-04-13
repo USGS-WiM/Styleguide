@@ -389,7 +389,7 @@ pre{
 	background-color: var(--grey100);
 	line-height: 18px;
 	box-sizing: border-box;
-	padding: 15px;
+	padding: 0 15px;
 	border-radius: var(--borderRadius);
 	// Hidden
 	&::-webkit-scrollbar{

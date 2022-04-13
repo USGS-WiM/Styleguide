@@ -127,7 +127,7 @@ export default {
 				"CSS Variables": "/variables",
 				"Meta Tags": "/meta",
 				"USWDS": "/uswds",
-				"Dark Mode": "/darkmode",
+				"Dark Mode": "/dark",
 				"Printing": "/printing",
 				"Custom Components": "/components",
 			},

@@ -154,6 +154,20 @@ export default {
 			}
 		};
 
+		// Selects element by id and copies to clipboard 
+		Vue.prototype.copyBlock = function(id) {
+			let _this = this;
+			var range = document.createRange();
+			range.selectNode(document.getElementById(id));
+			window.getSelection().removeAllRanges();
+			window.getSelection().addRange(range);
+			document.execCommand("copy");
+			setTimeout(() => {
+				window.getSelection().removeAllRanges();
+				_this.hello("Copied to Clipboard!", "far fa-copy");
+			}, 500);
+		};
+
 		// Toast & Hello
 		// Toast & Hello
 		Vue.prototype.toast = function(title, body, color, icon, path, info) {

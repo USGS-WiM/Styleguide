@@ -28,10 +28,6 @@
 
 
 <script>
-/** 
- * @group Interface
- * Simple inline icon that shows tooltip popup on click with custom <slot> content.
- */
 export default {
 	name: "Tooltip",
 	mixins: [

@@ -77,7 +77,7 @@ button{
 	
 		<h3 class="mtop-lg mbottom-sm">Dark Mode & CSS Themes</h3>
 	
-		<router-link to="/darkmode" class="button">
+		<router-link to="/dark" class="button">
 			<i class="far fa-moon-stars"></i>
 			<span>View Dark Mode Page</span>
 		</router-link>

@@ -6,6 +6,7 @@ Display and code for animated loaders.
 <template>
   <div class="padded mtop-lg pbottom-xl">
     <h1>Animated Loaders</h1>
+	
 
     <p class="big">
       Use loaders in your application to show something is happening. This will provide the HTML and CSS for an animated loader, you'll need to show/hide it when needed. 
@@ -331,12 +332,19 @@ Display and code for animated loaders.
 			<!-- USGS Waves -->
 			<div class="loader-object" v-if="animationShape == 'usgswave'">
 				<!--?xml version="1.0" encoding="UTF-8"?-->
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 193 150" version="1.1" >
-					<path d="M 25.511658 668.330547 C 25.487128 705.357917 25.021049 719.889505 24.996519 785.097865 C 24.996519 786.666198 26.73818 787.670911 28.062824 786.837734 C 115.170418 731.308932 203.700777 667.791432 311.610185 599.666953 C 331.40625 587.169297 352.625081 576.509531 375.364799 570.873333 C 580.684585 519.9025 684.423818 689.037448 757.5 755.005469 C 784.998624 779.80474 851.500648 869.493802 1005.502753 912.990547 C 1092.217859 926.885 1146.528255 909.80487 1187.886577 889.539062 C 1188.573429 889.220495 1188.990447 888.485339 1188.990447 887.725677 C 1188.990447 825.531458 1188.05829 817.052656 1188.009229 767.944219 C 1188.009229 766.30237 1186.144916 765.346667 1184.820272 766.30237 C 1095.382286 830.162943 975.600146 867.729427 839.995871 779.24112 C 817.010848 764.219427 793.780521 749.32026 770.574725 734.641641 C 731.620385 709.964896 706.23138 682.126979 641.004938 605.499193 C 586.4983 588.492578 581.003481 568.006224 488.49919 510.173932 C 393.22296 472.926016 301.724417 473.048542 222.000486 534.287057 C 143.478546 588.517083 71.383582 634.709401 26.321163 666.688698 C 25.806023 667.056276 25.511658 667.668906 25.511658 668.330547 Z M 25.511658 668.330547 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-1"></path>
-					<path d="M 25.511658 668.330547 C 25.487128 705.357917 25.021049 719.889505 24.996519 785.097865 C 24.996519 786.666198 26.73818 787.670911 28.062824 786.837734 C 106.756477 736.675573 186.627591 679.995026 280.873543 619.295625 C 320.907222 593.491641 364.178918 570.946849 411.473608 565.310651 C 593.146049 543.623542 672.207659 694.869688 807.493038 747.996979 C 892.245709 783.603047 961.544203 774.217552 1021.398478 748.609609 C 1036.680942 742.066719 1050.785946 733.146823 1064.449401 723.663307 C 1114.565091 688.841406 1158.744414 660.660417 1188.082821 641.864922 C 1188.671551 641.497344 1188.990447 640.835703 1188.990447 640.149557 L 1188.990447 519.804479 C 1188.990447 518.260651 1187.297847 517.280443 1185.948672 518.064609 C 1082.945353 579.082578 1028.75761 633.827214 951.511253 667.276823 C 901.959764 692.713229 837.493766 696.90362 775.554404 680.142057 C 671.054728 651.838542 578.72215 560.899714 484.01012 508.458568 C 390.328368 472.950521 300.448834 474.02875 222.000486 534.287057 C 143.478546 588.517083 71.383582 634.709401 26.321163 666.688698 C 25.806023 667.056276 25.511658 667.668906 25.511658 668.330547 Z M 25.511658 668.330547 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-2" ></path>
-					<path d="M 1187.49409 392.965521 C 1187.51862 355.595078 1187.984699 341.137005 1188.009229 274.360313 C 1188.009229 273.576146 1187.126133 273.061536 1186.463812 273.478125 C 1090.917746 334.300052 990.34294 408.403802 868.009634 484.00237 C 697.498543 600.010026 577.005019 533.992995 486.512225 453.003281 C 294.806833 323.199193 179.36658 293.106797 24.751214 419.382135 C 24.285136 419.774219 23.990771 420.362344 23.990771 420.974974 L 23.990771 541.540599 C 23.990771 543.059922 25.683371 544.04013 27.008015 543.280469 C 135.260848 480.52263 177.575858 400.733672 347.498219 425.508438 C 492.988261 459.007057 494.999757 564.992083 697.498543 616.992135 C 802.586949 648.260781 867.494495 616.992135 991.005262 527.00901 C 1069.527202 472.778984 1141.622166 426.562161 1186.660055 394.582865 C 1187.199725 394.215286 1187.49409 393.602656 1187.49409 392.965521 Z M 1187.49409 392.965521 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-3"></path>
-					<path d="M 1187.003481 142.350755 L 1187.003481 25.509922 C 1187.003481 23.966094 1185.335411 22.96138 1184.010767 23.745547 C 965.346422 151.711745 729.11828 350.424479 603.007286 389.069193 C 570.062905 399.165339 534.248462 397.376458 500.126619 392.646953 C 324.979275 368.386797 282.443491 165.753229 24.873867 189.32724 C 23.843588 189.42526 23.009553 190.331953 23.009553 191.361172 L 23.009553 289.063438 C 23.009553 290.460234 24.432319 291.464948 25.756962 290.974844 C 160.600793 241.204766 250.504858 278.403672 324.684909 338.735495 C 348.283193 357.923073 372.102251 376.988125 397.761091 393.333099 C 465.784003 436.633802 528.827234 476.136198 626.507448 475.008958 C 749.846503 470.009896 936.523154 293.44987 1186.022264 144.090625 C 1186.635525 143.723047 1187.003481 143.061406 1187.003481 142.350755 Z M 1187.003481 142.350755 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-4"></path>
+				<svg width="392" height="306" viewBox="0 0 392 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M200.5 197.5C321 341 375 295 389.5 289.017" class="animation-usgswave-1"></path>
+					<path d="M200.5 202.5C334.5 312.5 375 253.5 389.5 247.517" class="animation-usgswave-2"></path>
+					<path d="M4 256.368C136.5 151 174.5 178.5 219 218.5C321 288.5 356.5 221.868 389.5 211.368" class="animation-usgswave-3"></path>
+					<path d="M4 214C96.0567 126.225 143.014 155.782 175.015 177.389C184.845 184.026 194.553 191.035 204.377 197.68C298.097 261.074 358.078 178.998 389.5 169" class="animation-usgswave-4"></path>
+					<path d="M4 174C151 63 138.5 215.5 267.5 200.5C311 189.5 340.5 154 389.5 129" class="animation-usgswave-5"></path>
+					<path d="M4 129C123 49.5 141.5 193 249 172.5C292.5 161.5 340.5 109 389.5 84" class="animation-usgswave-6"></path>
+					<path d="M4 92C106.5 65 128.5 165 218.5 154C262 143 288 101.5 389.5 47" class="animation-usgswave-7"></path>
+					<path d="M3.5 59C106.5 52.5 100.5 132.5 184 128.5C240 121 287.5 59 389 4.5" class="animation-usgswave-8"></path>
 				</svg>
+
+
+				
 			</div>
 			<!-- USGS Box -->
 			<div class="loader-object" v-if="animationShape == 'usgsbox'">
@@ -460,7 +468,7 @@ Display and code for animated loaders.
 		<!-- Wave Stroke -->
 		.usgswavestroke path {
 			fill: none;
-			stroke-width: 40;
+			stroke-width: 14;
 			stroke-linecap: round;
 			stroke-linejoin: round;
 			stroke-opacity: 1;
@@ -478,19 +486,31 @@ Display and code for animated loaders.
 		.usgswavestroke.loader-blue {
 			stroke: var(--usgsBlue);
 		}
+		.usgswavestroke .animation-usgswave-1 {
+			animation: animation-wave-stroke-1 {{loaderSpeed}}s ease-in-out .28s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgswavestroke .animation-usgswave-2 {
+			animation: animation-wave-stroke-2 {{loaderSpeed}}s ease-in-out .28s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgswavestroke .animation-usgswave-3 {
+			animation: animation-wave-stroke-3 {{loaderSpeed}}s ease-in-out .3s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgswavestroke .animation-usgswave-4 {
+			animation: animation-wave-stroke-4 {{loaderSpeed}}s ease-in-out .25s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgswavestroke .animation-usgswave-5 {
+			animation: animation-wave-stroke-5 {{loaderSpeed}}s ease-in-out .2s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgswavestroke .animation-usgswave-6 {
+			animation: animation-wave-stroke-6 {{loaderSpeed}}s ease-in-out .15s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgswavestroke .animation-usgswave-7 {
+			animation: animation-wave-stroke-7 {{loaderSpeed}}s ease-in-out .1s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgswavestroke .animation-usgswave-8 {
+			animation: animation-wave-stroke-8 {{loaderSpeed}}s ease-in-out .05s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
 
-		.usgswavestroke .svg-usgswave-1 {
-			animation: animation-usgs-wave-1 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
-		}
-		.usgswavestroke .svg-usgswave-2 {
-			animation: animation-usgs-wave-2 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
-		}
-		.usgswavestroke .svg-usgswave-3 {
-			animation: animation-usgs-wave-3 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
-		}
-		.usgswavestroke .svg-usgswave-4 {
-			animation: animation-usgs-wave-4 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
-		}
 
 		<!-- USGS Box Stroke -->
 		.usgsboxstroke path {
@@ -595,62 +615,76 @@ Display and code for animated loaders.
 			fill: rgb(2, 134, 255);
 		}
 
+		<!-- USGS Wave Shake -->
 		<!-- USGS Shake -->
-		.usgsboxshake .loader-object,
 		.usgswaveshake .loader-object{
 			animation: shake {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 		}
-		.usgsboxshake path,
 		.usgswaveshake path{
 			fill: none;
-			stroke-width: 40;
+			stroke-width: 14;
 			stroke-linecap: round;
 			stroke-linejoin: round;
 			stroke-opacity: 1;
 			stroke-miterlimit: 4;
 		}
-		.usgsboxshake rect,
-		.usgswaveshake rect{
+		.usgswaveshake.loader-black path{
+			stroke: var(--text);
+		}
+		.usgswaveshake.loader-white path{
+			stroke: var(--background);
+		}
+		.usgswaveshake.loader-green path{
+			stroke: var(--usgsGreen);
+		}
+		.usgswaveshake.loader-blue path{
+			stroke: var(--usgsBlue);
+		}
+		<!-- USGS Box Shake -->
+		.usgsboxshake .loader-object{
+			animation: shake {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgsboxshake path{
+			fill: none;
+			stroke-width: 14;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-opacity: 1;
+			stroke-miterlimit: 4;
+		}
+		.usgsboxshake rect{
 			stroke-width: 90px;
 		}
 		
-		.usgsboxshake.loader-black path,
-		.usgswaveshake.loader-black path{
+		.usgsboxshake.loader-black path{
 			stroke: var(--text);
 			fill: var(--text);
 		}
-		.usgsboxshake.loader-black rect,
-		.usgswaveshake.loader-black rect{
+		.usgsboxshake.loader-black rect{
      		 stroke: var(--text);
 		}
 
-		.usgsboxshake.loader-white path,
-		.usgswaveshake.loader-white path{
+		.usgsboxshake.loader-white path{
 			stroke: var(--background);
 			fill: var(--background);
 		}
-		.usgsboxshake.loader-white rect,
-		.usgswaveshake.loader-white rect{
+		.usgsboxshake.loader-white rect{
      		 stroke: var(--background);
 		}
 
-		.usgsboxshake.loader-green path,
-		.usgswaveshake.loader-green path{
+		.usgsboxshake.loader-green path{
 			stroke: var(--usgsGreen);
 			fill: var(--usgsGreen);
 		}
-		.usgsboxshake.loader-green rect,
-		.usgswaveshake.loader-green rect{
+		.usgsboxshake.loader-green rect{
      		 stroke: var(--usgsGreen);
 		}
 
-		.usgsboxshake.loader-blue path,
-		.usgswaveshake.loader-blue path{
+		.usgsboxshake.loader-blue path{
 			stroke: var(--usgsBlue);
 			fill: var(--usgsBlue);
 		}
-		.usgsboxshake.loader-blue rect,
-		.usgswaveshake.loader-blue rect{
+		.usgsboxshake.loader-blue rect{
      		 stroke: var(--usgsBlue);
 		}
 
@@ -667,12 +701,35 @@ Display and code for animated loaders.
 			stroke: black;
 			fill: rgb(2, 134, 255);
 		}
-		.usgsboxpulse .loader-object,
+		<!-- USGS Wave Pulse -->
 		.usgswavepulse .loader-object {
 			animation: pulse {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 		}
-		.usgsboxpulse path,
 		.usgswavepulse path{
+			fill: none;
+			stroke-width: 12;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-opacity: 1;
+			stroke-miterlimit: 4;
+		}
+		.usgswavepulse.loader-black path{
+			stroke: var(--text);
+		}
+		.usgswavepulse.loader-white path{
+			stroke: var(--background);
+		}
+		.usgswavepulse.loader-blue path{
+			stroke: var(--usgsBlue);
+		}
+		.usgswavepulse.loader-green path{
+			stroke: var(--usgsGreen);
+		}
+		<!-- USGS Box Pulse -->
+		.usgsboxpulse .loader-object{
+			animation: pulse {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+		}
+		.usgsboxpulse path{
 			fill: none;
 			stroke-width: 40;
 			stroke-linecap: round;
@@ -680,44 +737,35 @@ Display and code for animated loaders.
 			stroke-opacity: 1;
 			stroke-miterlimit: 4;
 		}
-		.usgsboxpulse rect,
-		.usgswavepulse rect{
+		.usgsboxpulse rect{
   			stroke-width: 90px;
 		}
-		.usgsboxpulse.loader-black path,
-		.usgswavepulse.loader-black path{
+		.usgsboxpulse.loader-black path{
 			stroke: var(--text);
 			fill: var(--text);
 		}
-		.usgsboxpulse.loader-black rect,
-		.usgswavepulse.loader-black rect{
+		.usgsboxpulse.loader-black rect{
 			stroke: var(--text);
 		}
-		.usgsboxpulse.loader-white path,
-		.usgswavepulse.loader-white path{
+		.usgsboxpulse.loader-white path{
 			stroke: var(--background);
 			fill: var(--background);
 		}
-		.usgsboxpulse.loader-white rect,
-		.usgswavepulse.loader-white rect{
+		.usgsboxpulse.loader-white rect{
 			stroke: var(--background);
 		}
-		.usgsboxpulse.loader-blue path,
-		.usgswavepulse.loader-blue path{
+		.usgsboxpulse.loader-blue path{
 			stroke: var(--usgsBlue);
 			fill: var(--usgsBlue);
 		}
-		.usgsboxpulse.loader-blue rect,
-		.usgswavepulse.loader-blue rect{
+		.usgsboxpulse.loader-blue rect{
 			stroke: var(--usgsBlue);
 		}
-		.usgsboxpulse.loader-green path,
-		.usgswavepulse.loader-green path{
+		.usgsboxpulse.loader-green path{
 			stroke: var(--usgsGreen);
 			fill: var(--usgsGreen);
 		}
-		.usgsboxpulse.loader-green rect,
-		.usgswavepulse.loader-green rect{
+		.usgsboxpulse.loader-green rect{
 			stroke: var(--usgsGreen);
 		}
 
@@ -777,8 +825,15 @@ Display and code for animated loaders.
 
 
 		<div class="sg--codeblock">
+
+			<!-- Copy to clipboard -->
+			<button @click="copyBlock('elementHTML')" class="button small transparent mtop-xs mleft-xs">
+				<i class="far fa-copy"></i>
+				<span>Copy to Clipboard</span>
+			</button>
+
 			<pre>
-				<code>
+				<code id="elementHTML">
 <b>&lt;!-- Element HTML --&gt;</b>
 &lt;div class="loader-wrapper loader-{{loaderColor}} {{animationShape}}{{animationType}} {{animationShape}} {{display}}"&gt;
 
@@ -801,11 +856,15 @@ Display and code for animated loaders.
       &lt;/g&gt;
     &lt;/svg&gt;</span><span v-if="animationShape == 'usgswave'">
     &lt;!-- USGS Wave SVG --&gt;
-    &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 193 150" version="1.1" &gt;
-      &lt;path d="M 25.511658 668.330547 C 25.487128 705.357917 25.021049 719.889505 24.996519 785.097865 C 24.996519 786.666198 26.73818 787.670911 28.062824 786.837734 C 115.170418 731.308932 203.700777 667.791432 311.610185 599.666953 C 331.40625 587.169297 352.625081 576.509531 375.364799 570.873333 C 580.684585 519.9025 684.423818 689.037448 757.5 755.005469 C 784.998624 779.80474 851.500648 869.493802 1005.502753 912.990547 C 1092.217859 926.885 1146.528255 909.80487 1187.886577 889.539062 C 1188.573429 889.220495 1188.990447 888.485339 1188.990447 887.725677 C 1188.990447 825.531458 1188.05829 817.052656 1188.009229 767.944219 C 1188.009229 766.30237 1186.144916 765.346667 1184.820272 766.30237 C 1095.382286 830.162943 975.600146 867.729427 839.995871 779.24112 C 817.010848 764.219427 793.780521 749.32026 770.574725 734.641641 C 731.620385 709.964896 706.23138 682.126979 641.004938 605.499193 C 586.4983 588.492578 581.003481 568.006224 488.49919 510.173932 C 393.22296 472.926016 301.724417 473.048542 222.000486 534.287057 C 143.478546 588.517083 71.383582 634.709401 26.321163 666.688698 C 25.806023 667.056276 25.511658 667.668906 25.511658 668.330547 Z M 25.511658 668.330547 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-1"&gt;&lt;/path&gt;
-      &lt;path d="M 25.511658 668.330547 C 25.487128 705.357917 25.021049 719.889505 24.996519 785.097865 C 24.996519 786.666198 26.73818 787.670911 28.062824 786.837734 C 106.756477 736.675573 186.627591 679.995026 280.873543 619.295625 C 320.907222 593.491641 364.178918 570.946849 411.473608 565.310651 C 593.146049 543.623542 672.207659 694.869688 807.493038 747.996979 C 892.245709 783.603047 961.544203 774.217552 1021.398478 748.609609 C 1036.680942 742.066719 1050.785946 733.146823 1064.449401 723.663307 C 1114.565091 688.841406 1158.744414 660.660417 1188.082821 641.864922 C 1188.671551 641.497344 1188.990447 640.835703 1188.990447 640.149557 L 1188.990447 519.804479 C 1188.990447 518.260651 1187.297847 517.280443 1185.948672 518.064609 C 1082.945353 579.082578 1028.75761 633.827214 951.511253 667.276823 C 901.959764 692.713229 837.493766 696.90362 775.554404 680.142057 C 671.054728 651.838542 578.72215 560.899714 484.01012 508.458568 C 390.328368 472.950521 300.448834 474.02875 222.000486 534.287057 C 143.478546 588.517083 71.383582 634.709401 26.321163 666.688698 C 25.806023 667.056276 25.511658 667.668906 25.511658 668.330547 Z M 25.511658 668.330547 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-2" &gt;&lt;/path&gt;
-      &lt;path d="M 1187.49409 392.965521 C 1187.51862 355.595078 1187.984699 341.137005 1188.009229 274.360313 C 1188.009229 273.576146 1187.126133 273.061536 1186.463812 273.478125 C 1090.917746 334.300052 990.34294 408.403802 868.009634 484.00237 C 697.498543 600.010026 577.005019 533.992995 486.512225 453.003281 C 294.806833 323.199193 179.36658 293.106797 24.751214 419.382135 C 24.285136 419.774219 23.990771 420.362344 23.990771 420.974974 L 23.990771 541.540599 C 23.990771 543.059922 25.683371 544.04013 27.008015 543.280469 C 135.260848 480.52263 177.575858 400.733672 347.498219 425.508438 C 492.988261 459.007057 494.999757 564.992083 697.498543 616.992135 C 802.586949 648.260781 867.494495 616.992135 991.005262 527.00901 C 1069.527202 472.778984 1141.622166 426.562161 1186.660055 394.582865 C 1187.199725 394.215286 1187.49409 393.602656 1187.49409 392.965521 Z M 1187.49409 392.965521 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-3"&gt;&lt;/path&gt;
-      &lt;path d="M 1187.003481 142.350755 L 1187.003481 25.509922 C 1187.003481 23.966094 1185.335411 22.96138 1184.010767 23.745547 C 965.346422 151.711745 729.11828 350.424479 603.007286 389.069193 C 570.062905 399.165339 534.248462 397.376458 500.126619 392.646953 C 324.979275 368.386797 282.443491 165.753229 24.873867 189.32724 C 23.843588 189.42526 23.009553 190.331953 23.009553 191.361172 L 23.009553 289.063438 C 23.009553 290.460234 24.432319 291.464948 25.756962 290.974844 C 160.600793 241.204766 250.504858 278.403672 324.684909 338.735495 C 348.283193 357.923073 372.102251 376.988125 397.761091 393.333099 C 465.784003 436.633802 528.827234 476.136198 626.507448 475.008958 C 749.846503 470.009896 936.523154 293.44987 1186.022264 144.090625 C 1186.635525 143.723047 1187.003481 143.061406 1187.003481 142.350755 Z M 1187.003481 142.350755 " transform="matrix(0.159241,0,0,0.159405,0,0)" class="svg-usgswave-4"&gt;&lt;/path&gt;
+    &lt;svg width="392" height="306" viewBox="0 0 392 306" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+      &lt;path d="M200.5 197.5C321 341 375 295 389.5 289.017" class="animation-usgswave-1"&gt;&lt;/path&gt;
+      &lt;path d="M200.5 202.5C334.5 312.5 375 253.5 389.5 247.517" class="animation-usgswave-2"&gt;&lt;/path&gt;
+      &lt;path d="M4 256.368C136.5 151 174.5 178.5 219 218.5C321 288.5 356.5 221.868 389.5 211.368" class="animation-usgswave-3"&gt;&lt;/path&gt;
+      &lt;path d="M4 214C96.0567 126.225 143.014 155.782 175.015 177.389C184.845 184.026 194.553 191.035 204.377 197.68C298.097 261.074 358.078 178.998 389.5 169" class="animation-usgswave-4"&gt;&lt;/path&gt;
+      &lt;path d="M4 174C151 63 138.5 215.5 267.5 200.5C311 189.5 340.5 154 389.5 129" class="animation-usgswave-5"&gt;&lt;/path&gt;
+      &lt;path d="M4 129C123 49.5 141.5 193 249 172.5C292.5 161.5 340.5 109 389.5 84" class="animation-usgswave-6"&gt;&lt;/path&gt;
+      &lt;path d="M4 92C106.5 65 128.5 165 218.5 154C262 143 288 101.5 389.5 47" class="animation-usgswave-7"&gt;&lt;/path&gt;
+      &lt;path d="M3.5 59C106.5 52.5 100.5 132.5 184 128.5C240 121 287.5 59 389 4.5" class="animation-usgswave-8"&gt;&lt;/path&gt;
     &lt;/svg&gt;</span><span v-if="animationShape == 'usgsbox'">
     &lt;!-- USGS Box SVG --&gt;
     &lt;svg width="100%" height="100%" fill="none" viewBox="0 0 1271 1379" xmlns="http://www.w3.org/2000/svg" &gt;
@@ -832,233 +891,254 @@ Display and code for animated loaders.
 			</pre>
 		</div>
 		<div class="sg--codeblock">
-			<pre>	
-				<code>
+
+			<!-- Copy to clipboard -->
+			<button @click="copyBlock('loaderCSS')" class="button small transparent mtop-xs mleft-xs">
+				<i class="far fa-copy"></i>
+				<span>Copy to Clipboard</span>
+			</button>
+
+			<pre>	<code id="loaderCSS">
 <b>/* Loader Element CSS */</b>
 
 /* Colors */
 .loader-wrapper{
-	color: {{ loaderColor == 'white' ? 'white' : 'black' }};<span v-if="display == 'fullscreen' || display == 'fillparent'">
-	background-color: {{ loaderColor == 'white' ? 'rgba(10,10,30,0.65)' : 'rgba(255,255,255,0.65)' }};</span>
+  color: {{ loaderColor == 'white' ? 'white' : 'black' }};<span v-if="display == 'fullscreen' || display == 'fillparent'">
+  background-color: {{ loaderColor == 'white' ? 'rgba(10,10,30,0.65)' : 'rgba(255,255,255,0.65)' }};</span>
 }
 
 /*  Display and positioning */<span v-if="display == 'blockloader'">
 .loader-wrapper{
-	display: block;
+  display: block;
 }</span><span v-if="display == 'fullscreen'">
 .loader-wrapper{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 10000;
-	margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  margin: 0 auto;
 }</span><span v-if="display == 'fillparent'">
 .loader-wrapper{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }</span><span v-if="display == 'fullscreen' || display == 'fillparent'">
 /*  Center the SVG */
 .loader-wrapper .loader-object{
-	margin: 0 auto;
+  margin: 0 auto;
 }</span>
 
 /* Set size */
 .loader-object{
-	max-width: {{loaderSize}}px;
-	width: {{loaderSize}}px;
-    transform-origin: center center;
+  max-width: {{loaderSize}}px;
+  width: {{loaderSize}}px;
+  transform-origin: center center;
 }
 .loader-object svg{
-	max-width: 100%;
-	max-height: {{loaderSize}}px;
-	max-width: {{loaderSize}}px;
+  max-width: 100%;
+  max-height: {{loaderSize}}px;
+  max-width: {{loaderSize}}px;
 }
 
 /* Title and subtitle */
 .loader-title,
 .loader-subtitle{
-	display: block;
-	width: 100%;
-	text-align: center;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 .loader-title{
-	font-size: 20px;
-	font-weight: 700;
-	margin-top: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 30px;
 }
 .loader-subtitle{
-	font-size: 14px;
-	padding-top: 15px;
-	letter-spacing: 0.2px;
+  font-size: 14px;
+  padding-top: 15px;
+  letter-spacing: 0.2px;
 }
 <span v-if="animationShape == 'wimpin' && animationType == 'stroke'">
 /* WIM Pin Draw SVG Styles */
 .wimpinstroke path {
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke-opacity: 1;
-	stroke-miterlimit: 4;
-	fill: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-opacity: 1;
+  stroke-miterlimit: 4;
+  fill: white;
 }
 .wimpinstroke .svg-wimpin-main {
-	stroke-width: 20;
-	stroke: black;
-	animation: animation-pin-outline  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  alternate none, animation-pin-fill  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  alternate forwards;
+  stroke-width: 20;
+  stroke: black;
+  animation: animation-pin-outline  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  alternate none, animation-pin-fill  {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  alternate forwards;
 }
 .wimpinstroke .svg-wimpin-america {
-	animation: animation-pin-land-fill {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animation-pin-land-fill {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }
 .wimpinstroke .svg-wimpin-europe {
-	animation: animation-pin-land-fill {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0.25s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animation-pin-land-fill {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease 0.25s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }
 </span><span v-if="animationShape == 'usgswave' && animationType == 'stroke'">
 /* USGS Wave Draw SVG Styles */
 .usgswavestroke path {
-	fill: none;
-	stroke-width: 40;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke-opacity: 1;
-	stroke-miterlimit: 4;
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-opacity: 1;
+  stroke-miterlimit: 4;
 }
 .usgswavestroke{
-	stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
 }
-.usgswavestroke .svg-usgswave-1 {
-	animation: animation-usgs-wave-1 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+.usgswavestroke .animation-usgswave-1 {
+  animation: animation-wave-stroke-1 {{loaderSpeed}}s ease-in-out .28s {{loopLoader ? 'infinite' : 1}}  normal none;
 }
-.usgswavestroke .svg-usgswave-2 {
-	animation: animation-usgs-wave-2 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+.usgswavestroke .animation-usgswave-2 {
+  animation: animation-wave-stroke-2 {{loaderSpeed}}s ease-in-out .28s {{loopLoader ? 'infinite' : 1}}  normal none;
 }
-.usgswavestroke .svg-usgswave-3 {
-	animation: animation-usgs-wave-3 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+.usgswavestroke .animation-usgswave-3 {
+  animation: animation-wave-stroke-3 {{loaderSpeed}}s ease-in-out .3s {{loopLoader ? 'infinite' : 1}}  normal none;
 }
-.usgswavestroke .svg-usgswave-4 {
-	animation: animation-usgs-wave-4 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+.usgswavestroke .animation-usgswave-4 {
+  animation: animation-wave-stroke-4 {{loaderSpeed}}s ease-in-out .25s {{loopLoader ? 'infinite' : 1}}  normal none;
+}
+.usgswavestroke .animation-usgswave-5 {
+  animation: animation-wave-stroke-5 {{loaderSpeed}}s ease-in-out .2s {{loopLoader ? 'infinite' : 1}}  normal none;
+}
+.usgswavestroke .animation-usgswave-6 {
+  animation: animation-wave-stroke-6 {{loaderSpeed}}s ease-in-out .15s {{loopLoader ? 'infinite' : 1}}  normal none;
+}
+.usgswavestroke .animation-usgswave-7 {
+  animation: animation-wave-stroke-7 {{loaderSpeed}}s ease-in-out .1s {{loopLoader ? 'infinite' : 1}}  normal none;
+}
+.usgswavestroke .animation-usgswave-8 {
+	animation: animation-wave-stroke-8 {{loaderSpeed}}s ease-in-out .05s {{loopLoader ? 'infinite' : 1}}  normal none;
 }</span><span v-if="animationShape == 'usgsbox' && animationType == 'stroke'">
 /* USGS Box Draw SVG Styles */
 .usgsboxstroke path {
-	stroke-width: 44;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke: var(--text);
-	stroke-opacity: 1;
-	stroke-miterlimit: 4;
+  stroke-width: 44;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #001028;
+  stroke-opacity: 1;
+  stroke-miterlimit: 4;
 }
 .usgsboxstroke rect {
-	fill: transparent;
-	stroke: var(--text);
-	stroke-width: 90px;
+  fill: transparent;
+  stroke: #001028;
+  stroke-width: 90px;
 }
 .usgsboxstroke path {
-	stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
-	fill: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  fill: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
 }
 .usgsboxstroke rect {
-	stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }}
+  stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }}
 }
 .usgsboxstroke .usgsbox-1 {
-	animation: animaton-usgsbox-stroke-1 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animaton-usgsbox-stroke-1 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }
 .usgsboxstroke .usgsbox-2 {
-	animation: animaton-usgsbox-stroke-2 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animaton-usgsbox-stroke-2 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }
 .usgsboxstroke .usgsbox-3 {
-	animation: animaton-usgsbox-fill-3 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animaton-usgsbox-fill-3 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }
 .usgsboxstroke .usgsbox-4 {
-	animation: animaton-usgsbox-fill-4 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animaton-usgsbox-fill-4 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }
 .usgsboxstroke .usgsbox-5 {
-	animation: animaton-usgsbox-fill-5 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animaton-usgsbox-fill-5 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }
 .usgsboxstroke .usgsbox-6 {
-	animation: animaton-usgsbox-fill-6 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
+  animation: animaton-usgsbox-fill-6 {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  alternate none;
 }</span><span v-if="animationShape == 'wimpin' && animationType == 'shake'">
 /* WIM Pin Shake styles */
 .wimpinshake .loader-object {
-	animation: shake {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+  animation: shake {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 }
 .wimpinshake path {
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke-opacity: 1;
-	stroke-miterlimit: 4;
-	fill: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-opacity: 1;
+  stroke-miterlimit: 4;
+  fill: white;
 }
 .wimpinshake .svg-wimpin-main {
-	stroke-width: 20;
-	stroke: black;
-	fill: rgb(2, 134, 255);
+  stroke-width: 20;
+  stroke: black;
+  fill: rgb(2, 134, 255);
 }</span><span v-if="animationType == 'shake' && (animationShape == 'usgswave' || animationShape == 'usgsbox')">
 /* USGS Shake styles */
 .loader-wrapper .loader-object {
-	animation: shake {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+  animation: shake {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 }
 .loader-wrapper path{
-	fill: none;
-	stroke-width: 40;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke: black;
-	stroke-opacity: 1;
-	stroke-miterlimit: 4;
+  fill: none;
+  stroke-width: 40;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: black;
+  stroke-opacity: 1;
+  stroke-miterlimit: 4;
 }
 .loader-wrapper rect{
-	stroke-width: 90px;
-	stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  stroke-width: 90px;
+  stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
 }
 .loader-wrapper path{
-	stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
-	fill: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  fill: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
 }
 </span><span v-if="animationType == 'pulse' && animationShape == 'wimpin'">
 /* WIM Pin Pulse styles */
-
 .wimpinpulse .loader-object {
-	animation: pulse {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+  animation: pulse {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 }
 .wimpinpulse path {
-	fill: white;
+  fill: white;
 }
 .wimpinpulse .svg-wimpin-main {
-	stroke-width: 20;
-	stroke: black;
-	fill: rgb(2, 134, 255);
+  stroke-width: 20;
+  stroke: black;
+  fill: rgb(2, 134, 255);
 }
 </span><span v-if="animationType == 'pulse' && (animationShape == 'usgswave' || animationShape == 'usgsbox')">
 /* USGS Pulse styles */
 .loader-wrapper .loader-object {
-	animation: pulse {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
+  animation: pulse {{loopLoader ? (loaderSpeed / 2) : loaderSpeed}}s ease-in-out 0s {{loopLoader ? 'infinite' : 1}}  normal none;
 }
 .loader-wrapper path{
-	fill: none;
-	stroke-width: 40;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke: var(--text);
-	stroke-opacity: 1;
-	stroke-miterlimit: 4;
-	stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
-	fill: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #001028;
+  stroke-opacity: 1;
+  stroke-miterlimit: 4;
+  stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+}
+</span><span v-if="animationType == 'pulse' && animationShape == 'usgsbox'">
+.loader-wrapper path{
+  fill: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  stroke-width: 40;
 }
 .loader-wrapper rect{
-	stroke-width: 90px;
-	stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
+  stroke-width: 90px;
+  stroke: {{ loaderColor == 'black' && 'black' || loaderColor == 'white' && 'white' || loaderColor == 'green' && '#016D4D' || loaderColor == 'blue' && '#00264C' }};
 }
 </span>
 
@@ -1067,8 +1147,14 @@ Display and code for animated loaders.
 			</pre>
 		</div>
 		<div class="sg--codeblock">
-			<pre>	
-				<code>
+
+			<!-- Copy to clipboard -->
+			<button @click="copyBlock('animationCSS')" class="button small transparent mtop-xs mleft-xs">
+				<i class="far fa-copy"></i>
+				<span>Copy to Clipboard</span>
+			</button>
+
+			<pre>	<code id="animationCSS">
 <b>/* Loader Animation CSS */</b>
 <span v-if="animationType == 'stroke' && animationShape == 'wimpin'">
 /* WIM Pin Draw/Stroke animation */
@@ -1091,25 +1177,65 @@ Display and code for animated loaders.
   100% {opacity: 1;}
 }</span><span v-if="animationType == 'stroke' && animationShape == 'usgswave'">
 /* USGS Wave Draw/Stroke animation */
-@keyframes animation-usgs-wave-1 {
-  	0% {stroke-dashoffset: 2931.462890625px;stroke-dasharray: 2931.462890625px;}
-	45% {stroke-dashoffset: 0;}
- 	100% {stroke-dashoffset: 0;stroke-dasharray: 2931.462890625px;}
+@keyframes animation-wave-stroke-1 {
+  0% { opacity: 0; stroke-dashoffset: 230.412353515625px; stroke-dasharray: 230.412353515625px; }
+  10%{opacity: 1;}
+  25% { stroke-dashoffset: 230.412353515625px; stroke-dasharray: 230.412353515625px;  }
+  50% { stroke-dashoffset: 0; stroke-dasharray: 230.412353515625px; }
+  62%{opacity: 1;}
+  80% { opacity: 0;}
+  100% { opacity: 0;}
 }
-@keyframes animation-usgs-wave-2 {
-	0% {stroke-dashoffset: 2874.23046875px;stroke-dasharray: 2874.23046875px;}
-	70% {stroke-dashoffset: 0;}
-	100% {stroke-dashoffset: 0;stroke-dasharray: 2874.23046875px}
+@keyframes animation-wave-stroke-2 {
+  0% { opacity: 0; stroke-dashoffset: 214.1689453125px; stroke-dasharray: 214.1689453125px; }
+  10%{opacity: 1;}
+  25% { stroke-dashoffset: 214.1689453125px; stroke-dasharray: 214.1689453125px; }
+  50% { stroke-dashoffset: 0; stroke-dasharray: 214.1689453125px; }
+  62%{opacity: 1;}
+  80% { opacity: 0;}
+  100% { opacity: 0;}
 }
-@keyframes animation-usgs-wave-3 {
-	0% {stroke-dashoffset: 2878.54150390625px;stroke-dasharray: 2878.54150390625px;}
-	80% {stroke-dashoffset: 0;}
-	100% {stroke-dashoffset: 0;stroke-dasharray: 2878.54150390625px;}
+@keyframes animation-wave-stroke-3 {
+  0% { opacity: 0; stroke-dashoffset: 435.21282958984375px; stroke-dasharray: 435.21282958984375px; }
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 435.21282958984375px;}
+  65%{opacity: 1;}
+100% { opacity: 0;}
 }
-@keyframes  animation-usgs-wave-4 {
-	0% {stroke-dashoffset: 2865.14111328125px;stroke-dasharray: 2865.14111328125px;}
-	65% {stroke-dashoffset: 0;}
-	100% {stroke-dashoffset: 0;stroke-dasharray: 2865.14111328125px;}
+@keyframes animation-wave-stroke-4 {
+  0% { opacity: 0; stroke-dashoffset: 435.42230224609375px; stroke-dasharray: 435.42230224609375px;}
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 435.42230224609375px;  }
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+@keyframes animation-wave-stroke-5 {
+  0% { opacity: 0; stroke-dashoffset: 436.1790771484375px; stroke-dasharray: 436.1790771484375px;  }
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 436.1790771484375px;}
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+@keyframes animation-wave-stroke-6 {
+  0% { opacity: 0; stroke-dashoffset: 437.32952880859375px; stroke-dasharray: 437.32952880859375px;}
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 437.32952880859375px; }
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+@keyframes animation-wave-stroke-7 {
+  0% { opacity: 0; stroke-dashoffset: 435.7785339355469px; stroke-dasharray: 435.7785339355469px;  }
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 435.7785339355469px; }
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+@keyframes animation-wave-stroke-8 {
+  0% { opacity: 0; stroke-dashoffset: 442.9269714355469px; stroke-dasharray: 442.9269714355469px;}
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 442.9269714355469px;}
+  65%{opacity: 1;}
+  100% { opacity: 0;}
 }</span><span v-if="animationType == 'stroke' && animationShape == 'usgsbox'">
 /* USGS Box Draw/Stroke animation */
 @keyframes animaton-usgsbox-stroke-1 {
@@ -1198,7 +1324,7 @@ export default {
 
   data() {
     return {
-		animationShape: "wimpin",
+		animationShape: "usgswave",
 		animationType: "stroke",
 		loaderColor: "black",
 		loaderSpeed: 5,
@@ -1222,19 +1348,6 @@ export default {
   beforeDestroy() {},
 
   methods: {
-
-	  getOutput(){
-		  var out = getComputedStyle(document.getElementsByClassName("loader-wrapper")[0]);
-		  console.log("OUTPUT");
-		  console.log(out);
-	  },
-
-
-		getCSSVariable(name) {
-			return getComputedStyle(document.documentElement).getPropertyValue(
-				"--" + name
-			);
-		},
 
 		// In non-loop mode, this briefly resets the class to re-run the animation
 		rerunAnimation(){
@@ -1322,29 +1435,72 @@ export default {
 	}
 }
 
-// Stroke Animations
-// Stroke Animations
-// Stroke Animations
-@keyframes animation-usgs-wave-1 {
-  	0% {stroke-dashoffset: 2931.462890625px;stroke-dasharray: 2931.462890625px;}
-	45% {stroke-dashoffset: 0;}
- 	100% {stroke-dashoffset: 0;stroke-dasharray: 2931.462890625px;}
+// Stroke Wave Animations
+// Stroke Wave Animations
+// Stroke Wave Animations
+@keyframes animation-wave-stroke-1 {
+  0% { opacity: 0; stroke-dashoffset: 230.412353515625px; stroke-dasharray: 230.412353515625px; }
+  10%{opacity: 1;}
+  25% { stroke-dashoffset: 230.412353515625px; stroke-dasharray: 230.412353515625px;  }
+  50% { stroke-dashoffset: 0; stroke-dasharray: 230.412353515625px; }
+  62%{opacity: 1;}
+  80% { opacity: 0;}
+  100% { opacity: 0;}
 }
-@keyframes animation-usgs-wave-2 {
-	0% {stroke-dashoffset: 2874.23046875px;stroke-dasharray: 2874.23046875px;}
-	70% {stroke-dashoffset: 0;}
-	100% {stroke-dashoffset: 0;stroke-dasharray: 2874.23046875px}
+@keyframes animation-wave-stroke-2 {
+  0% { opacity: 0; stroke-dashoffset: 214.1689453125px; stroke-dasharray: 214.1689453125px; }
+  10%{opacity: 1;}
+  25% { stroke-dashoffset: 214.1689453125px; stroke-dasharray: 214.1689453125px; }
+  50% { stroke-dashoffset: 0; stroke-dasharray: 214.1689453125px; }
+  62%{opacity: 1;}
+  80% { opacity: 0;}
+  100% { opacity: 0;}
 }
-@keyframes animation-usgs-wave-3 {
-	0% {stroke-dashoffset: 2878.54150390625px;stroke-dasharray: 2878.54150390625px;}
-	80% {stroke-dashoffset: 0;}
-	100% {stroke-dashoffset: 0;stroke-dasharray: 2878.54150390625px;}
+@keyframes animation-wave-stroke-3 {
+  0% { opacity: 0; stroke-dashoffset: 435.21282958984375px; stroke-dasharray: 435.21282958984375px; }
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 435.21282958984375px;}
+  65%{opacity: 1;}
+100% { opacity: 0;}
 }
-@keyframes  animation-usgs-wave-4 {
-	0% {stroke-dashoffset: 2865.14111328125px;stroke-dasharray: 2865.14111328125px;}
-	65% {stroke-dashoffset: 0;}
-	100% {stroke-dashoffset: 0;stroke-dasharray: 2865.14111328125px;}
+@keyframes animation-wave-stroke-4 {
+  0% { opacity: 0; stroke-dashoffset: 435.42230224609375px; stroke-dasharray: 435.42230224609375px;}
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 435.42230224609375px;  }
+  65%{opacity: 1;}
+  100% { opacity: 0;}
 }
+@keyframes animation-wave-stroke-5 {
+  0% { opacity: 0; stroke-dashoffset: 436.1790771484375px; stroke-dasharray: 436.1790771484375px;  }
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 436.1790771484375px;}
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+@keyframes animation-wave-stroke-6 {
+  0% { opacity: 0; stroke-dashoffset: 437.32952880859375px; stroke-dasharray: 437.32952880859375px;}
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 437.32952880859375px; }
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+@keyframes animation-wave-stroke-7 {
+  0% { opacity: 0; stroke-dashoffset: 435.7785339355469px; stroke-dasharray: 435.7785339355469px;  }
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 435.7785339355469px; }
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+@keyframes animation-wave-stroke-8 {
+  0% { opacity: 0; stroke-dashoffset: 442.9269714355469px; stroke-dasharray: 442.9269714355469px;}
+  10%{opacity: 1;}
+  50% { stroke-dashoffset: 0; stroke-dasharray: 442.9269714355469px;}
+  65%{opacity: 1;}
+  100% { opacity: 0;}
+}
+
+
+
 // Box stroke/fill animation
 // Box stroke/fill animation
 // Box stroke/fill animation
@@ -1503,4 +1659,5 @@ export default {
 		left: 10%;
 	}
 }
+
 </style>

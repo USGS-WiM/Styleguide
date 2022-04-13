@@ -100,9 +100,9 @@ export const routes = [
 		},
 		// Dark Mode
 		{
-			path: "/darkmode",
-			name: "darkmode",
-			component: () => import(/* webpackChunkName: "darkmode" */ "./views/guides/DarkMode.vue"),
+			path: "/dark",
+			name: "dark",
+			component: () => import(/* webpackChunkName: "dark" */ "./views/guides/DarkMode.vue"),
 			meta: {
 				title: "Dark Mode — " + AppName,
 			}
@@ -123,6 +123,15 @@ export const routes = [
 			component: () => import(/* webpackChunkName: "components" */ "./views/guides/Components.vue"),
 			meta: {
 				title: "Components — " + AppName,
+			}
+		},
+		// Templates
+		{
+			path: "/templates",
+			name: "templates",
+			component: () => import(/* webpackChunkName: "templates" */ "./views/guides/Templates.vue"),
+			meta: {
+				title: "Templates — " + AppName,
 			}
 		},
 		
