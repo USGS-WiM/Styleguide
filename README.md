@@ -3,6 +3,23 @@
 
 # WIM Styleguide & Frontend tools
 
+A collection of tools, guides, and code examples for setting up and developig websites.
+
+#### Tools: 
+ - QR Code Link Generator - with WIM or USGS logo in center
+ - Leaflet Marker Creator - design CSS leaflet markers
+ - Animated Loaders - design and get code for USGS and WIM animated loaders
+ - App Layouts - create the base layout for a new app
+ - USWDS - info on adding USWDS to your project
+ - CSS Variables - set up CSS variables
+ - Dark Mode - setting up dark mode or other CSS themes
+ - Meta Tags - common meta tags for a new project
+ - Components - reusable components
+ - Printing - information and code examples for creating printable sections
+ - Colors - view and copy colors and shades
+ - Logos - view and download WIM and USGS logos
+ - Interface icons - Set up and use Font Awesome
+
 ### Prerequisites
 
 Vue CLI
@@ -64,7 +81,6 @@ To push tags to remote origin: `git push origin --tags`
 ## Authors
 
 * **[Mitch Samuels](https://github.com/mitchas)**  - *Lead Developer* - [USGS Web Informatics & Mapping](https://wim.usgs.gov/)
-* **[Jamie Velkoverh](mailto:JVELKOVERH@USGS.GOV)** - *Geonarrative Coordinator* -  [USGS Web Informatics & Mapping](https://wim.usgs.gov/)
 
 See also the list of [contributors](../../graphs/contributors) who participated in this project.
 
