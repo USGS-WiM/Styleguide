@@ -1,6 +1,6 @@
 <!--
 Icons.vue
-Icons & Map Symbols
+Icons
 -->
 
 <template>
@@ -74,42 +74,6 @@ Icons & Map Symbols
 				<span>{{icon.info || icon.class}}</span>
 			</li>
 		</ul>
-
-
-
-		<h2 class="mtop-xl">Map Symbols</h2>
-
-		<h3 class="mtop-sm">
-			WIM Marker Maker
-		</h3>
-		<p>
-			Marker Maker is a tool to customize map markers and icons by choosing the shapes and colors.
-		</p>
-
-		<a class="button mtop-sm" target="_blank" href="https://wim.usgs.gov/markermaker">
-			<i class="far fa-external-link"></i>
-			<span>Open wim.usgs.gov/markermaker</span>
-		</a>
-
-		<h3 class="mtop-md">
-			Using Marker Maker 
-		</h3>
-		<p>
-			The CSS from marker maker must be imported into your project. <a href="https://github.com/USGS-WiM/marker-creator/blob/master/app/stylesheets/css/markers.css" target="_blank">Download the file here</a>.
-		</p> 
-		<p>
-			Once the CSS is in your project, use the Leafleft DivIcon feature to use the custom markers.
-		</p> 
-		<pre class="mtop-sm"><code>
-	// Replace "className" with the your className from the marker maker.
-	
-	var mapIcon = L.divIcon({className: 'wmm-pin wmm-blue wmm-icon-noicon wmm-icon-white wmm-size-25'});
-
-	var marker = L.marker(&lt;Coords&gt;, {icon: mapIcon});
-
-	map.addLayer(marker);
-		</code></pre>
-
 
 
 	</div>

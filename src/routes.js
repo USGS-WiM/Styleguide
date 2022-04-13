@@ -38,7 +38,7 @@ export const routes = [
 		{
 			path: "/markers",
 			name: "markers",
-			component: () => import(/* webpackChunkName: "markers" */ "./views/guides/Markers.vue"),
+			component: () => import(/* webpackChunkName: "markers" */ "./views/tools/Markers.vue"),
 			meta: {
 				title: "Map Markers — " + AppName,
 			}
@@ -47,7 +47,7 @@ export const routes = [
 		{
 			path: "/loaders",
 			name: "loaders",
-			component: () => import(/* webpackChunkName: "loaders" */ "./views/guides/Loaders.vue"),
+			component: () => import(/* webpackChunkName: "loaders" */ "./views/tools/Loaders.vue"),
 			meta: {
 				title: "Animated Loaders — " + AppName,
 			}
@@ -56,11 +56,29 @@ export const routes = [
 		{
 			path: "/qr",
 			name: "qr",
-			component: () => import(/* webpackChunkName: "qr" */ "./views/guides/QR.vue"),
+			component: () => import(/* webpackChunkName: "qr" */ "./views/tools/QR.vue"),
 			meta: {
 				title: "QR Code Generator — " + AppName,
 			}
 		},
+		// Frame Generator
+		{
+			path: "/frame",
+			name: "frame",
+			component: () => import(/* webpackChunkName: "frame" */ "./views/tools/Frame.vue"),
+			meta: {
+				title: "Frame Generator — " + AppName,
+			}
+		},	
+			// Frame View/Preview/Body
+			{
+				path: "/frame-preview",
+				name: "frame-view",
+				component: () => import(/* webpackChunkName: "frame-view" */ "./views/tools/FrameView.vue"),
+				meta: {
+					title: "Frame Generator — " + AppName,
+				}
+			},
 		// Icons
 		{
 			path: "/icons",
@@ -129,7 +147,7 @@ export const routes = [
 		{
 			path: "/templates",
 			name: "templates",
-			component: () => import(/* webpackChunkName: "templates" */ "./views/guides/Templates.vue"),
+			component: () => import(/* webpackChunkName: "templates" */ "./views/tools/Templates.vue"),
 			meta: {
 				title: "Templates — " + AppName,
 			}

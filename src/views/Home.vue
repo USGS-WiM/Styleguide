@@ -44,6 +44,14 @@ Home.vue
 						<small>SVG + CSS animated loaders for websites and applications.</small>
 					</div>
 				</router-link>
+				<!-- Frame -->
+				<router-link class="tool-link" to="/frame">
+					<i class="far fa-frame"></i>
+					<div class="text">
+						<b>iFrame Generator</b>
+						<small>Add your website or Storymap to an iFrame with a header and footer.</small>
+					</div>
+				</router-link>
 			</div>
 
 			<!-- Development -->

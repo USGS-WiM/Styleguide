@@ -115,7 +115,7 @@ export default {
 		return {
 			showAccountPopover: false,
 
-			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator",],
+			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Frame Template (Geonarrative)", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator",],
 			guidePaths: {
 				"Home": "/",
 				"Colors": "/colors",
@@ -123,6 +123,7 @@ export default {
 				"Map Symbols": "/markers",
 				"Animated Loaders": "/loaders",
 				"QR Code Generator": "/qr",
+				"Frame Template (Geonarrative)": "/frame",
 				"Interface Icons": "/icons",
 				"CSS Variables": "/variables",
 				"Meta Tags": "/meta",
@@ -312,7 +313,7 @@ export default {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				z-index: 10;
+				// z-index:;
 				margin-left: 12px;
 
 				@media (max-width: $screenSM) {
