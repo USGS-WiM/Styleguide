@@ -27,6 +27,57 @@ Simple html for static page with no dependencies or external references
 			</a>
 		</div>
 
+		
+
+		<h2 class="mtop-lg">Redirecting</h2>
+
+		<p>
+			The code example below is one way to add a redirect your static site.
+		</p>
+		<pre>
+			<code>
+// Javascript
+// Redirect after 5 seconds
+
+setTimeout(function(){ 
+  window.location.href = "https://addressToRedirectTo.gov/";
+}, 5000);
+			</code>
+		</pre>
+		
+
+		<h3 class="mtop-md">Redirect Countdown</h3>
+
+		<p>
+			Add a countdown to your redirect.
+		</p>
+		<pre>
+			<code>
+&lt;!-- Element HTML --&gt;
+&lt;div id="count"&gt;5&lt;/div&gt;
+
+// Javascript
+setTimeout(function(){
+  document.getElementById("count").innerHTML = "4" 
+}, 1000);
+setTimeout(function(){ 
+  document.getElementById("count").innerHTML = "3" 
+}, 2000);
+setTimeout(function(){ 
+  document.getElementById("count").innerHTML = "2" 
+}, 3000);
+setTimeout(function(){
+  document.getElementById("count").innerHTML = "1" 
+}, 4000);
+setTimeout(function(){ 
+  document.getElementById("count").innerHTML = "0" 
+}, 5000);
+
+
+
+			</code>
+		</pre>
+
 
 
 

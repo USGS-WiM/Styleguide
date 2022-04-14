@@ -9,7 +9,7 @@
 		
 		<footer id="main">
 			Created by <a href="https://wim.usgs.gov" target="_blank">WIM</a> at the USGS. 
-			Open Source on <a href="https://github.com/USGS-WiM/QR-Code-Generator" target="_blank">GitHub</a>
+			Open Source on <a href="https://github.com/USGS-WIM/styleguide" target="_blank">GitHub</a>
 		</footer>
 
 		<footer id="required">
