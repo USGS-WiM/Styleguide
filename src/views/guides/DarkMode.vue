@@ -114,12 +114,6 @@ export default {
 	
 	methods: {
 
-		getCSSVariable(name){
-			return getComputedStyle(document.documentElement)
-				.getPropertyValue("--" + name);
-		}
-
-
 	}
 };
 

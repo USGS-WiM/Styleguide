@@ -152,6 +152,15 @@ export const routes = [
 				title: "Templates — " + AppName,
 			}
 		},
+		// Static Page
+		{
+			path: "/static",
+			name: "static",
+			component: () => import(/* webpackChunkName: "static" */ "./views/guides/Static.vue"),
+			meta: {
+				title: "Static Page — " + AppName,
+			}
+		},
 		
 	//* Interface
 	// Example page for seeing UI Elements

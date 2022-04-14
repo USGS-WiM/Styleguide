@@ -4,7 +4,7 @@ Create custom map markers
 -->
 
 <template>
-	<div class="padded mtop-lg pbottom-xl">
+	<div class="mtop-md">
 
 
 		<div id="markerGenerator">
@@ -145,7 +145,7 @@ Create custom map markers
 									<div class="flex column flex-center">
 										<input type="color" id="mk_shdcol" v-model="marker.shadowColor" :disabled="!marker.shadow"/>
 									</div>
-									<input type="text" placeholder="rgba(0,0,0,0.25)" class="mtop-xxs" id="mk_shdcol2" v-model="marker.shadowColor" :disabled="!marker.shadow"/>
+									<input type="text" placeholder="rgba(0,0,0,0.35)" class="mtop-xxs" id="mk_shdcol2" v-model="marker.shadowColor" :disabled="!marker.shadow"/>
 								</div>
 
 							</div>
@@ -245,12 +245,37 @@ Create custom map markers
 					</transition>
 				</div>
 
+				<div class="marker-form-group">
+					<!-- Animation -->
+					<h3 class="flex flex-between">
+						Animation
+						<input type="checkbox" class="toggle on-off mright-xs" id="mk_animation" :checked="marker.animated == true" @click="marker.animated = !marker.animated" />
+					</h3>
+
+					<!-- Animation controls -->
+					<section :class="{'disabled' : !marker.animated }" key="1">
+
+						<div class="field-horizontal mtop-xs">
+							<input type="radio" class="radio mright-xs" id="mk_anpulse" :checked="marker.animation == 'pulse'" @click="marker.animation = 'pulse'" />
+							<label for="mk_anpulse">Pulse</label>
+						</div>
+						<div class="field-horizontal mtop-xs">
+							<input type="radio" class="radio mright-xs" id="mk_anbounce" :checked="marker.animation == 'bounce'" @click="marker.animation = 'bounce'" />
+							<label for="mk_anhover">Bounce</label>
+						</div>
+
+					</section>
+
+				
+				</div>
+				
+
 				<div id="markerInstructions" class="mtop-lg">
 					<h2 class="flex flex-between">
 						How to use with Leaflet
 					</h2>
 					<p>
-						First, copy the Output CSS from below the map and add it to your project's CSS.
+						First, click the button below the map to view marker CSS. Copy all of the CSS and add it to your project.
 					</p> 
 					<p class="no-padding">
 						Once the CSS is in your project, use the Leafleft DivIcon feature to use your custom marker.
@@ -274,9 +299,6 @@ Create custom map markers
 				<div id="map"></div>
 
 				<div id="outputArea">
-
-					<h2 class="mbottom-sm">Output</h2>
-
 					<div class="field mbottom-sm">
 						<label for="mc_clnm">
 							Icon CSS Class Name
@@ -284,16 +306,26 @@ Create custom map markers
 						<input type="text" v-model="markerClassName" id="mc_clnm"/>
 					</div>
 
-					<div id="output">
+					<button class="button" @click="showOutputModal = true">
+						Show output
+					</button>
 
-						<!-- Copy to clipboard -->
-						<button @click="copyBlock('markerCSS')" class="button small transparent mtop-xs mleft-xs">
-							<i class="far fa-copy"></i>
-							<span>Copy to Clipboard</span>
-						</button>
+					<!-- Output Modal -->
+							<!-- Promote to admin modal -->
+					<Modal
+						title="Marker CSS"
+						confirmText="Copy To Clipboard"
+						dismissText="Close"
+						confirmIcon="far fa-copy"
+						:show="showOutputModal"
+						@confirmed="copyBlock('markerCSS');"
+						@dismissed="showOutputModal = false;">
 
-						<pre>
-							<code id="markerCSS">
+
+						<div id="output">
+
+							<pre>
+								<code id="markerCSS">
 <b>/* Marker CSS */</b>
 .{{markerClassName}}{
   position: relative;
@@ -327,7 +359,7 @@ Create custom map markers
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   transform: rotate(-45deg);</span>
-  <span v-if="marker.shape=='diamond'">transform: rotate(45deg);</span>
+  <span v-if="marker.shape=='diamond'">transform: rotate(-45deg);</span>
 <span v-if="marker.border && marker.shape != 'triangle'">  /* Border */
   border: {{marker.borderWeight}}px {{marker.borderStyle}} {{marker.borderColor}};</span>
 <span v-if="marker.border && marker.shape == 'square' || marker.shape == 'diamond'">  /* Border Radius */
@@ -355,7 +387,7 @@ Create custom map markers
   background-color: transparent;
   left: -{{marker.iconSize}}px;
   top: -{{marker.iconSize}}px;
-  <span v-if="marker.shape == 'map-marker'">top:-{{marker.iconSize * 1.5}}px;</span>
+  <span v-if="marker.shape == 'map-marker'">top: -{{(marker.size / 1.35) + (marker.iconSize / 2)}}px</span>
   height: 0;
   width: 0;</span>
   margin-left: 5.5px;
@@ -363,13 +395,51 @@ Create custom map markers
   position: absolute;
   content: "{{marker.iconCharacter || ' '}}";
   <span v-if="!marker.iconCharacter">background-color: {{marker.iconColor}};</span>
-  <span v-if="marker.iconShape == 'circle'">border-radius: 50%;</span><span v-if="marker.iconShape == 'diamond'">transform: rotate(45deg);</span><span v-if="marker.iconShape == 'triangle' && marker.shape == 'triangle'">margin-top: {{marker.size / 2.5}}%;</span><span v-if="marker.iconShape == 'triangle' && marker.shape == 'map-marker'">top: -{{(marker.size / 1.3) + (marker.iconSize / 2)}}px;</span>
+  <span v-if="marker.iconShape == 'circle'">border-radius: 50%;</span><span v-if="marker.iconShape == 'diamond'">transform: rotate(-45deg);</span><span v-if="marker.iconShape == 'triangle' && marker.shape == 'triangle'">margin-top: {{marker.size / 2.5}}%;</span><span v-if="marker.iconShape == 'triangle' && marker.shape == 'map-marker'">top: -{{(marker.size / 1.3) + (marker.iconSize / 2)}}px;</span>
 }
+<span v-if="marker.animated">
+/* Animations */
+.myicon:before,
+.myicon:after{
+  animation: marker-{{marker.animation}} 2s ease-in-out 0s infinite normal none;
+  transform-origin: 50% 50%;
+}<span v-if="marker.animation == 'pulse'">
+@keyframes marker-pulse {
+  0% {
+    transform: scale(1)<span v-if="marker.shape == 'diamond' || marker.shape == 'map-marker'"> rotate(-45deg)</span>;
+    transform-origin: center center;
+  }
+  50% {
+    transform: scale(1.3)<span v-if="marker.shape == 'diamond' || marker.shape == 'map-marker'"> rotate(-45deg)</span>;
+  }
+  10% {
+    transform-origin: center center;
+    transform: scale(1)<span v-if="marker.shape == 'diamond' || marker.shape == 'map-marker'"> rotate(-45deg)</span>;
+  }
+}</span><span v-if="marker.animation == 'bounce'">
+@keyframes marker-bounce {
+  0% {
+    transform: translateY(0)<span v-if="marker.shape == 'diamond' || marker.shape == 'map-marker'"> rotate(-45deg)</span>;
+  }
+  50% {
+    transform: translateY(-10px)<span v-if="marker.shape == 'diamond' || marker.shape == 'map-marker'"> rotate(-45deg)</span>;
+  }
+  10% {
+    transform: translateY(0)<span v-if="marker.shape == 'diamond' || marker.shape == 'map-marker'"> rotate(-45deg)</span>;
+  }
+}</span>
+</span>
 </span>
 
-							</code>
-						</pre>
-					</div>
+								</code>
+							</pre>
+						</div>
+
+
+					</Modal>
+
+
+
 
 				</div>
 			</div>
@@ -403,15 +473,6 @@ Create custom map markers
   				margin-left: 5.5px;
 			}
 
-			<!-- Highlight shape with custom color -->
-			.shape-picker button.active{
-				color: {{marker.background}};
-				font-weight: 900 !important;
-			}
-			.shape-picker button.active-icon{
-				color: {{marker.iconColor}};
-				font-weight: 900 !important;
-			}
 		</v-style>
 
 		<!-- Shapes -->
@@ -441,7 +502,7 @@ Create custom map markers
 		<!-- Diamond -->
 		<v-style v-if="marker.shape == 'diamond'">
 			.myicon:after{
-				transform: rotate(45deg);
+				transform: rotate(-45deg);
 			}
 		</v-style>
 		<!-- Triangle -->
@@ -538,7 +599,7 @@ Create custom map markers
 		</v-style>
 		<v-style v-if="marker.shape == 'map-marker' && marker.iconShape == 'triangle'">
 			.myicon:before {
-				top: -{{marker.iconSize * 1.5}}px;
+				top: -{{(marker.size / 1.35) + (marker.iconSize / 2)}}px
 			}
 		</v-style>
 		<v-style v-if="marker.shape == 'triangle' && marker.iconShape == 'triangle'">
@@ -549,7 +610,17 @@ Create custom map markers
 		<!-- Diamond -->
 		<v-style v-if="marker.icon == true && marker.iconShape == 'diamond'">
 			.myicon:before {
-				transform: rotate(45deg);
+				transform: rotate(-45deg);
+			}
+		</v-style>
+
+
+		<!-- Animations -->
+		<v-style v-if="marker.animated">
+			.myicon:before,
+			.myicon:after{
+				animation: marker-{{marker.animation}}{{marker.shape == 'map-marker' || marker.shape == 'diamond' ? '-rotate' : ''}} 2s ease-in-out 0s infinite normal none;
+				transform-origin: 50% 50%;
 			}
 		</v-style>
 
@@ -559,10 +630,14 @@ Create custom map markers
 </template>
 
 <script>
+
+import Modal from "@/components/ui/Modals/Modal";
+
 export default {
 	name: "icons",
 
 	components: {
+		Modal,
 	},
 	
 
@@ -573,10 +648,12 @@ export default {
 		return {
 			markerClassName: "myicon",
 
+			showOutputModal: false,
+
 			marker: {
 				size: 50,
 				shape: "map-marker",
-				background: "#0076d6",
+				background: "#ff3c46",
 
 				border: true,
 				borderWeight: 3,
@@ -585,7 +662,7 @@ export default {
 				borderRadius: 0,
 
 				shadow: true,
-				shadowColor: "rgba(0,0,0,0.25)",
+				shadowColor: "rgba(0,0,0,0.35)",
 				shadowX: 0,
 				shadowY: 0,
 				shadowBlur: 10,
@@ -594,8 +671,11 @@ export default {
 				icon: true,
 				iconShape: "circle",
 				iconSize: 20,
-				iconColor: "#ffe12d",
+				iconColor: "#F0F2F5",
 				iconCharacter: "",
+
+				animated: false,
+				animation: "pulse",
 			},
 
 			shapes: [ "map-marker", "circle", "square", "diamond", "triangle" ],
@@ -638,7 +718,7 @@ export default {
 
 		// Reset to default shadow values
 		resetShadow: function(){
-			this.marker.shadowColor = "rgba(0,0,0,0.25)";
+			this.marker.shadowColor = "rgba(0,0,0,0.35)";
 			this.marker.shadowX = 0;	
 			this.marker.shadowY = 0;	
 			this.marker.shadowBlur = 10;	
@@ -658,30 +738,40 @@ export default {
 
 #markerGenerator{
 	display: flex;
-	gap: 40px;
 	margin: 0 auto;
 	justify-content: center;
 	box-sizing: border-box;
 	width: 100%;
+	position: relative;
 
 	@media (max-width: $screenLG) {
 		flex-wrap: wrap;
 		flex-direction: row-reverse;
-		margin-bottom: 30vh;
+		margin-bottom: 10vh;
+		max-width: 100%;
 	}
 
 	#markerGeneratorOptions{
 		box-sizing: border-box;
-		padding: var(--padding);
 		overflow: auto;
 		display: flex;
 		flex-wrap: wrap; 
 		gap: 30px;
-		width: fit-content;
-		justify-content: space-around;
+		justify-content: flex-start;
 		height: fit-content;
-		width: fit-content;
-		
+		width: 50vw;
+		max-height: 100vh;
+		overflow-x: auto;
+
+		@media (max-width: $screenLG) {
+			width: fit-content;
+		}
+		@media (max-width: $screenSM) {
+			width: 100vw;
+			justify-content: center;
+			border-bottom: 1px solid var(--border);
+		}
+
 		.marker-form-group{
 		}
 
@@ -691,8 +781,15 @@ export default {
 			padding: 15px;
 			border-radius: var(--borderRadius);
 			margin-top: 15px;
-			// max-width: 280px;
+			max-width: 280px;
+			min-width: 280px;
 			flex-basis: 280px;
+
+			@media (max-width: $screenSM) {
+				max-width: 90vw;
+				min-width: 90vw;
+				flex-basis: 100%;
+			}
 
 			p{
 				max-width: 262px;
@@ -714,7 +811,6 @@ export default {
 		box-sizing: border-box;
 		padding: var(-padding);
 		width: fit-content;
-		padding-top: 5vh;
 
 		@media (max-width: $screenLG) {
 			width: 100%;
@@ -725,28 +821,30 @@ export default {
 		max-width: 400px;
 		max-width: 100%;
 		width: 400px;
-		height: 400px;
+		min-height: 300px;
 		display: block;
 		z-index: 0;
 		margin: var(--padding);
 		border-radius: calc( var(--borderRadius) * 2);
-		
+
 		@media (max-width: $screenLG) {
-			width: 100%;
+			width: 96vw;
+			border-radius: 10px;
 			margin: 0;
 			position: fixed !important;
-			bottom: 0;
-			left: 0;
-			height: 30vh;
+			bottom: 10px;
+			left: 2vw;
+			max-height: 30vh;
+			min-height: 30vh;
 			z-index: 50;
 		}
 
 	}
 
 	#outputArea{
-		max-width: 400px;
 		width: 100%;
-		margin: 0 auto;
+		box-sizing: border-box;
+		padding: 25px;
 
 		#output{
 			background-color: var(--grey100);
@@ -769,9 +867,15 @@ export default {
 		transition: 0.2s;
 		top: 0;
 		font-size: 30px;
+		color: var(--grey400);
 
 		&:hover{
 			background-color: var(--grey200);
+		}
+
+		&.active,
+		&.active-icon{
+			color: var(--text)
 		}
 	}
 
@@ -780,6 +884,63 @@ export default {
 		display: none;
 	}
 
+}
+
+// Center instructions
+#markerInstructions{
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+
+// Animations
+@keyframes marker-pulse {
+	0% {
+		transform: scale(1);
+		transform-origin: center center;
+	}
+	50% {
+		transform: scale(1.3);
+	}
+	10% {
+		transform-origin: center center;
+		transform: scale(1);
+	}
+}
+@keyframes marker-pulse-rotate {
+	0% {
+		transform: scale(1) rotate(-45deg);
+		transform-origin: center center;
+	}
+	50% {
+		transform: scale(1.3) rotate(-45deg);
+	}
+	10% {
+		transform-origin: center center;
+		transform: scale(1) rotate(-45deg);
+	}
+}
+@keyframes marker-bounce {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	10% {
+		transform: translateY(0);
+	}
+}
+@keyframes marker-bounce-rotate {
+	0% {
+		transform: translateY(0) rotate(-45deg);
+	}
+	50% {
+		transform: translateY(-10px) rotate(-45deg);
+	}
+	10% {
+		transform: translateY(0) rotate(-45deg);
+	}
 }
 
 

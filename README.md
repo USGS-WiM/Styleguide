@@ -7,6 +7,7 @@ A collection of tools, guides, and code examples for setting up and developig we
 
 #### Tools: 
  - QR Code Link Generator - with WIM or USGS logo in center
+ - iFrame / Geonarrative Generator - Create web pages embedded between required Headers and Footers
  - Leaflet Marker Creator - design CSS leaflet markers
  - Animated Loaders - design and get code for USGS and WIM animated loaders
  - App Layouts - create the base layout for a new app

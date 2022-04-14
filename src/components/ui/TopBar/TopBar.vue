@@ -13,9 +13,9 @@
 		<div id="requiredHeaders">
 			<us-official-header :variant="$store.getters['Settings/darkMode'] ? 'dark' : 'light'"/>
 
-			<div id="usgsHeader">
+			<a id="usgsHeader" href="https://usgs.gov" target="_blank">
 				<img src="@/assets/branding/usgs-tagline.png" title="USGS Logo" alt="USGS Logo"/>
-			</div>
+			</a>
 		</div>
 
 
@@ -115,7 +115,7 @@ export default {
 		return {
 			showAccountPopover: false,
 
-			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Frame Template (Geonarrative)", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator",],
+			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Frame Template (Geonarrative)", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator", "Static Page Template",],
 			guidePaths: {
 				"Home": "/",
 				"Colors": "/colors",
@@ -132,6 +132,7 @@ export default {
 				"Printing": "/printing",
 				"Custom Components": "/components",
 				"App Layout Creator": "/templates",
+				"Static Page Template": "/static",
 			},
 			selectedLink: "",
 		};
