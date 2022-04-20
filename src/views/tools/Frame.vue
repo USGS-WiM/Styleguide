@@ -70,10 +70,10 @@ Generates single index.html file with USGS header and footer, with iframe in the
 								<us-form-input name="FrameURL" v-model="form.raw_url" placeholder="https://usgs.maps.arcgis.com/apps/xxxx/index.html?appid=xxxxxxxxxxxxxxx" />
 
 							</us-form-group>
-							<button class="button small mtop-xs" @click="updatePreview()" :disabled="!form.raw_url || !urlChange">
+							<!-- <button class="button small mtop-xs" @click="updatePreview()" :disabled="!form.raw_url || !urlChange">
 								<i class="far fa-history"></i>
 								<span>Load URL in Preview</span>
-							</button>
+							</button> -->
 
 							<!-- Theme -->
 							<us-form-group label="Header & Footer Theme">
@@ -267,7 +267,7 @@ Generates single index.html file with USGS header and footer, with iframe in the
 							color="red">
 							<h4>You have a few things to complete</h4>
 							<ul>
-								<li v-if="form.url.length < 10">Enter a valid URL</li>
+								<li v-if="form.url.length < 8">Enter a valid URL</li>
 								<li v-if="!form.title">Enter a title</li>
 								<li v-if="!form.theme">Select a frame theme</li>
 								<li v-if="!form.person">Add an Author/Point of Contact</li>
@@ -425,6 +425,7 @@ export default {
 	watch: {
 		"form.raw_url": function(){
 			this.urlChange = true;
+			this.updatePreview();
 		}
 	},
 

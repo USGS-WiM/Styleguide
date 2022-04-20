@@ -212,10 +212,10 @@ Create custom map markers
 							<!-- Icon Character -->
 							<div class="field mtop-xs">
 								<label class="small" for="ic_col">Or your own character</label>
-								<input type="text" placeholder="3" maxlength="3" id="ic_char" v-model="marker.iconCharacter" :disabled="!marker.icon" @input="marker.iconShape = 'character'"/>
+								<input type="text" placeholder="5" id="ic_char" v-model="marker.iconCharacter" :disabled="!marker.icon" @input="marker.iconShape = 'character'"/>
 							</div>
 							<p class="tiny no-padding">
-								One character. Emojis also work.
+								Emojis also work.
 							</p>
 
 							<!-- Icon Size -->
@@ -695,15 +695,16 @@ export default {
 	mounted() {
 
 		// Map Setup
-		var mainMap = L.map("map").setView([43.092533,-89.5324482], 17);
+		var mainMap = L.map("map").setView([43.0743151,-89.4275082], 17);
 		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			attribution: "",
 			maxZoom: 18,
 		}).addTo(mainMap);
 
+
 		var previewIcon = L.divIcon({className: "myicon"});
 		// you can set .my-div-icon styles in CSS
-		L.marker([43.092533,-89.5324482], {icon: previewIcon}).addTo(mainMap).bindPopup("<b>Hello world!</b><br />I am a popup.");;
+		L.marker([43.0743151,-89.4275082], {icon: previewIcon}).addTo(mainMap).bindPopup("<b>Hello world!</b><br />I am a popup.");;
 
 
 	},

@@ -52,6 +52,14 @@ Home.vue
 						<small>Add your website or Storymap to an iFrame with a header and footer.</small>
 					</div>
 				</router-link>
+				<!-- Email Signature -->
+				<router-link class="tool-link" to="/signature">
+					<i class="far fa-envelope"></i>
+					<div class="text">
+						<b>Email Signature</b>
+						<small>Create a signature to paste into your Outlook settings.</small>
+					</div>
+				</router-link>
 			</div>
 
 			<!-- Development -->

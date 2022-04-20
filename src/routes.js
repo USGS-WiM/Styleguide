@@ -61,6 +61,15 @@ export const routes = [
 				title: "QR Code Generator — " + AppName,
 			}
 		},
+		// Email Signature Generator
+		{
+			path: "/signature",
+			name: "email-signature",
+			component: () => import(/* webpackChunkName: "email-signature" */ "./views/tools/EmailSignature.vue"),
+			meta: {
+				title: "Email Signatures — " + AppName,
+			}
+		},
 		// Frame Generator
 		{
 			path: "/frame",

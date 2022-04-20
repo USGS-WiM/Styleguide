@@ -115,7 +115,7 @@ export default {
 		return {
 			showAccountPopover: false,
 
-			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Frame Template (Geonarrative)", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator", "Static Page Template",],
+			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Email Signature Designer", "Frame Template (Geonarrative)", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator", "Static Page Template",],
 			guidePaths: {
 				"Home": "/",
 				"Colors": "/colors",
@@ -123,6 +123,7 @@ export default {
 				"Map Symbols": "/markers",
 				"Animated Loaders": "/loaders",
 				"QR Code Generator": "/qr",
+				"Email Signature Designer": "/signature",
 				"Frame Template (Geonarrative)": "/frame",
 				"Interface Icons": "/icons",
 				"CSS Variables": "/variables",

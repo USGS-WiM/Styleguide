@@ -122,8 +122,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Banner, Green
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_Green_Banneronly_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_Green_Banneronly_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -131,8 +131,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Full Logo, Green
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_Green_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_Green_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -140,8 +140,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					No Tagline, Green
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_Green_Notag_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_Green_Notag_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -149,7 +149,7 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					USGS Favicon
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Download</a>
+					<a href="img/sg-logos/USGS/USGS_Favicon.png" >Download</a>
 				</b>
 			</div>
 		</div>
@@ -160,8 +160,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Banner, Black
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_Black_Banneronly_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_Black_Banneronly_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -169,8 +169,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Full Logo, Black
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_Black_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_Black_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -178,8 +178,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					No Tagline, Green
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_Black_Notag_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_Black_Notag_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 		</div>
@@ -190,8 +190,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Banner, White
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_White_Banneronly_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_White_Banneronly_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -199,8 +199,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Full Logo, White
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_White_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_White_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -208,8 +208,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					No Tagline, White
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/USGS/USGS_White_Notag_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_White_Notag_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 		</div>
