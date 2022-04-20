@@ -54,27 +54,17 @@ setTimeout(function(){
 		<pre>
 			<code>
 &lt;!-- Element HTML --&gt;
-&lt;div id="count"&gt;5&lt;/div&gt;
+&lt;span id="counterElement"&gt;5&lt;/span&gt;
 
 // Javascript
-setTimeout(function(){
-  document.getElementById("count").innerHTML = "4" 
-}, 1000);
-setTimeout(function(){ 
-  document.getElementById("count").innerHTML = "3" 
-}, 2000);
-setTimeout(function(){ 
-  document.getElementById("count").innerHTML = "2" 
-}, 3000);
-setTimeout(function(){
-  document.getElementById("count").innerHTML = "1" 
-}, 4000);
-setTimeout(function(){ 
-  document.getElementById("count").innerHTML = "0" 
-}, 5000);
-
-
-
+var countStart = 5; // Same number as in HTML
+for (let step = 1; step < 6; step++) {
+  // Delay is 1000ms * step
+  var countDelay = step * 1000;
+  setTimeout(function(){ 
+    document.getElementById("counterElement").innerHTML = countStart - step; 
+  }, countDelay);
+}
 			</code>
 		</pre>
 
