@@ -18,7 +18,7 @@ Create custom map markers
 					<!-- Marker Options -->
 					<div class="marker-form-group">
 
-						<h3>Marker Options</h3>
+						<h3>Base Options</h3>
 
 						<section>
 
@@ -161,7 +161,7 @@ Create custom map markers
 					<!-- Icon -->
 					<div class="marker-form-group">
 						<h3 class="flex flex-between">
-							Icon
+							Marker Icon
 							<input type="checkbox" class="toggle on-off mright-xs" id="mk_icon" :checked="marker.icon == true" @click="marker.icon = !marker.icon" />
 						</h3>
 
@@ -475,7 +475,7 @@ Create custom map markers
 					How to use with Leaflet
 				</h2>
 				<p>
-					First, click the button below the map to view marker CSS. Copy all of the CSS and add it to your project.
+					First, click the "Show CSS Output" button to view marker CSS. Copy all of the CSS and add it to your project.
 				</p> 
 				<p class="no-padding">
 					Once the CSS is in your project, use the Leafleft DivIcon feature to use your custom marker.

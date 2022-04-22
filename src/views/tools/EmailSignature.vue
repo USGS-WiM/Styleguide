@@ -53,6 +53,23 @@ Email Signature generator
 							<input type="text" id="addr3" v-model="address_3" placeholder=""/>
 						</div>
 
+						<!-- Pre-fill address -->
+						<div class="flex flex-around mtop-xs">
+							<a class="small" @click="fillAddress('wi')">
+								<i class="far-map-marker"></i>
+								<span>Madison FPL</span>
+							</a>
+							<a class="small" @click="fillAddress('mn')">
+								<i class="far-map-marker"></i>
+								<span>St. Paul</span>
+							</a>
+							<a class="small" @click="fillAddress('mn-og')">
+								<i class="far-map-marker"></i>
+								<span>Mounds View</span>
+							</a>
+						</div>
+
+
 						<!-- Website -->
 						<div class="field mtop-sm">
 							<label for="sigwebsite">Website</label>
@@ -69,13 +86,27 @@ Email Signature generator
 
 			<div id="sigRight">
 
+				<!-- Logo -->
+				<div class="flex flex-wrap gap">
+					<div class="field mbottom-lg mtop-sm flex">
+						<input id="sigDivider" type="checkbox" class="toggle on-off" v-model="enableDivider"/>
+						<label for="sigDivider" class="flex flex-column flex-center mleft-xs">Divider</label>
+					</div>
+					<div class="field mbottom-lg mtop-sm flex">
+						<input id="sigLogo" type="checkbox" class="toggle on-off" v-model="enableLogo"/>
+						<label for="sigLogo" class="flex flex-column flex-center mleft-xs">Logo</label>
+					</div>
+					<div class="field mbottom-lg mtop-sm flex" v-if="enableLogo">
+						<input id="sigWimLogo" type="checkbox" class="toggle yes-no" v-model="wimLogo"/>
+						<label for="sigWimLogo" class="flex flex-column flex-center mleft-xs">WIM Logo</label>
+					</div>
+				</div>
+
 
 				<div class="signature-wrapper">
 
 					<div id="usgsSignature">
-						<div class="logo">
-							<img src="https://wim.usgs.gov/hold/signature_logo.png"/>
-						</div>
+						<!-- Signature Body -->
 						<div class="body">
 							<!-- Name -->
 							<span class="name">
@@ -83,7 +114,7 @@ Email Signature generator
 								<span v-if="pronouns" class="pronouns">({{pronouns}})</span>	
 							</span>
 							<!-- Title -->
-							<span class="title">{{title || "" }}</span>
+							<span class="title" :class="{'no-border': !enableDivider}">{{title || "" }}</span>
 							<!-- Email -->
 							<a class="contact" v-if="email" :href="'mailto:' + email">
 								<span>{{email}}</span>
@@ -105,15 +136,20 @@ Email Signature generator
 							</div>
 
 							<!-- Website -->
-							<a class="contact" :href="website" v-if="website">
+							<a class="contact website" :href="website" v-if="website">
 								<span>{{website.replace(/^https?:\/\//, '')}}</span>
 							</a>
 							
 						</div>
+						<!-- Logo -->
+						<div class="logo" v-if="enableLogo"> 
+							<img src="https://wim.usgs.gov/hold/signature_logo_wim.png" v-if="wimLogo"/>
+							<img src="https://wim.usgs.gov/hold/signature_logo.png" v-else/>
+						</div>
 
 					</div>
 
-					<!-- Instructions -->
+
 					<h3 class="mtop-lg">Instructions</h3>
 					<h4 class="mtop-md">Step 1</h4>
 					<p>
@@ -183,6 +219,11 @@ export default {
 			address_2: "US Geological Survey Upper Midwest Water Science Center",
 			address_3: "1 Gifford Pinchot Drive, Madison, WI 53726",
 
+			// Design
+			enableDivider: true,
+			enableLogo: true,
+			wimLogo: false,
+
 			// name: "Mitch Samuels",
 			// pronouns: "He/Him",
 			// title: "Software Developer",
@@ -211,6 +252,30 @@ export default {
 	},
 	
 	methods: {
+
+		fillAddress: function(code){
+
+			// Wisconsin
+			if(code == "wi"){
+				this.address_1 = "Web Informatics & Mapping";
+				this.address_2 = "US Geological Survey Upper Midwest Water Science Center";
+				this.address_3 = "1 Gifford Pinchot Drive, Madison, WI 53726";
+			}
+			// Minnesota
+			else if(code == "mn"){
+				this.address_1 = "Web Informatics & Mapping";
+				this.address_2 = "US Geological Survey";
+				this.address_3 = "1992 Folwell Ave, St Paul, MN 55108";
+			}
+			// Minnesota - OG
+			else if(code == "mn-og"){
+				this.address_1 = "Web Informatics & Mapping";
+				this.address_2 = "US Geological Survey Minnesota Water Science Center";
+				this.address_3 = "2280 Woodale Dr, Mounds View, MN 55112";
+			}
+
+		},
+
 
 		copySignature: function(){
 			var range = document.createRange();
@@ -393,15 +458,12 @@ export default {
 	}
 
 	.logo{
-		display: inline-block;
-		vertical-align: middle;
-		text-align: center;
-		margin: 0 auto;
+		display: block;
 		box-sizing: border-box;
 		padding: 15px 25px 15px 0;
 
 		img{
-			height: 50px;
+			height: 40px;
 			width: auto;
 			margin: 0 auto;
 		}
@@ -417,7 +479,8 @@ export default {
 		display: inline-block;
 		vertical-align: middle;
 		color:#030636;
-		max-width: fit-content;
+		width: fit-content;
+		max-width: 500px;
 
 		.name,
 		.title,
@@ -438,31 +501,42 @@ export default {
 		}
 
 		.pronouns{
-			font-size: 60%;
+			font-size: 55%;
 			font-weight: 400;
 			font-style: italic;
 		}
 
 		.name{
-			font-size: 115%;
-			font-weight: 800;
+			font-size: 120%;
+			font-weight: 700;
 		}
 		.title{
-			font-size: 95%;
-			color: grey;
+			font-size: 90%;
+			color: #5b5b5b;
 			font-weight: 500;
 			padding-bottom: 8px;
 			margin-bottom: 8px;
-			margin-top: 2px;
-			border-bottom: 2px solid #006E4C;
+			margin-top: 4px;
+			border-bottom: 1px solid black;
+
+			&.no-border{
+				border-bottom: none;
+				margin-bottom: 0;
+			}
 		}
 		.contact{
-			font-size: 80%;
+			font-size: 75%;
 			display: block;
 			margin: 0 0 8px 0;
 
 			&.address{
 				margin-bottom: 4px;
+			}
+			&.website{
+				margin-top: 6px;
+				display: block;
+				font-style: italic;
+				font-size: 85%;
 			}
 		}
 	}

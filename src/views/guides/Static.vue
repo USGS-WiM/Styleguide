@@ -58,7 +58,7 @@ setTimeout(function(){
 
 // Javascript
 var countStart = 5; // Same number as in HTML
-for (let step = 1; step < 6; step++) {
+for (let step = 1; step &lt; 6; step++) {
   // Delay is 1000ms * step
   var countDelay = step * 1000;
   setTimeout(function(){ 
