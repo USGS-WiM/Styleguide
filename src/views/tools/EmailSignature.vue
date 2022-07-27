@@ -76,6 +76,12 @@ Email Signature generator
 							<input type="text" id="sigwebsite" v-model="website" placeholder="https://usgs.gov"/>
 						</div>
 
+						<!-- ORCID -->
+						<div class="field mtop-sm">
+							<label for="orcidInput">ORCID</label>
+							<input type="text" id="orcidInput" v-model="orcID" placeholder="0000-0000-1234-5678"/>
+						</div>
+
 					</div>			
 							
 
@@ -138,6 +144,12 @@ Email Signature generator
 							<!-- Website -->
 							<a class="contact website" :href="website" v-if="website">
 								<span>{{website.replace(/^https?:\/\//, '')}}</span>
+							</a>
+							
+
+							<!-- ORCID -->
+							<a class="contact orcid" v-if="orcID" :href="'https://orcid.org/' + orcID">
+								<span id="octxt">ORC<b>iD</b>:</span>&nbsp;<span>{{orcID}}</span>
 							</a>
 							
 						</div>
@@ -218,6 +230,8 @@ export default {
 			address_1: "Web Informatics & Mapping",
 			address_2: "US Geological Survey Upper Midwest Water Science Center",
 			address_3: "1 Gifford Pinchot Drive, Madison, WI 53726",
+
+			orcID: "",
 
 			// Design
 			enableDivider: true,
@@ -449,6 +463,7 @@ export default {
 	line-height: 10px;
 	margin: 0;
 	color: black;
+	background-color: white !important;
 
 	a{
 		text-decoration: none !important;
@@ -463,7 +478,7 @@ export default {
 		padding: 15px 25px 15px 0;
 
 		img{
-			height: 40px;
+			height: 36px;
 			width: auto;
 			margin: 0 auto;
 		}
@@ -480,6 +495,7 @@ export default {
 		vertical-align: middle;
 		color:#030636;
 		width: fit-content;
+		min-width: 250px;
 		max-width: 500px;
 
 		.name,
@@ -501,17 +517,17 @@ export default {
 		}
 
 		.pronouns{
-			font-size: 55%;
+			font-size: 70%;
 			font-weight: 400;
 			font-style: italic;
 		}
 
 		.name{
-			font-size: 120%;
+			font-size: 100%;
 			font-weight: 700;
 		}
 		.title{
-			font-size: 90%;
+			font-size: 85%;
 			color: #5b5b5b;
 			font-weight: 500;
 			padding-bottom: 8px;
@@ -525,7 +541,7 @@ export default {
 			}
 		}
 		.contact{
-			font-size: 75%;
+			font-size: 70%;
 			display: block;
 			margin: 0 0 8px 0;
 
@@ -536,7 +552,20 @@ export default {
 				margin-top: 6px;
 				display: block;
 				font-style: italic;
-				font-size: 85%;
+				font-size: 80%;
+			}
+			&.orcid{
+				margin-top: 6px;
+				display: block;
+				font-style: italic;
+				font-size: 80%;
+				font-weight: bolder;
+			}
+			#octxt{
+				color: black;
+				b{
+					color: green;
+				}
 			}
 		}
 	}
