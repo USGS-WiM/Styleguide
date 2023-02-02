@@ -170,6 +170,15 @@ export const routes = [
 				title: "Static Page — " + AppName,
 			}
 		},
+		// Partials
+		// {
+		// 	path: "/partials",
+		// 	name: "partials",
+		// 	component: () => import(/* webpackChunkName: "partials" */ "./views/guides/Partials.vue"),
+		// 	meta: {
+		// 		title: "Partials — " + AppName,
+		// 	}
+		// },
 		
 	//* Interface
 	// Example page for seeing UI Elements

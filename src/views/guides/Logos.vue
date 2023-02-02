@@ -30,8 +30,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Horizontal
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_horizontal_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_horizontal_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -39,8 +39,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Abbreviation
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_abbreviation_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_abbreviation_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -48,8 +48,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Pin Only
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_pin_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_pin_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -57,8 +57,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Avatar
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_avatar_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_avatar_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -66,7 +66,7 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Favicon
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Download</a>
+					<a href="img/sg-logos/WIM/wim_favicon.png" target="_blank">Download</a>
 				</b>
 			</div>
 		</div>
@@ -79,8 +79,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Stacked
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_stacked_dark_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_stacked_dark_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -88,8 +88,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Horizontal
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_horizontal_dark_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_horizontal_dark_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -97,8 +97,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Abbreviation
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_abbreviation_dark_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_abbreviation_dark_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 			<div class="sg--logoblock">
@@ -106,8 +106,8 @@ Displays & Download links for various WIM and USGS Logos
 				<b>
 					Pin Only
 					<br/>
-					<a href="img/sg-logos/WIM/wim_stacked_web.png" >Web Optimized</a>
-					<a href="img/sg-logos/WIM/wim_stacked_fullres.png" target="_blank">Fullres</a>
+					<a href="img/sg-logos/WIM/wim_pin_dark_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/WIM/wim_pin_dark_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>
 		</div>
@@ -127,11 +127,11 @@ Displays & Download links for various WIM and USGS Logos
 				</b>
 			</div>
 			<div class="sg--logoblock">
-				<img src="img/sg-logos/USGS/USGS_Green_web.png" title="USGS Green" alt="USGS Green"/>
+				<img src="img/sg-logos/USGS/USGS_Green_fullres.png" title="USGS Green" alt="USGS Green"/>
 				<b>
 					Full Logo, Green
 					<br/>
-					<a href="img/sg-logos/USGS/USGS_Green_web.png" >Web Optimized</a>
+					<a href="img/sg-logos/USGS/USGS_Green_fullres.png" >Web Optimized</a>
 					<a href="img/sg-logos/USGS/USGS_Green_fullres.png" target="_blank">Fullres</a>
 				</b>
 			</div>

@@ -105,16 +105,29 @@ Generates single index.html file with USGS header and footer, with iframe in the
 								</div>
 							</div>
 
+							<!-- USA Banner -->
+							<div class="field mtop-md">
+								<div class="flex">
+									<div class="mright-md">
+										<input id="usaBannerToggle" type="checkbox" class="toggle on-off" v-model="form.usa_banner"/>
+									</div>
+									<label for="usaBannerToggle">
+										USA Banner
+										<small class="block text-fade">Add the <a href="https://designsystem.digital.gov/components/banner/" target="_blank">USWDS</a> "official website of the US Government" banner.</small>
+									</label>
+								</div>
+							</div>
+
 							<!-- Test Mode -->
 							<div class="field mtop-md">
 								<div class="flex">
+									<div class="mright-md">
+										<input id="testingToggle" type="checkbox" class="toggle on-off" v-model="form.test_mode"/>
+									</div>
 									<label for="testingToggle">
 										Test Mode
 										<small class="block text-fade">This will add a banner to clearly indicate it's in testing.</small>
 									</label>
-									<div class="mleft-md">
-										<input id="testingToggle" type="checkbox" class="toggle on-off" v-model="form.test_mode"/>
-									</div>
 								</div>
 							</div>
 							
@@ -199,22 +212,40 @@ Generates single index.html file with USGS header and footer, with iframe in the
 						</us-form-group>
 
 
+						<h3 class="mtop-md">Google Analytics</h3>
+
 						<!-- Optional -->
 						<!-- Analytics ID -->
 						<us-form-group 
-							label="Google Analytics ID" 
-							help-text="Optional - If you'd like to track visits for this site, add your Google Analytics tracking ID here. Each page view will be tracked with the page title." 
+							:label="useOldGAnalytics ? 'UA Tracking ID' : 'Google Analytics Measurement ID'" 
+							help-text="Optional - If you'd like to use Google analytics with this site." 
 							error="">
 
-							<us-form-input name="AnalyticsID" placeholder="UA-XXXXXXXX-X" v-model="form.analytics_id" />
+							<us-form-input name="AnalyticsID" :placeholder="useOldGAnalytics ? 'UA-XXXXXXXX-X' : 'G-XXXXXXXXXX'" v-model="form.analytics_id" />
 
 						</us-form-group>
+					
+						<p class="mtop-sm">
+							Universal Analytics properties (UA-) will stop processing data on July 1, 2023. If you haven't already, move over to Google Analytics 4 (GA4) tags
+						</p>
+
+
+						<p class="small">
+							<b>Have a {{ useOldGAnalytics ? 'GA4 Code (G-XXXXXXXXXX)' : 'Universal Analytics code (UA-XXXXXXXX-X)'}}?</b>
+						</p>
+						<button @click="useOldGAnalytics = !useOldGAnalytics" class="button grey small">
+							{{useOldGAnalytics ? "Click to use GA4 code" : "Click to use UA- code"}}
+						</button>
+
+
 
 
 
 
 						<!-- Previews -->
-						<h3 class="mtop-lg">Meta Preview</h3>
+						<h2 class="mtop-lg">Meta Preview</h2>
+
+						<p>This is what your site will look like on social media and search engines.</p>
 
 						<!-- Google -->
 						<h4 class="mtop-sm">Google Search</h4>
@@ -337,11 +368,16 @@ Generates single index.html file with USGS header and footer, with iframe in the
 			<!-- Test mode no index -->
 			<meta name="robots" content="noindex" v-if="form.test_mode">
 
-			<v-script v-if="form.analytics_id">
+
+			<!-- Old (v3?) Google analytics tags -->
+			<v-script v-if="form.analytics_id && useOldGAnalytics">
 				(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
 				ga("create", "{{form.analytics_id}}", "auto");
 				ga("send", "pageview", "{{form.title}}")'
 			</v-script>
+
+
+
 		</div>
 
 
@@ -378,6 +414,8 @@ export default {
 			// URL has changed
 			urlChange: false,
 
+			useOldGAnalytics: false,
+
 			// Form Data
 			form: {
 				raw_url: "",
@@ -385,7 +423,7 @@ export default {
 				title: "",
 				theme: "USGS",
 
-			 	date: this.$date().format("YYYY-MM-DD"),
+				date: this.$date().format("YYYY-MM-DD"),
 				person: "",
 				email: "",
 
@@ -395,6 +433,7 @@ export default {
 				// Other Options
 				esri_header: false,
 				test_mode: false,
+				usa_banner: false,
 			},
 
 			// Generated HTML output to download
@@ -449,7 +488,7 @@ export default {
 			setTimeout(() => {
 				_this.$store.dispatch("Hold/STOP_LOAD");
 				_this.form.url = this.form.raw_url;
-      		}, 1000);
+			}, 1000);
 		},
 
 		// Validate form, get frame html
@@ -466,7 +505,7 @@ export default {
 
 			setTimeout(() => {
 				_this.downloadFile();
-      		}, 1000);
+			}, 1000);
 		},
 
 		// Download
@@ -480,7 +519,28 @@ export default {
 			};
 
             // Output to Textarea first
-			this.generatedOutput = "<html lang='en'><head>";
+			this.generatedOutput = "<!DOCTYPE html><html lang='en'><head>";
+
+			// Add Analytics if present 
+			if(this.form.analytics_id && !this.useOldGAnalytics){
+
+				console.log("Adding Google Analytics");
+
+				var gscript = "<";
+				gscript = gscript + "script async src='https://www.googletagmanager.com/gtag/js?id=" + this.form.analytics_id;
+				gscript = gscript + "'></scri";
+				gscript = gscript + "pt><script>";
+
+				gscript = gscript + "window.dataLayer = window.dataLayer || [];";
+				gscript = gscript + "function gtag(){dataLayer.push(arguments);}";
+				gscript = gscript + "gtag('js', new Date());";
+				gscript = gscript + "gtag('config', \"" + this.form.analytics_id + "\");</scri" + "pt>";
+
+
+				this.generatedOutput = this.generatedOutput + gscript;
+			}
+
+
 			// Add Head
 			this.generatedOutput = this.generatedOutput + 
 				this.$refs.templateHead.innerHTML;
@@ -508,10 +568,10 @@ export default {
             document.body.appendChild(downloadLink);
 
 			setTimeout(() => {
-            	downloadLink.click();
+				downloadLink.click();
 				_this.hello("File downloaded", "far fa-check", "green");
 				_this.$store.dispatch("Hold/STOP_LOAD");
-      		}, 500);
+			}, 500);
 
 		},
 
