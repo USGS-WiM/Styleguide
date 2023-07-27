@@ -38,7 +38,7 @@ export const routes = [
 		{
 			path: "/markers",
 			name: "markers",
-			component: () => import(/* webpackChunkName: "markers" */ "./views/guides/Markers.vue"),
+			component: () => import(/* webpackChunkName: "markers" */ "./views/tools/Markers.vue"),
 			meta: {
 				title: "Map Markers — " + AppName,
 			}
@@ -47,7 +47,7 @@ export const routes = [
 		{
 			path: "/loaders",
 			name: "loaders",
-			component: () => import(/* webpackChunkName: "loaders" */ "./views/guides/Loaders.vue"),
+			component: () => import(/* webpackChunkName: "loaders" */ "./views/tools/Loaders.vue"),
 			meta: {
 				title: "Animated Loaders — " + AppName,
 			}
@@ -56,9 +56,18 @@ export const routes = [
 		{
 			path: "/qr",
 			name: "qr",
-			component: () => import(/* webpackChunkName: "qr" */ "./views/guides/QR.vue"),
+			component: () => import(/* webpackChunkName: "qr" */ "./views/tools/QR.vue"),
 			meta: {
 				title: "QR Code Generator — " + AppName,
+			}
+		},
+		// Email Signature Generator
+		{
+			path: "/signature",
+			name: "email-signature",
+			component: () => import(/* webpackChunkName: "email-signature" */ "./views/tools/EmailSignature.vue"),
+			meta: {
+				title: "Email Signatures — " + AppName,
 			}
 		},
 		// Icons
@@ -129,11 +138,29 @@ export const routes = [
 		{
 			path: "/templates",
 			name: "templates",
-			component: () => import(/* webpackChunkName: "templates" */ "./views/guides/Templates.vue"),
+			component: () => import(/* webpackChunkName: "templates" */ "./views/tools/Templates.vue"),
 			meta: {
 				title: "Templates — " + AppName,
 			}
 		},
+		// Static Page
+		{
+			path: "/static",
+			name: "static",
+			component: () => import(/* webpackChunkName: "static" */ "./views/guides/Static.vue"),
+			meta: {
+				title: "Static Page — " + AppName,
+			}
+		},
+		// Partials
+		// {
+		// 	path: "/partials",
+		// 	name: "partials",
+		// 	component: () => import(/* webpackChunkName: "partials" */ "./views/guides/Partials.vue"),
+		// 	meta: {
+		// 		title: "Partials — " + AppName,
+		// 	}
+		// },
 		
 	//* Interface
 	// Example page for seeing UI Elements

@@ -3,7 +3,7 @@
 // Universal Lightbox
 // Blank div with lightbox class
 .lightbox{
-	background-color: var(--greyTransparent);
+	background-color: var(--transparent);
 	// backdrop-filter: blur(3px);
 	backdrop-filter: grayscale(80%);
 	display: block;

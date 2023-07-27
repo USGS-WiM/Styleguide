@@ -13,9 +13,9 @@
 		<div id="requiredHeaders">
 			<us-official-header :variant="$store.getters['Settings/darkMode'] ? 'dark' : 'light'"/>
 
-			<div id="usgsHeader">
+			<a id="usgsHeader" href="https://usgs.gov" target="_blank">
 				<img src="@/assets/branding/usgs-tagline.png" title="USGS Logo" alt="USGS Logo"/>
-			</div>
+			</a>
 		</div>
 
 
@@ -115,7 +115,7 @@ export default {
 		return {
 			showAccountPopover: false,
 
-			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator",],
+			guides: ["Home", "Colors", "Logos & Branding", "Map Symbols", "Animated Loaders", "QR Code Generator", "Email Signature Designer", "Frame Template (Geonarrative)", "Interface Icons", "CSS Variables", "Meta Tags", "USWDS",  "Dark Mode", "Printing", "Custom Components", "App Layout Creator", "Static Page Template",],
 			guidePaths: {
 				"Home": "/",
 				"Colors": "/colors",
@@ -123,6 +123,7 @@ export default {
 				"Map Symbols": "/markers",
 				"Animated Loaders": "/loaders",
 				"QR Code Generator": "/qr",
+				"Email Signature Designer": "/signature",
 				"Interface Icons": "/icons",
 				"CSS Variables": "/variables",
 				"Meta Tags": "/meta",
@@ -131,6 +132,7 @@ export default {
 				"Printing": "/printing",
 				"Custom Components": "/components",
 				"App Layout Creator": "/templates",
+				"Static Page Template": "/static",
 			},
 			selectedLink: "",
 		};
@@ -312,7 +314,7 @@ export default {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				z-index: 10;
+				// z-index:;
 				margin-left: 12px;
 
 				@media (max-width: $screenSM) {

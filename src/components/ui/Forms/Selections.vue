@@ -289,7 +289,7 @@ export default {
 
 .selections-lightbox{
 	z-index: 2;
-	background-color: var(--greyTransparent);
+	background-color: var(--transparent);
 	position: fixed;
 	bottom: 0;
 	left: 0;

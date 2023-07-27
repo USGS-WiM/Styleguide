@@ -8,7 +8,7 @@
 
 <template>
 	<!-- Tooltip -->
-	<button class="tooltip" v-bind:class="[color && color, position && position, {'show': show}]" @click.prevent="show = !show" tabindex="0" role="tooltip">
+	<button class="tooltip" v-bind:class="[color && color, position && position, {'show': show}]" @click="show = !show" tabindex="0" role="tooltip">
 
 		<!-- Icon -->
 		<i :class="['tooltip-icon', (!icon && !show) && 'fas fa-question-circle', (icon && !show) && icon, {'far fa-times-circle': show}]"></i>
@@ -195,7 +195,6 @@ export default {
 				font-size: 12px;
 				padding: 4px 0 7px 0;
 				font-weight: 700;
-				pointer-events: all;
 
 				span{
 					font-weight: 600;

@@ -44,6 +44,14 @@ Home.vue
 						<small>SVG + CSS animated loaders for websites and applications.</small>
 					</div>
 				</router-link>
+				<!-- Email Signature -->
+				<router-link class="tool-link" to="/signature">
+					<i class="far fa-envelope"></i>
+					<div class="text">
+						<b>Email Signature</b>
+						<small>Create a signature to paste into your Outlook settings.</small>
+					</div>
+				</router-link>
 			</div>
 
 			<!-- Development -->
@@ -103,6 +111,14 @@ Home.vue
 					<div class="text">
 						<b>Printing</b>
 						<small>Information for creating a printable section on your application.</small>
+					</div>
+				</router-link>
+				<!-- Static Page -->
+				<router-link class="tool-link" to="/static">
+					<i class="far fa-browser"></i>
+					<div class="text">
+						<b>Static Page</b>
+						<small>No dependencies, good for simple messages or redirect pages.</small>
 					</div>
 				</router-link>
 			</div>
@@ -207,13 +223,20 @@ export default {
 			display: flex;
 			color: var(--text);
 			max-width: 300px;
+			min-width: 300px;
+
+			@media (max-width: $screenSM) {
+				min-width: 90%;
+				max-width: 90%;
+			}
 
 			i{
 				font-size: 32px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				width: 100px;
+				min-width: 100px;
+				max-width: 100px;
 				text-align: center;
 				transform: scale(1);
 				transition: 0.1s;

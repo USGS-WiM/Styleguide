@@ -854,7 +854,8 @@ Display and code for animated loaders.
 			<pre>
 				<code id="elementHTML">
 <b>&lt;!-- Element HTML --&gt;</b>
-&lt;div class="loader-wrapper"&gt;
+&lt;div class="loader-wrapper {{animationShape}}{{animationType}} {{display}}"&gt;
+
 
   &lt;div class="loader-object"&gt;<span v-if="animationShape == 'wimpin'">
     &lt;!-- WIM Pin SVG --&gt;

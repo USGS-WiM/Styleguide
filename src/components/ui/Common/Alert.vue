@@ -97,7 +97,8 @@ export default {
 			border-radius: 22px;
 			font-size: 14px;
 			box-shadow: var(--shadow);
-			font-weight: 700;
+			font-weight: 600;
+			letter-spacing: 0.2px;
 			margin: 0 auto;
 			border: 1px solid var(--border);
 			max-width: 300px;

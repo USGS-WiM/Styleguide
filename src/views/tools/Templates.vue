@@ -133,35 +133,35 @@ Simple base code structures for new apps
 
 			<!-- Required USGS Footer -->
 			<footer id="usgs" v-if="layout.usgsFooter">
-				<a href="//www.doi.gov/privacy" target="_blank">
+				<a href="https://www.doi.gov/privacy" target="_blank">
 					DOI Privacy Policy
 				</a>
-				<a href="//usgs.gov/policies-and-notices" target="_blank">
+				<a href="https://usgs.gov/policies-and-notices" target="_blank">
 					Legal
 				</a>
-				<a href="//usgs.gov/accessibility-and-us-geological-survey" target="_blank">
+				<a href="https://usgs.gov/accessibility-and-us-geological-survey" target="_blank">
 					Accessibility
 				</a>
-				<a href="//usgs.gov/sitemap" target="_blank">
+				<a href="https://usgs.gov/sitemap" target="_blank">
 					Site Map
 				</a>
 				<div></div>
-				<a href="//doi.gov" target="_blank">
+				<a href="https://doi.gov" target="_blank">
 					U.S. Department of the Interior
 				</a>
-				<a href="//doioig.gov" target="_blank">
+				<a href="https://doioig.gov" target="_blank">
 					DOI Inspector General
 				</a>
-				<a href="//whitehouse.gov" target="_blank">
+				<a href="https://whitehouse.gov" target="_blank">
 					White House
 				</a>
-				<a href="//www.whitehouse.gov/omb/management/egov" target="_blank">
+				<a href="https://www.whitehouse.gov/omb/management/egov" target="_blank">
 					E-Gov
 				</a>
-				<a href="//www.doi.gov/pmb/eeo/no-fear-act" target="_blank">
+				<a href="https://www.doi.gov/pmb/eeo/no-fear-act" target="_blank">
 					No Fear Act
 				</a>
-				<a href="//www2.usgs.gov/foia" target="_blank">
+				<a href="https://www2.usgs.gov/foia" target="_blank">
 					FOIA
 				</a>
 			</footer>
@@ -221,17 +221,17 @@ Simple base code structures for new apps
 <span v-if="layout.usgsFooter">
   &lt;!-- Required USGS Footer --&gt;
   &lt;footer id="usgs" v-if="layout.usgsFooter"&gt;
-    &lt;a href="//www.doi.gov/privacy" target="_blank"&gt;DOI Privacy Policy&lt;/a&gt;
-    &lt;a href="//usgs.gov/policies-and-notices" target="_blank"&gt;Legal&lt;/a&gt;
-    &lt;a href="//usgs.gov/accessibility-and-us-geological-survey" target="_blank"&gt;Accessibility&lt;/a&gt;
-    &lt;a href="//usgs.gov/sitemap" target="_blank"&gt;Site Map&lt;/a&gt;
+    &lt;a href="https://www.doi.gov/privacy" target="_blank"&gt;DOI Privacy Policy&lt;/a&gt;
+    &lt;a href="https://usgs.gov/policies-and-notices" target="_blank"&gt;Legal&lt;/a&gt;
+    &lt;a href="https://usgs.gov/accessibility-and-us-geological-survey" target="_blank"&gt;Accessibility&lt;/a&gt;
+    &lt;a href="https://usgs.gov/sitemap" target="_blank"&gt;Site Map&lt;/a&gt;
     &lt;div&gt;&lt;/div&gt;
-    &lt;a href="//doi.gov" target="_blank"&gt;U.S. Department of the Interior&lt;/a&gt;
-    &lt;a href="//doioig.gov" target="_blank"&gt;DOI Inspector General&lt;/a&gt;
-    &lt;a href="//whitehouse.gov" target="_blank"&gt;White House&lt;/a&gt;
-    &lt;a href="//www.whitehouse.gov/omb/management/egov" target="_blank"&gt;E-Gov&lt;/a&gt;
-    &lt;a href="//www.doi.gov/pmb/eeo/no-fear-act" target="_blank"&gt;No Fear Act&lt;/a&gt;
-    &lt;a href="//www2.usgs.gov/foia" target="_blank"&gt;FOIA&lt;/a&gt;
+    &lt;a href="https://doi.gov" target="_blank"&gt;U.S. Department of the Interior&lt;/a&gt;
+    &lt;a href="https://doioig.gov" target="_blank"&gt;DOI Inspector General&lt;/a&gt;
+    &lt;a href="https://whitehouse.gov" target="_blank"&gt;White House&lt;/a&gt;
+    &lt;a href="https://www.whitehouse.gov/omb/management/egov" target="_blank"&gt;E-Gov&lt;/a&gt;
+    &lt;a href="https://www.doi.gov/pmb/eeo/no-fear-act" target="_blank"&gt;No Fear Act&lt;/a&gt;
+    &lt;a href="https://www2.usgs.gov/foia" target="_blank"&gt;FOIA&lt;/a&gt;
   &lt;/footer&gt;</span>
 
 &lt;/body&gt;
