@@ -117,7 +117,7 @@ Displays & Download links for various WIM and USGS Logos
 		<h2 class="mtop-md">USGS Logos</h2>
 
 		<div class="sg--logogrid mtop-md">
-			<div class="sg--logoblock">
+			<!-- <div class="sg--logoblock">
 				<img src="img/sg-logos/USGS/USGS_Green_Banneronly_web.png" title="USGS Banner" alt="USGS Banner"/>
 				<b>
 					Banner, Green
@@ -125,7 +125,7 @@ Displays & Download links for various WIM and USGS Logos
 					<a href="img/sg-logos/USGS/USGS_Green_Banneronly_web.png" >Web Optimized</a>
 					<a href="img/sg-logos/USGS/USGS_Green_Banneronly_fullres.png" target="_blank">Fullres</a>
 				</b>
-			</div>
+			</div> -->
 			<div class="sg--logoblock">
 				<img src="img/sg-logos/USGS/USGS_Green_fullres.png" title="USGS Green" alt="USGS Green"/>
 				<b>
@@ -155,7 +155,7 @@ Displays & Download links for various WIM and USGS Logos
 		</div>
 
 		<div class="sg--logogrid mtop-md">
-			<div class="sg--logoblock">
+			<!-- <div class="sg--logoblock">
 				<img src="img/sg-logos/USGS/USGS_Black_Banneronly_web.png" title="USGS Banner" alt="USGS Banner"/>
 				<b>
 					Banner, Black
@@ -163,7 +163,7 @@ Displays & Download links for various WIM and USGS Logos
 					<a href="img/sg-logos/USGS/USGS_Black_Banneronly_web.png" >Web Optimized</a>
 					<a href="img/sg-logos/USGS/USGS_Black_Banneronly_fullres.png" target="_blank">Fullres</a>
 				</b>
-			</div>
+			</div> -->
 			<div class="sg--logoblock">
 				<img src="img/sg-logos/USGS/USGS_Black_web.png" title="USGS Black" alt="USGS Black"/>
 				<b>
@@ -185,7 +185,7 @@ Displays & Download links for various WIM and USGS Logos
 		</div>
 
 		<div class="sg--logogrid dark mtop-md">
-			<div class="sg--logoblock">
+			<!-- <div class="sg--logoblock">
 				<img src="img/sg-logos/USGS/USGS_White_Banneronly_web.png" title="USGS Banner, White" alt="USGS Banner"/>
 				<b>
 					Banner, White
@@ -193,7 +193,7 @@ Displays & Download links for various WIM and USGS Logos
 					<a href="img/sg-logos/USGS/USGS_White_Banneronly_web.png" >Web Optimized</a>
 					<a href="img/sg-logos/USGS/USGS_White_Banneronly_fullres.png" target="_blank">Fullres</a>
 				</b>
-			</div>
+			</div> -->
 			<div class="sg--logoblock">
 				<img src="img/sg-logos/USGS/USGS_White_web.png" title="USGS White" alt="USGS White"/>
 				<b>

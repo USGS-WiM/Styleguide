@@ -124,7 +124,6 @@ export default {
 				"Animated Loaders": "/loaders",
 				"QR Code Generator": "/qr",
 				"Email Signature Designer": "/signature",
-				"Frame Template (Geonarrative)": "/frame",
 				"Interface Icons": "/icons",
 				"CSS Variables": "/variables",
 				"Meta Tags": "/meta",

@@ -70,24 +70,6 @@ export const routes = [
 				title: "Email Signatures — " + AppName,
 			}
 		},
-		// Frame Generator
-		{
-			path: "/frame",
-			name: "frame",
-			component: () => import(/* webpackChunkName: "frame" */ "./views/tools/Frame.vue"),
-			meta: {
-				title: "Frame Generator — " + AppName,
-			}
-		},	
-			// Frame View/Preview/Body
-			{
-				path: "/frame-preview",
-				name: "frame-view",
-				component: () => import(/* webpackChunkName: "frame-view" */ "./views/tools/FrameView.vue"),
-				meta: {
-					title: "Frame Generator — " + AppName,
-				}
-			},
 		// Icons
 		{
 			path: "/icons",
