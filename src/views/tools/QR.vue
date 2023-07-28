@@ -220,6 +220,7 @@ export default {
 
 			// Get logo based on theme choice
 			var logoRef = "";
+
 			// this.qr.foreground = "#000000";
 			if(this.qr.theme == "USGS Black"){
 				logoRef = "./img/qr/usgsblack.png";
@@ -232,11 +233,13 @@ export default {
 			}
 
 
+
 			
 			// Wait for image to load before drawing
 			var base_image = new Image();
 			base_image.src = logoRef;
 			
+
 			base_image.onload = function(){
 				// Clear center before logo and set Transparency
 				// If transparent
@@ -296,15 +299,10 @@ export default {
 			link.click();
 		}
 
-
-
 	}
 };
 
-
-
 </script>
-
 
 <style lang="scss">
 
