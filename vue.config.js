@@ -10,12 +10,10 @@ module.exports = {
 		]
 	},
 	devServer: {// Environment configuration
-        host: "0.0.0.0",
 		socket: "socket",
         port: 8080,
         https: false,
         hotOnly: false,
-		public: "0.0.0.0:8080",
         disableHostCheck:true,
                  open: true // Configure to automatically start the browser
     },
